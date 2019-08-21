@@ -10,15 +10,28 @@
 
 
 /*!
- * ajaxify-cart.js
- */
-// =require vendor/ajaxify-cart.js
-
-
-/*!
  * transit.js
  */
 // =require vendor/transit.js
+
+
+/*!
+ * lazysizes.min.js
+ */
+// =require vendor/lazysizes.min.js
+
+
+/*!
+ * scrollmagic-2.0.7.min.js
+ */
+// =require vendor/scrollmagic.min.js
+
+
+/*!
+ * slick.min.js
+ */
+// =require vendor/slick.js
+
 
 
 

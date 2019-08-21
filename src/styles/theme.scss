@@ -11,7 +11,7 @@
 /*================ SETTINGS ================*/
 @import url('settings/variables.scss.liquid');
 @import url('settings/colors.scss.liquid');
-@import url('settings/typography.scss.liquid');
+@import url('settings/typography.scss');
 
 
 /*================ GLOBAL ================*/
@@ -30,4 +30,6 @@
 
 /*================ PAGES ================*/
 @import url('pages/home.scss');
+@import url('pages/product.scss');
 @import url('pages/landing-page-promo.scss');
+

@@ -25,7 +25,7 @@
 
                        <div class="small-12  medium-10 medium-centered   columns">
 
-                         <img data-src="<?php echo $path; ?>assets/images/illustr--glassDiagram--static.svg"
+                         <img data-src="{{'illustr--glassDiagram--static.svg' | asset_url}}"
                               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                               class="hide-for-medium-up lazyload"
                               data-sizes="auto"
@@ -36,7 +36,7 @@
                          <div class="glassDiagram  show-for-medium-up"
                               data-ui-component="glass-diagram-animation">
 
-                             <img data-src="<?php echo $path; ?>assets/images/illustr--glassDiagram.svg"
+                             <img data-src="{{'illustr--glassDiagram.svg' | asset_url}}"
                                   class="glassDiagram-glass lazyload"
                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                   alt="Glass Diagram of Blowfish"
@@ -149,6 +149,29 @@
      </section>
 
 
+{%javascript%}
+$(document).ready(function() {
+  
+  if($('[data-ui-component="glass-diagram-animation"]').length > 0 ) {
+
+    var glassDiagramAnimCtrl = new ScrollMagic.Controller(); 
+
+    var glassDiagram = '[data-ui-component="glass-diagram-animation"]';
+
+    var classToggle = 'is-showing-bullets'; 
+
+
+    new ScrollMagic.Scene({
+        triggerElement: '[data-action="trigger-glass-diagram-anim"]',
+        offset: 300      })
+    .setClassToggle(glassDiagram, classToggle)
+    .addTo(glassDiagramAnimCtrl); 
+
+  }
+
+}); 
+{%endjavascript%}
+
 
 {%schema%}
 {
@@ -187,4 +210,7 @@
   ]
 }
 {%endschema%}
+
+
+
 

@@ -1,57 +1,57 @@
 
 /*------------------------------------*\
-    #Typography
+    #Typography Settings
 \*------------------------------------*/
 
 
 
-// @font-face {
-//  font-family: MuseoSansRounded-900;
-//  src: url(../assets/fonts/330F46_0_0.eot);
-//  src: url(../assets/fonts/330F46_0_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_0_0.woff2) format("woff2"), url(../assets/fonts/330F46_0_0.woff) format("woff"), url(../assets/fonts/330F46_0_0.ttf) format("truetype"), url(../assets/fonts/330F46_0_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: MuseoSansRounded-900;
+ src: url(../assets/330F46_0_0.eot);
+ src: url(../assets/330F46_0_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_0_0.woff2) format("woff2"), url(../assets/330F46_0_0.woff) format("woff"), url(../assets/330F46_0_0.ttf) format("truetype"), url(../assets/330F46_0_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: MuseoSansRounded-500;
-//  src: url(../assets/fonts/330F46_1_0.eot);
-//  src: url(../assets/fonts/330F46_1_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_1_0.woff2) format("woff2"), url(../assets/fonts/330F46_1_0.woff) format("woff"), url(../assets/fonts/330F46_1_0.ttf) format("truetype"), url(../assets/fonts/330F46_1_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: MuseoSansRounded-500;
+ src: url(../assets/330F46_1_0.eot);
+ src: url(../assets/330F46_1_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_1_0.woff2) format("woff2"), url(../assets/330F46_1_0.woff) format("woff"), url(../assets/330F46_1_0.ttf) format("truetype"), url(../assets/330F46_1_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: MuseoSansRounded-700;
-//  src: url(../assets/fonts/330F46_2_0.eot);
-//  src: url(../assets/fonts/330F46_2_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_2_0.woff2) format("woff2"), url(../assets/fonts/330F46_2_0.woff) format("woff"), url(../assets/fonts/330F46_2_0.ttf) format("truetype"), url(../assets/fonts/330F46_2_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: MuseoSansRounded-700;
+ src: url(../assets/330F46_2_0.eot);
+ src: url(../assets/330F46_2_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_2_0.woff2) format("woff2"), url(../assets/330F46_2_0.woff) format("woff"), url(../assets/330F46_2_0.ttf) format("truetype"), url(../assets/330F46_2_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: AirFactoryRounded-Bold;
-//  src: url(../assets/fonts/330F46_3_0.eot);
-//  src: url(../assets/fonts/330F46_3_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_3_0.woff2) format("woff2"), url(../assets/fonts/330F46_3_0.woff) format("woff"), url(../assets/fonts/330F46_3_0.ttf) format("truetype"), url(../assets/fonts/330F46_3_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: AirFactoryRounded-Bold;
+ src: url(../assets/330F46_3_0.eot);
+ src: url(../assets/330F46_3_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_3_0.woff2) format("woff2"), url(../assets/330F46_3_0.woff) format("woff"), url(../assets/330F46_3_0.ttf) format("truetype"), url(../assets/330F46_3_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: AirFactoryRounded-Regular;
-//  src: url(../assets/fonts/330F46_4_0.eot);
-//  src: url(../assets/fonts/330F46_4_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_4_0.woff2) format("woff2"), url(../assets/fonts/330F46_4_0.woff) format("woff"), url(../assets/fonts/330F46_4_0.ttf) format("truetype"), url(../assets/fonts/330F46_4_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: AirFactoryRounded-Regular;
+ src: url(../assets/330F46_4_0.eot);
+ src: url(../assets/330F46_4_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_4_0.woff2) format("woff2"), url(../assets/330F46_4_0.woff) format("woff"), url(../assets/330F46_4_0.ttf) format("truetype"), url(../assets/330F46_4_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: MuseoSansRounded-700Italic;
-//  src: url(../assets/fonts/330F46_5_0.eot);
-//  src: url(../assets/fonts/330F46_5_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_5_0.woff2) format("woff2"), url(../assets/fonts/330F46_5_0.woff) format("woff"), url(../assets/fonts/330F46_5_0.ttf) format("truetype"), url(../assets/fonts/330F46_5_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: MuseoSansRounded-700Italic;
+ src: url(../assets/330F46_5_0.eot);
+ src: url(../assets/330F46_5_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_5_0.woff2) format("woff2"), url(../assets/330F46_5_0.woff) format("woff"), url(../assets/330F46_5_0.ttf) format("truetype"), url(../assets/330F46_5_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: MuseoSansRounded-900Italic;
-//  src: url(../assets/fonts/330F46_6_0.eot);
-//  src: url(../assets/fonts/330F46_6_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_6_0.woff2) format("woff2"), url(../assets/fonts/330F46_6_0.woff) format("woff"), url(../assets/fonts/330F46_6_0.ttf) format("truetype"), url(../assets/fonts/330F46_6_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: MuseoSansRounded-900Italic;
+ src: url(../assets/330F46_6_0.eot);
+ src: url(../assets/330F46_6_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_6_0.woff2) format("woff2"), url(../assets/330F46_6_0.woff) format("woff"), url(../assets/330F46_6_0.ttf) format("truetype"), url(../assets/330F46_6_0.svg#wf) format("svg")
+}
 
-// @font-face {
-//  font-family: MuseoSansRounded-500Italic;
-//  src: url(../assets/fonts/330F46_7_0.eot);
-//  src: url(../assets/fonts/330F46_7_0.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/330F46_7_0.woff2) format("woff2"), url(../assets/fonts/330F46_7_0.woff) format("woff"), url(../assets/fonts/330F46_7_0.ttf) format("truetype"), url(../assets/fonts/330F46_7_0.svg#wf) format("svg")
-// }
+@font-face {
+ font-family: MuseoSansRounded-500Italic;
+ src: url(../assets/330F46_7_0.eot);
+ src: url(../assets/330F46_7_0.eot?#iefix) format("embedded-opentype"), url(../assets/330F46_7_0.woff2) format("woff2"), url(../assets/330F46_7_0.woff) format("woff"), url(../assets/330F46_7_0.ttf) format("truetype"), url(../assets/330F46_7_0.svg#wf) format("svg")
+}
 
 
 
@@ -193,7 +193,7 @@ $type-settings: (
 };
 
 @mixin text-micro() {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: $base-magic-number / 16;
 }; 
 
@@ -328,67 +328,6 @@ $type-settings: (
 %lh4 {
     line-height:  $base-magic-number / 24;
 } 
-
-
-
-
-/*------------------------------------*\
-    #Responsive Type with Media Queries 
-\*------------------------------------*/
-
-//This allows for type to resize as needed as oppose to needing media queries
-//that force changing type size 
-//http://robertmaple.co.uk/fluid-responsive-type-with-media-queries/
-
-//Set your font size min/max (px)
-$max-font-size : 19;
-$min-font-size : 16;
- 
-//Set your viewport size min/max (px)
-$max-media : 2000;
-$min-media : 320;
- 
-// Internal variables for the font/viewport ranges
-$viewport-range : $max-media - $min-media;
-$font-increments : ($max-font-size - $min-font-size) / $viewport-range;
- 
-// Calculate min/max :root font sizes (%) - 6.25 relates to 1px being 6.25% of the default 16px html font-size. 
-$min-root-font : (6.25 * $min-font-size);
-$max-root-font : (6.25 * $max-font-size);
- 
-// Counter variable for use in loop
-$i : 0;
-
-
-// Loop through the range between the min/max viewport sizes
-@while $i < $viewport-range {
-    
-    // Calculate the font size based on position in the loop.
-    $font-size : ((($font-increments * $i) *  6.25 ) + $min-root-font ) * 1%;
- 
-    // Calculate the breakpoint size based on position in the loop
-    $break : $i + $min-media * 1px;
- 
-    // Print out breakpoint with :root font-size
-    @media screen and (min-width: #{$break}) {
-        :root {   
-            font-size: $font-size; 
-        }
-    }
-    
-    // Advance the counter
-    $i : $i + 1;
-}
- 
-// Set the min and max font/viewport sizes where text will stop scaling.
-:root {    
-    @media (max-width: #{$min-media}px){
-        font-size: $min-root-font * 1%; 
-    }
-    @media (min-width: #{$max-media}px){
-        font-size: $max-root-font * 1%; 
-    } 
-}
 
 
 
@@ -5155,8 +5094,8 @@ select {
 
 // @font-face {
 //  font-family: siteicons;
-//  src: url(../assets/fonts/siteicons.eot?69383846);
-//  src: url(../assets/fonts/siteicons.eot?69383846#iefix) format("embedded-opentype"), url(../assets/fonts/siteicons.woff2?69383846) format("woff2"), url(../assets/fonts/siteicons.woff?69383846) format("woff"), url(../assets/fonts/siteicons.ttf?69383846) format("truetype"), url(../assets/fonts/siteicons.svg?69383846#siteicons) format("svg");
+//  src: url(../assets/siteicons.eot?69383846);
+//  src: url(../assets/siteicons.eot?69383846#iefix) format("embedded-opentype"), url(../assets/siteicons.woff2?69383846) format("woff2"), url(../assets/siteicons.woff?69383846) format("woff"), url(../assets/siteicons.ttf?69383846) format("truetype"), url(../assets/siteicons.svg?69383846#siteicons) format("svg");
 //  font-weight: 400;
 //  font-style: normal
 // }

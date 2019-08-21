@@ -1,0 +1,39 @@
+
+
+/*------------------------------------*\
+    #Product Page
+\*------------------------------------*/
+
+.product {
+
+	.product__title {
+		color: $tertiary-color;
+		font-family: $secondary-font-family; 
+		font-weight: bold; 
+		@include h2();
+
+		span {
+			&.is-hidden {
+				display: none; 
+			}
+		} 
+	}
+	
+
+	.product__description {
+
+		span {
+			&.is-hidden {
+				display: none; 
+			}
+		}
+	}
+
+	.product__images {
+		img {
+			&.is-hidden {
+				display: none; 
+			}
+		}
+	}
+}

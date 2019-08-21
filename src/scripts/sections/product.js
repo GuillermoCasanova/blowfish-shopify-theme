@@ -20,7 +20,6 @@ theme.Product = (function() {
     productJson: '[data-product-json]',
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
-    qtyButtons: '[data-qty-counter-button]',
     singleOptionSelector: '[data-single-option-selector]'
   };
 
@@ -152,39 +151,6 @@ theme.Product = (function() {
      */
     onUnload: function() {
       this.$container.off(this.namespace);
-    },
-
-    initSecondaryInfo: function() {
-      if(this.$container.find('.product__information__description__secondary-dscrp')) {
-
-        var $secondaryInfo = $('.product__information__description__secondary-dscrp');
-
-        $secondaryInfo.before('<button class="product__description__toggle" data-secondary-info-toggle>+ More Information</button>'); 
-
-        var $infoToggle = $('[data-secondary-info-toggle]'); 
-
-        $infoToggle.on('click', function() {
-          $secondaryInfo.find('span').toggle();
-          $secondaryInfo.toggle(); 
-        });
-      }
-    },
-
-    initQtyBtns: function() {
-
-      var $qtyButtons = $(selectors.qtyButtons); 
-      var $qty = $('#Quantity'); 
-
-      $qtyButtons.on('click', function(event) {
-        event.preventDefault(); 
-        var currentQty = parseInt($qty.val());
-
-        if(currentQty === 0 && $(this).attr('value') =='-1') {
-          return 
-        }
-        $qty.val(currentQty + parseInt($(this).attr('value')));
-
-      }); 
     }
 
   });
