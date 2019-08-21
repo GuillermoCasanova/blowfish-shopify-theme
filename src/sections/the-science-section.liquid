@@ -1,0 +1,87 @@
+
+     <!-- Tell Me About the Science -->
+     <section class="[ section  section--science ]">
+
+         <div class="row">
+
+             <div class="small-12  columns medium-centered">
+
+                 <div class="row  grid  grid--center grid--flexDirectionColumn med-grid--flexDirectionRow">
+
+                     <div class="small-12 medium-4  large-4  medium-push-1    columns">
+
+                      <div class="section--science-photo">
+                          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $path; ?>assets/images/arm_over_face.gif" alt="Person laying down with arm over face before taking Blowfish" class="lazyload" data-sizes="auto">
+                      </div>
+
+                     </div>
+
+
+                     <div class="small-12 medium-6 medium-push-1  large-5 large-push-2 columns  text-left">
+
+                         <h1 class="medium-text-left section-text  [ ff2  fwb txtc1 lh2 ]">
+                           {{section.settings.headline}}
+                         </h1>
+
+                         <p class="section-text mb4">
+                          {{section.settings.body}}
+                         </p>
+
+                         <div class="row">
+
+                           <div class="small-10 medium-8 large-6  small-centered  medium-uncentered  columns ">
+
+                             <a href="<?php echo $path; ?>hangover-science/" rel="internal" class="button  button--medium  button--primary  button--expanded ">
+
+                               <span class="button-textState1">I feel like learning</span>
+                               <span class="button-textState2">I feel like learning</span>
+
+                             </a>
+
+                           </div>
+
+                         </div>
+
+                     </div>
+
+
+                 </div>
+
+             </div>
+
+         </div>
+
+     </section>
+     <!--End Tell me about the science section-->
+
+
+
+
+{%schema%}
+{
+  "name": "The Science Section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "The Science Headline"
+    },
+    {
+      "type": "html",
+      "id": "body",
+      "label": "The Science Headline"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Sections", 
+      "name": "The Science Section", 
+      "settings": {
+        "headline": "Why Hangovers Suck",
+        "body": "They're terrible, but why? A quick look at why having a good time makes you feel so bad."
+      }
+    }
+  ]
+}
+{%endschema%}
+

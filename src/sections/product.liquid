@@ -1,0 +1,543 @@
+<section data-section-id="{{ section.id }}" data-section-type="product">
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+  {% for image in product.images %}
+    {% capture wrapper_class %}
+      {%- unless featured_image == image -%}
+        hide
+      {%- endunless -%}
+    {% endcapture %}
+
+    {% include 'responsive-image' with
+      image: image,
+      max_width: 700,
+      max_height: 800,
+      image_attributes: "data-product-featured-image",
+      wrapper_class: wrapper_class,
+      wrapper_attributes: "data-product-image-wrapper",
+    %}
+  {% endfor %}
+
+  {% if product.images.size > 1 %}
+    <ul>
+      {% for image in product.images %}
+        <li>
+          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail{% if featured_image == image %} aria-current="true"{% endif %}>
+            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <h1>{{ product.title }}</h1>
+  <p>{{ product.vendor }}</p>
+
+
+  {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+    {% unless product.has_only_default_variant %}
+      {% for option in product.options_with_values %}
+        <div class="js">
+
+          {% if forloop.index0 > 0 %}
+
+            {% for value in option.values %}
+              <input type="radio" id="Option{{ option.position }}-{{ value }}" name="options[{{ option.name }}]" value="{{ value }}"{% if option.selected_value == value %} checked{% endif %}>
+              <label for="Option{{ option.position }}-{{ value }}">{{ value }}</label>
+            {% endfor %}
+
+          {% else %}
+
+            <label for="Option{{ option.position }}">
+              {{ option.name }}
+            </label>
+
+            <select
+              id="Option{{ option.position }}"
+              name="options[{{ option.name | escape }}]">
+              {% for value in option.values %}
+                <option
+                  value="{{ value | escape }}"
+                  {% if option.selected_value == value %}selected="selected"{% endif %}>
+                    {{ value }}
+                </option>
+              {% endfor %}
+            </select>
+
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% endunless %}
+
+    <noscript>
+      <select name="id">
+        {% for variant in product.variants %}
+          <option
+            {% if variant == current_variant %}selected="selected"{% endif %}
+            {% unless variant.available %}disabled="disabled"{% endunless %}
+            value="{{ variant.id }}">
+              {{ variant.title }}
+          </option>
+        {% endfor %}
+      </select>
+    </noscript>
+
+    <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+    <input type="number" id="Quantity" name="quantity" value="1" min="1">
+
+    <div data-price-wrapper>
+      <span data-product-price>
+        {{ current_variant.price | money }}
+      </span>
+
+      {% if product.compare_at_price_max > product.price %}
+        <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+        <s data-compare-price>
+          {% if current_variant.compare_at_price > current_variant.price %}
+            {{ current_variant.compare_at_price | money }}
+          {% endif %}
+        </s>
+      {% endif %}
+    </div>
+
+    <button
+      type="submit"
+      name="add"
+      data-submit-button
+      {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+        <span data-submit-button-text>
+          {% if current_variant.available %}
+            {{ 'products.product.add_to_cart' | t }}
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
+        </span>
+    </button>
+  {% endform %}
+
+  <div class="rte">
+    {{ product.description }}
+  </div>
+
+  {% if section.settings.show_share_buttons %}
+    {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+  {% endif %}
+</section>
+
+
+      
+      <!--Buy Blowfish Section--> 
+      
+      <section class="section  section--main">
+          
+          <div class="row">
+      
+              <div class="small-12 columns medium-10 large-9 medium-centered  productContainer">
+      
+                  <div class="row  grid grid--flexDirectionColumn  large-grid--flexDirectionRow  med-grid--center ">
+
+                    <div class="small-12  columns   large-6">
+
+                       <div class="row  small-collapse">
+      
+                            <div class="small-7  small-centered  large-11 columns" id="scroll-to-product">  
+                              <div class="productImg-container">
+                                  <?php
+                                                  $crn_pr = 1;
+                                
+                                                  foreach($product_list as $product){
+                                                  $show_me = ($crn_pr!=1)?' style="display:none" data-prolist="true" data-product-obj="'.$product['id'].'"':' data-prolist="true" data-product-obj="'.$product['id'].'"';
+                                
+                                                ?>              
+                                <div <?php echo $show_me; ?>>
+                                  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>" class="mb5 lazyload">
+                                </div>
+                                                             <?php $crn_pr++; } ?>
+                              </div>
+                            </div>
+    
+                        </div>
+
+                    </div>
+                          
+                    <div class="small-12   large-5    columns  mb5 ">
+                
+
+                        <div class="row">
+    
+                          <div class="small-12 columns">
+                            <?php
+                $crn_pr = 1;
+                
+                foreach($product_list as $product){
+                $show_me = ($crn_pr!=1)?' style="display:none" data-prolist="true" data-product-obj="'.$product['id'].'"':' data-prolist="true" data-product-obj="'.$product['id'].'"';
+                
+              ?>
+                            <h2 class="h3  fwb  mb1  ff2" <?php echo $show_me; ?>><?php echo $product['title']; ?></h2>
+                            
+                              <a href="<?php echo $path; ?>reviews/" <?php echo $show_me; ?>>
+                                  <div class="mb1">
+                                    <div class="yotpo bottomLine" style="display:inline-block"
+                                         data-product-id="<?php 
+                      $yotpo = $product['id'];
+                      if($product['id'] == "306447417373") $yotpo = "54389632";
+                      if($product['id'] == "306447876125") $yotpo = "8972299593";
+                      echo $yotpo; 
+                              
+                    ?>">
+                                    </div>
+                                  </div>
+                                </a>
+                        
+                            <p class="mb3 text-micro" <?php echo $show_me; ?>>
+                              <?php echo $product['description']; ?>
+                            </p>
+                            
+                            <?php $crn_pr++; } ?>
+                            
+                          </div>
+    
+                        </div>
+                      
+                        <div class="row">
+
+                          <div class="small-12 small-centered  columns">
+                              
+                            <label class="text-mini  uc  txtc1  fwb mr2" for="productType">
+                              HOW MUCH BLOWFISH TODAY?
+                            </label>
+
+                            <div class="select-customWrapper">
+
+                              <select name="productType"  class="select--primary  select--medium  mb3" id="productType">
+                                
+                             <?php
+                $trt = 1;
+               foreach($product_list as $product){
+                 if($trt==1){$first_el = $product['id'];}
+                 echo '<option value="'.$product['id'].'" data-price="'.$product['price'].'">'.$product['title'].'</option>';
+                 $trt++;
+               }
+                  ?>
+
+                              </select>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                        <div class="row">
+                        
+                          <div class="small-12  medium-7 large-12  small-centered medium-uncentered columns mb1">
+                      
+                              <button class="button  button--medium  button--primary  button--expanded" id="lets-addit">
+                                
+                                <span class="button-textState1">add to cart - $<span data-bf-cart-single="<?php echo $product_list[$first_el]['price']; ?>" class="odometer1"><?php echo $product_list[$first_el]['price']; ?></span></span>
+                                <span class="button-textState2">add to cart - $<span data-bf-cart-single="<?php echo $product_list[$first_el]['price']; ?>" class="odometer1"><?php echo $product_list[$first_el]['price']; ?></span></span>
+                                
+                              </button>
+  
+                          </div>
+                
+                        </div>
+          
+                        <!--Payment Options--> 
+                        <div class="row">
+                          
+                          <div class="small-12 large-12 columns">
+                            
+                            <div class="paymentOptions">
+                        
+                              <ul class="paymentOptions-list  grid  grid--center  grid--justifyRight">
+                              
+                              <li>
+                                
+                                <span class="text-micro txtc5 text-right display-block">
+                                  we also accept:
+                                </span>
+                              </li>
+                              <li class=" text-center">
+                                  
+                                  <img src="<?php echo $path; ?>assets/images/payment--apple.gif" alt="Apple Pay" width="130" class="paymentOptions-logo" >
+                                                
+                              </li>
+                                                
+                              <li class=" text-center">
+                                  
+                                  <img src="<?php echo $path; ?>assets/images/payment--amazonPay.gif" alt="Amazon Pay" width="130" class="paymentOptions-logo" >
+                                                
+                              </li>
+                                          
+                              </ul>
+                        
+                            </div>
+                        
+                          </div>
+                        
+                        </div>
+                        <!--Payment Options--> 
+
+
+                    </div>
+                
+                  </div>
+                  
+              </div>
+      
+          </div>
+      
+
+      </section>
+      
+      
+
+     <!-- Begin Guarantee Section--> 
+     <section class="section   section--tertiary">
+         
+         <div class="section-bg">
+           
+         </div>
+     
+         <div class="row ">
+     
+             <div class="small-12 medium-10  large-7  medium-centered columns">
+                     
+                <a href="<?php echo $path;?>guarantee/"> 
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.4 18" role="presentation" class="blowfishGuaranteeBadge">
+                  <title>Blowfish Guarantee Badge</title><path d="M10 7c-.4 0-.3-.3-.2-.3s.2-.1.3-.1l.1-.1c0-.1-.1-.1-.1-.1-.2-.7-.5-1.3-1-1.8 0-.1 0-.3.1-.4l.1-.3L9 4c-.1.1-.3.2-.4.2-.4-.2-.8-.3-1.2-.4-.1-.1-.2-.2-.2-.3l-.1-.3-.1.3c0 .1-.1.3-.2.4-.4 0-.8.1-1.2.3-.1 0-.2-.1-.4-.2L5 3.8l.1.3c0 .1.1.3.1.4l-.1.1c-.3.3-.6.6-.7 1-.1 0-.2.1-.4 0h-.3l.3.2c.1.1.1.2.2.3 0 .1 0 .2-.1.4v-.1c-.2-.2-.5-.3-.7-.2-.1 0-.1.1-.1.2v.7c0 .1.1.2.1.2.2.1.5 0 .7-.2l.1-.1c0 .1 0 .2.1.4-.2.1-.2.2-.4.3l-.2.2h.7c.2.4.4.7.7 1l.1.1c0 .1 0 .3-.1.4l-.1.3.2-.2c.1-.1.2-.1.3-.2.5.2.9.4 1.3.4.1.1.2.2.2.4l.1.3.1-.3c0-.1.1-.3.2-.4.4 0 .8-.2 1.2-.4.1 0 .3.1.4.2l.2.2-.1-.3v-.5c.5-.4.8-1 .9-1.7l.1-.1c0-.1 0-.1-.1-.1zm-1.1-.7c-.2 0-.3-.1-.3-.3 0-.1.1-.3.3-.3.1.1.2.2.2.3 0 .2-.1.3-.2.3z" fill="#fff"/><path d="M13.4 6.6c0-3.7-3-6.6-6.6-6.6S.2 3 .2 6.6c0 1.5.5 2.8 1.3 3.9l-1.5 6 3.4-1.9L5.5 18l1.2-4.7L7.9 18l2.1-3.3 3.4 1.9-1.5-5.8c1-1.1 1.5-2.6 1.5-4.2zM6.8.9c3.2 0 5.8 2.6 5.8 5.8s-2.6 5.8-5.8 5.8S1 9.9 1 6.7C1.1 3.4 3.6.9 6.8.9zM5.2 16.2l-1.6-2.5L1 15.1l1-4c1 1.1 2.4 1.8 3.9 2l-.7 3.1zm4.6-2.4l-1.6 2.5-.8-3c1.5-.1 2.9-.8 4-1.8l1 3.8-2.6-1.5z" fill="#f6d83d"/></svg>
+                </a>
+     
+                 <a href="<?php echo $path;?>guarantee/">
+                  <h1 class="text-center section-text ">
+                  Our Hangover-Free <span class="txtc6">Guarantee</span>
+                 </h1>
+                </a>
+     
+                 <p class="text-center section-text mb4">
+                 Blowfish is a treatment that really works. If you don’t love it, we’ll give you your <a href="<?php echo $path; ?>guarantee/" class="section-link">money back</a>. But we’re pretty sure you’re gonna thank us.
+                 </p>
+     
+             </div>
+     
+         </div>
+     
+     </section>  
+     <!--End Guarantee Section--> 
+     
+
+      <!-- Reviews Section--> 
+      <section class="section">
+       
+       <div class="row">
+         <div class="small-12 columns text-center">
+                   
+                   <!--Call out for small--> 
+                   <h1 class="[ fwb  text-center  ff2  txtc1 ]">People Love <br class="hide-for-medium-up">Not Being Hungover </h1>      
+               
+               </div>
+               
+                <div class="small-11  medium-10 large-7  small-centered columns text-center mb6">
+                  
+                <ul class="slideshow  slideshow--reviews  "  data-ui-component="reviews-carousel">
+                     
+                     <li>
+                                         
+                         <blockquote class="slideshow-quote">These things are incredible, take one pouch and within 30 minutes no more hangover. Highly recommend for anyone looking.</blockquote>
+         
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+                 
+                     </li>
+                 
+                     <li>
+                 
+                         <blockquote class="slideshow-quote">I just pop two tablets in a big water bottle and the more I drink it the better I feel! For the worst hangovers, it’s not a perfect cure but it can bring me from feeling like a 1/10 to a 7/10 pretty quickly. With any hangover that isn't terrible, it makes me feel like nothing ever happened.</blockquote>                                   
+                     
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+         
+                     </li>
+                 
+                     <li>
+                                         
+                         <blockquote class="slideshow-quote">Perfect combo of ingredients you need to get things going. The taste isn't the best but I'll take the trade off when I feel like a million bucks when everyone else is struggling. Great product.</blockquote>
+         
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+         
+                     </li>
+                     
+                     <li>
+                                         
+                         <blockquote class="slideshow-quote">After going harder than most, we woke up early to shred the slopes, popped a couple blowfish pills, and rallied through the whole day.</blockquote>
+         
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+         
+                     </li>
+                     
+                     <li>
+                                         
+                         <blockquote class="slideshow-quote">Didn't want to believe the hype until I finally was in need of some help. Couldn't ask for anything better, it's no bull it worked as advertised. I have recommended this to friends and family, just wish I would've known about it sooner. Thanks Blowfish, you are awesome.</blockquote>
+         
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+         
+                     </li>
+                     
+                     <li>
+                                         
+                         <blockquote class="slideshow-quote">As a college student with 8ams this semester I thought my social life was done for but low and behold the world of science came to the rescue. This stuff works. If you love going out at night but still have professional things to do the next day you NEED Blowfish in your life.</blockquote>
+         
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+         
+                     </li>
+                     
+                     <li>
+                                         
+                         <blockquote class="slideshow-quote">I got married this past summer and put Blowfish in all of my wedding gift bags for out of town guests. The morning after the party, every single person made it to the brunch. Thanks Blowfish!</blockquote>
+         
+                         <div>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                             <span class="icon-star">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                             </span>
+                         </div>
+         
+                     </li>
+                     
+                 
+                 </ul>
+     
+                 <a href="<?php echo $path;?>reviews/"  class="styled-link">
+                   read more reviews
+                 </a>
+               
+               </div>
+     
+             </div>
+     
+     </section>
+
+
+
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_share_buttons",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

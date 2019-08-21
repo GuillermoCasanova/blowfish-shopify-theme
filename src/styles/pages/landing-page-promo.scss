@@ -1,0 +1,58 @@
+
+
+
+.landing-promo {
+	margin-top: rem-calc(72px);
+	margin-bottom: rem-calc(60px);
+	min-height: 50vh;
+	
+	.landing-promo__logo {
+		margin-bottom: rem-calc(24px);
+		max-width: rem-calc(300px);
+	}
+
+	.landing-promo__headline {
+		color: $primary-color;
+		@include h2(); 
+	}		
+	
+	.landing-promo__code {
+		color: black;
+		font-family: $tertiary-font-family; 
+		margin-bottom: rem-calc(24px);
+		display: block; 
+		@include h2(); 
+
+		.code {
+			color: $primary-color; 
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+
+.landing-promo-press {
+	text-align: center;
+	.landing-promo-press__headline {
+		font-family: $tertiary-font-family;
+		color: $primary-color;
+		@include h3(); 
+	}
+
+	.landing-promo-press__logo {
+		margin: rem-calc(12px);
+		margin-top: 0; 
+	}
+}
+
+
+
+.landing-promo-footer {
+	background-color: $primary-color; 
+	text-align: center; 
+	color: #fff;
+	padding: rem-calc(36px);
+	font-weight: bold; 
+	@include h3();
+}

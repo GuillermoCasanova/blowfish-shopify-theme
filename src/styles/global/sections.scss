@@ -1,0 +1,152 @@
+
+
+.section {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem
+}
+
+@media only screen and (min-width:43.8125em) {
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .section {
+    padding-top: 4.125rem;
+    padding-bottom: 4.125rem
+  }
+}
+
+.section--main {
+  padding-top: 6rem
+}
+
+.section--alt {
+  width: 100%
+}
+
+.section--alt .section-text--highlight {
+  color: #f6d83d
+}
+
+.section--alt .section-bg {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
+
+.section--primary {
+  background-color: #38b3e4
+}
+
+.section--primary .section-text {
+  color: #fff
+}
+
+.section--primary a.section-link {
+  color: #fff;
+  border-bottom: 2px solid #f6d83d;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out
+}
+
+.section--primary a.section-link:active,
+.section--primary a.section-link:focus,
+.section--primary a.section-link:hover {
+  opacity: 1;
+  color: #f6d83d;
+  border-bottom: 2px solid transparent
+}
+
+.section--secondary {
+  background-color: #095280
+}
+
+.section--secondary .section-text {
+  color: #fff
+}
+
+.section--secondary .section-link {
+  color: #fff;
+  border-bottom: 2px solid #fff
+}
+
+.section--secondary .section-link:focus,
+.section--secondary .section-link:hover {
+  border-bottom: 2px solid transparent
+}
+
+.section--tertiary {
+  background-color: #38b3e4
+}
+
+.section--tertiary .section-text {
+  color: #fff
+}
+
+.section--tertiary .section-link {
+  color: #fff;
+  border-bottom: 2px solid #f6d83d
+}
+
+.section--tertiary .section-link:focus,
+.section--tertiary .section-link:hover {
+  color: #f6d83d;
+  border-bottom: 2px solid transparent
+}
+
+.section--tertiary .section-bg {
+  ////background-image: url(../assets/images/bubbles--bottom--small.svg);
+  background-position: center bottom;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-repeat: repeat-x
+}
+
+.bubbles--top,
+.cart,
+.narrative-slide-blowfish:before {
+  background-repeat: no-repeat
+}
+
+.section--highlighted {
+  background-color: #f3f3f3
+}
+
+@media only screen and (min-width:43.8125em) {
+  .section--main {
+    padding-top: 7.125rem
+  }
+  .section--tertiary .section-bg {
+    ////background-image: url(../assets/images/bubbles--bottom--medium.svg)
+  }
+  .section--onePageSlide {
+    height: 100vh
+  }
+}
+
+.section--hero {
+  height: 90vh
+}
+
+@media only screen and (orientation:landscape) {
+  .section--hero {
+    height: 140vh
+  }
+}
+
+.section--header {
+  margin-top: 3.75rem
+}

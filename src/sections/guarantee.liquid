@@ -1,0 +1,76 @@
+
+<section class="section--main">
+          
+  <!--Begin headline-->
+  <div class="">
+    <div class="">
+        <h1 class="[ txtc1  ff2  fwb  lh3 ]">
+            {{section.settings.headline}} 
+        </h1>
+    </div>
+  </div>  
+  <!--End Headline--> 
+
+  <!--Contact Main Content--> 
+  <div class="row">
+    <div class="">
+      <div class="">
+        <div class="">
+          {{section.settings.body}}         
+          <div class="">
+             <div class="">
+               <a href="{{section.settings.cta-destination}}" data-text="{{section.settings.cta-text}}" class="button  button--medium  button--secondary  button--expanded">
+                 <span class="button-textState1">{{section.settings['cta-text']}}</span>
+               </a>
+             </div>
+           </div>
+        </div>
+
+        <div class="">
+          <div class="">
+            <img src="{{section.settings.image | img_url: '1200x'}}" alt="{{section.settings.image.alt}}">
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+  <!--End Contact Main Content--> 
+</section>
+
+
+{%schema%}
+{
+
+  "name": "Guarantee Page", 
+  "settings": [
+    {
+      "label": "Headline", 
+      "id": "headline",
+      "type": "text"
+    },
+    {
+      "label": "Copy", 
+      "id": "body",
+      "type": "html"
+    },
+    {
+      "label": "CTA Text", 
+      "id": "cta-text",
+      "type": "text"
+    },
+    {
+      "label": "CTA Destination", 
+      "id": "cta-destination",
+      "type": "url"
+    },
+    {
+      "label": "Guarantee Image", 
+      "id": "image",
+      "type": "image_picker"
+    }
+  ]
+}
+{%endschema%}
+
+

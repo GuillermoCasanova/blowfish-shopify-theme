@@ -1,0 +1,67 @@
+
+
+<section>
+	<div class="row">
+	  <div class="small-12 columns">
+	      <h1 class="headline">
+	         {{section.settings.headline}}
+	      </h1>
+	  </div>
+	</div>  
+
+	<div class="row">
+		<div class="small-12  medium-10  medium-centered  large-9 columns">
+			<ul class="accordion  accordion--large" data-accordion>
+				{%for block in section.blocks%}
+					<li class="accordion-navigation  accordion-element active">
+						<a href="">{{block.settings.question}}</a>
+						<div id="" class=" ">
+							{{block.settings.answer}}
+						</div>
+					</li>
+				{%endfor%}
+			</ul>
+		</div>
+	</div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <ul>
+        <li>For Drug Facts click here.</li>
+        <li>For Privacy Policy click here.</li>
+        <li>For Terms & Conditions click here.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "id": "question",
+          "type": "text",
+          "label": "Question"
+        },
+        {
+          "id": "answer",
+          "type": "html",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

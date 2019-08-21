@@ -1,0 +1,82 @@
+
+<!--Introduction section-->
+<div class="[ section  section--alt  section--hangOversSolved ] [ grid  grid--center grid--flexDirectionColumn  med-grid--flexDirectionRowReverse ] ">
+
+    <div class="section-img  show-for-medium-up">
+    <picture>
+      <source srcset="{{'introPhoto--large2.gif' | asset_url }}" 
+                    media="(min-width: 64.0625em)">
+            <source srcset="{{'introPhoto--medium2.gif' | asset_url }}" 
+                    media="(min-width: 43.8125em)">
+            <img src="{{'introPhoto--small2.jpg' | asset_url }}" alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish" data-sizes="auto">
+    </picture>
+    
+  </div>
+
+  <div class="row small-collapse medium-uncollapsed">
+
+    <div class="small-12 columns">
+
+      <div class="row">
+
+        <div class="small-12 medium-6   medium-push-1 large-5  columns">
+
+          <h1 class="ff2 fwb mb2 txtc1">
+          {{section.settings.headline}}
+          </h1>
+
+          <p>
+            {{section.settings.body}}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="small-12  medium-4 columns"  class="hide-for-medium-up">
+      <img data-src="{{'introPhoto--small2.jpg' | asset_url }}"
+           alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish"
+           data-sizes="auto"
+           src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+           class="hide-for-medium-up lazyload">
+    </div>
+  </div>
+</div>
+
+
+
+
+{%schema%}
+{
+  "name": "Intro Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Section Headline"
+    }, 
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Section Body Copy"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Sections", 
+      "name": "Intro Section", 
+      "settings": {
+        "headline": "A headline for this section of copy",
+        "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"
+      }
+    }
+  ]
+}
+{%endschema%}
+
+
+
+
+

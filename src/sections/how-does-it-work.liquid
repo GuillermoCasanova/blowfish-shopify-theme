@@ -1,0 +1,190 @@
+   <section class="section" data-action="trigger-glass-diagram-anim">
+
+         <div class="row">
+
+             <div class="small-12  medium-10  large-7  small-centered   columns">
+
+                 <div class="row  mb5">
+
+                     <div class="small-12 columns  text-left  medium-text-center mb6">
+
+                       <h1 class="txtc1  ff2  fwb lh2">
+
+                        {{section.settings.headline}}
+                       </h1>
+
+                       <p class="section-text">
+                        {{section.settings.body}}
+                       </p>
+
+                   </div>
+
+                   <div class="small-12 columns">
+
+                     <div class="row">
+
+                       <div class="small-12  medium-10 medium-centered   columns">
+
+                         <img data-src="<?php echo $path; ?>assets/images/illustr--glassDiagram--static.svg"
+                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                              class="hide-for-medium-up lazyload"
+                              data-sizes="auto"
+                              alt="Glass Diagram of Blowfish"
+                              title="Glass Diagram of Blowfish"
+                              width="800">
+
+                         <div class="glassDiagram  show-for-medium-up"
+                              data-ui-component="glass-diagram-animation">
+
+                             <img data-src="<?php echo $path; ?>assets/images/illustr--glassDiagram.svg"
+                                  class="glassDiagram-glass lazyload"
+                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                  alt="Glass Diagram of Blowfish"
+                                  title="Glass Diagram of Blowfish"
+                                  data-expand="-50"
+                                  width="800">
+
+                             <div class="glassDiagram-bulletContainer">
+
+
+                                 <div class="[ glassDiagram-bullet  glassDiagram-bullet--bubbles ]   [ grid  grid--center  grid--justifySpaceBetween ] ">
+
+                                   <div class="glassDiagram-bullet-icon">
+
+
+                                   </div>
+
+                                   <div class="glassDiagram-bullet-text">
+
+                                       Effervescence
+
+                                   </div>
+
+                                 </div>
+
+                                 <div class="[ glassDiagram-bullet  glassDiagram-bullet--reverse  glassDiagram-bullet--h2o  glassDiagram-bullet--reverse ] [ grid  grid--center  grid--justifySpaceBetween ]">
+
+                                   <div class="glassDiagram-bullet-icon">
+
+
+                                   </div>
+
+                                   <div class="glassDiagram-bullet-text">
+
+                                       H<sub>2</sub>O
+
+                                   </div>
+
+                                 </div>
+
+                                 <div class="[ glassDiagram-bullet  glassDiagram-bullet--reverse   glassDiagram-bullet--caffeine  glassDiagram-bullet--reverse  ] [ grid  grid--center  grid--justifySpaceBetween ]">
+
+                                   <div class="glassDiagram-bullet-icon">
+
+
+                                   </div>
+
+                                   <div class="glassDiagram-bullet-text">
+
+                                      Caffeine
+
+                                   </div>
+
+                                 </div>
+
+                                 <div class="glassDiagram-bullet  glassDiagram-bullet--aspirin  grid  grid--center  grid--justifySpaceBetween">
+
+                                   <div class="glassDiagram-bullet-icon">
+
+
+                                   </div>
+
+                                   <div class="glassDiagram-bullet-text">
+
+                                      Aspirin
+
+                                   </div>
+
+                                 </div>
+
+                             </div>
+
+                         </div>
+
+                       </div>
+
+                     </div>
+
+                   </div>
+
+                 </div>
+
+                 <div class="row">
+
+                   <div class="small-10  small-centered medium-6 large-5 columns text-center">
+
+                     <a href="{{section.settings.cta-link}}"
+                        title="{{section.settings.cta-label}}"
+                        rel="internal" 
+                        class="button  button--small  button--secondary  button--expanded  mb1">
+
+                       <span class="button-textState1">{{section.settings.cta-label}}</span>
+                       <span class="button-textState2">{{section.settings.cta-label}}</span>
+
+                     </a>
+
+                      <span class="display-block text-micro">
+                        Free shipping too!
+                      </span>
+
+                   </div>
+
+                 </div>
+
+
+             </div>
+
+         </div>
+
+     </section>
+
+
+
+{%schema%}
+{
+  "name": "How Does It Work Section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Section Headline"
+    },
+    {
+      "type": "html",
+      "id": "body",
+      "label": "Section Body"
+    },
+    {
+      "type": "text",
+      "id": "cta-label",
+      "label": "Section CTA Link"
+    },
+    {
+      "type": "url",
+      "id": "cta-link",
+      "label": "Section CTA Label"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Sections", 
+      "name": "How Does It Work Section", 
+      "settings": {
+        "headline": "A headline for how does it work",
+        "body": "Just drop two tablets in water and drink. Blowfish is real medicine specifically formulated to relieve hangover symptoms. The effervescent tablets rapidly deliver maximum-strength pain reliever and pharmaceutical-grade caffeine to your hurting body, while being gentle on your stomach. So don’t worry. Everything’s gonna be okay."
+      }
+    }
+  ]
+}
+{%endschema%}
+

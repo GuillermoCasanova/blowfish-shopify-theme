@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*============================================================================
+  TMD Online Shop | Built with Slate
+    - You cannot use native CSS/Sass @imports in this file without a build script
+==============================================================================*/
+
+/*================ UTILS ================*/
+@import url('tools/mixins.scss');
+@import url('tools/foundationFunctions.scss');
+
+/*================ SETTINGS ================*/
+@import url('settings/variables.scss.liquid');
+@import url('settings/colors.scss.liquid');
+@import url('settings/typography.scss.liquid');
+
+
+/*================ GLOBAL ================*/
+@import url('global/normalize.scss');
+@import url('global/slate-reset.scss');
+@import url('global/helper-classes.scss');
+@import url('global/sections.scss');
+@import url('global/typography.scss');
+
+
+/*================ SECTIONS ================*/
+@import url('sections/guarantee.scss');
+@import url('sections/header.scss');
+
+
+
+/*================ PAGES ================*/
+@import url('pages/home.scss');
+@import url('pages/landing-page-promo.scss');

@@ -1,0 +1,81 @@
+    <!-- Stock up for later-->
+     <section class="[ section section--alt section--overheadShot ] [ grid  grid--center grid--flexDirectionColumn  med-grid--flexDirectionRowReverse ]">
+
+       <div class="section-img">
+          <picture>
+            <source data-srcset="{{'guaranteePhoto--large.jpg' | asset_url}}" media="(min-width: 64.0625em)">
+            <source data-srcset="{{'guaranteePhoto--medium.jpg' | asset_url}}"  media="(min-width: 43.8125em)">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{'assets/images/guaranteePhoto--small.jpg' | asset_url}}" alt="Glass of water mixed with Blowfish and Blowfish packaging next to it" class="lazyload" data-sizes="auto"  >
+          </picture>
+       </div>
+
+       <div class="row">
+
+         <div class="small-12 medium-6 medium-push-1  large-5 columns">
+
+             <h1 class="ff2 fwb text-left txtc1 lh2">
+              {{section.settings.headline}}
+             </h1>
+
+             <p class="mb4">
+             {{section.settings.body}}
+             </p>
+
+             <div class="row">
+
+               <div class="small-10  small-centered medium-8 large-7 medium-uncentered  columns text-center">
+
+                 <a href="<?php echo $path; ?>purchase/"
+                   class="button  button--medium  button--secondary  button--expanded  mb1">
+
+                   <span class="button-textState1">buy online</span>
+                   <span class="button-textState2">buy online</span>
+
+                 </a>
+
+                  <span class="display-block text-micro">
+                    Free shipping too!
+                  </span>
+
+               </div>
+
+             </div>
+
+         </div>
+
+       </div>
+
+     </section>
+
+
+
+
+{%schema%}
+{
+  "name": "Ready? Section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "headline",
+      "label": "Ready? Headline"
+    },
+    {
+      "type": "html",
+      "id": "body",
+      "label": "Ready? Body"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Sections", 
+      "name": "Ready? Section", 
+      "settings": {
+        "headline": "Ready to be Hangover-Ready?",
+        "body": "You may not be hungover right now, but let’s be honest, at some point soon you definitely will be. Do your future self a favor and order some Blowfish now."
+      }
+    }
+  ]
+}
+{%endschema%}
+
+

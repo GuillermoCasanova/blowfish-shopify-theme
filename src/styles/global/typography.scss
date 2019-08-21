@@ -1,0 +1,18 @@
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $primary-font-family; 
+	font-family: $tertiary-font-family; 
+	margin-bottom: rem-calc(12px);
+}
+
+
+p {
+	margin-bottom: rem-calc(12px);
+}

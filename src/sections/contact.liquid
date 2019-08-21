@@ -1,0 +1,75 @@
+
+
+<section class="section">
+          
+  <!--Begin headline-->
+  <div class="row  section--header">
+
+      <div class="small-12 medium-11  medium-centered  large-9 columns text-center pb4">
+
+          <h1 class="[ txtc1  ff2  fwb  lh3 ]">
+            {{section.settings.headline}}
+          </h1>
+         
+      </div>
+
+  </div>  
+  <!--End Headline--> 
+  
+
+  <!--Contact Main Content--> 
+  <div class="row">
+    
+    <div class="small-12 columns  medium-10 large-9  medium-centered">
+      
+      <div class="row  grid  grid--center  small-grid--flexDirectionColumn  large-grid--flexDirectionRow">
+
+        <div class="small-12 columns large-6 mb7">
+
+         {{section.settings.body}}
+
+        </div>
+
+        <div class="large-6 columns">
+
+          <div class="show-for-large-up">
+
+            <img src="{{section.settings.image | img_url: '800x'}}" alt="{{section.settings.image.alt}}">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+ 
+  </div>
+  <!--End Contact Main Content--> 
+
+</section>
+
+
+{%schema%}
+{
+  "name": "Contact Page", 
+  "settings": [
+    {
+      "label": "Headline", 
+      "id": "headline",
+      "type": "text"
+    },
+    {
+      "label": "Copy", 
+      "id": "body",
+      "type": "html"
+    },
+    {
+      "label": "Contact Image", 
+      "id": "image",
+      "type": "image_picker"
+    }
+  ]
+}
+{%endschema%}
+
