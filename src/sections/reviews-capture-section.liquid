@@ -1,0 +1,206 @@
+
+
+
+<section id="reviews" class="section reviews-capture">
+	<div class="row">	
+		<div class="small-12 medium-11 large-9 medium-centered  columns">
+			<div class="reviews-capture__header">
+				<h1 class="reviews-capture__headline">
+				{{section.settings.headline}}
+				</h1>
+				<div class="reviews-capture__body">
+					{{section.settings.body}}
+				</div>
+			</div>
+			<ul class="reviews-capture__review-list">
+				{%for block in section.blocks%}
+				<li>
+					<article class="reviews-capture__review">
+						<div class="reviews-capture__review__header">
+							<span class="reviews-capture__review__customer-name">
+								{{block.settings.customer_name}}
+							</span>
+							<span>
+								{{block.settings.review_date}}
+							</span>
+							<span>
+						  {% assign rating = block.settings.star_rating %}
+						  {%for i in (1..rating) %}
+						   <span class="icon-star">
+						        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+						   </span>
+						  {%endfor%}
+							</span>
+						</div>
+						<div class="reviews-capture__review__content">
+							<span>
+								{{block.settings.review_title}}
+							</span>
+							<p class="reviews-capture__review__customer-review"> 
+								{{block.settings.review_text}}
+							</p>
+						</div>
+						<hr>
+					</article>
+				</li>
+				{%endfor%}
+			</ul>
+
+			<div class="reviews-capture__footer">
+				<h2>
+					Add a Review
+				</h2>
+		   <div class="reviews-form">
+		    {%form 'contact'%}
+		   	
+		   	 {%if form.posted_succesfully? %}
+		   						<p class="reviews-form__success">
+		   							success!
+		   							{{'contact.form.post_success' | t}}						
+		   						</p>
+		   	 {%endif%}
+		   	
+		   		{{form.errors | default_errors}}
+		   	
+		   	  <div class="row">
+		   	    <div class="small-12 medium-6 columns">
+		   	      <label for="name">Your Name</label>
+		   	      <input required class="input--primary input--medium input--expanded" type="text" name="contact[name]" id="name">
+		   	    </div>
+		   	
+		   	    <div class="small-12 medium-6 columns">
+		   	      <label for="email">Your Email</label>
+		   	      <input required class="input--primary input--medium input--expanded" type="email" name="contact[email]" id="email">
+		   	    </div>
+		   	  </div>
+		   	
+		   	  <label for="rating">
+		   	   How would you rate Blowfish?
+		   	  </label>
+		   	
+		   	  <div class="reviewCapture-ratingSelect  grid grid--left med-grid--center  grid--flexDirectionColumn  med-grid--flexDirectionRow">
+		   	
+		   	   <div class="reviewCapture-ratingSelect-option">
+		   	   	<input type="radio" value="five-stars" id="rating" name="contact[review-rating]" checked> 
+		   	     <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	   </div>                
+		   	
+		   	   <div class="reviewCapture-ratingSelect-option">
+		   	   	<input type="radio" value="four-stars" id="rating" name="contact[review-rating]"> 
+		   	     <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	   </div>   
+		   	
+		   	   <div class="reviewCapture-ratingSelect-option">
+		   	   	<input type="radio" value="three-stars" id="rating" name="contact[review-rating]"> 
+		   	     <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	   </div>   
+		   	
+		   	   <div class="reviewCapture-ratingSelect-option">
+		   	   	<input type="radio" value="two-stars" id="rating" name="contact[review-rating]"> 
+		   	     <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	      <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	   </div>                    
+		   	
+		   	    <div class="reviewCapture-ratingSelect-option">
+		   	    	<input type="radio" value="one-star" id="rating" name="contact[review-rating]"> 
+		   	     <span class="icon--micro icon--noMargin   icon-star-filled"></span>
+		   	   </div>                    
+		   	
+		   	  </div>
+		   	
+		   	  <div class="row">
+		   	    <div class="small-12  medium-7  large-7  columns">
+		   	      <label for="title">Review Title</label>
+		   	      <input required class="input--primary input--medium input--expanded" type="text" name="contact[title]" id="title">
+		   	    </div>
+		   	  </div>
+		   	
+		   	  <label for="message">What did you think of Blowfish?</label>
+		   	  <textarea required name="contact[message]" id="message" cols="28" rows="6">
+		   	    
+		   	  </textarea>
+		   	
+		   	  <div class="grid  grid--justifyRight">
+		   	    <button type="submit" value="{{'contact.form.send' | t}}" class="button--secondary button--medium">
+		   	      send my review
+		   	    </button>
+		   	  </div>
+		   	
+		   	{%endform%}</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{%schema%}
+{
+	"name": "Reviews Capture Section", 
+	"max_blocks": 20,
+	"settings": [
+		{
+			"type": "header", 
+			"content": "Header Copy"
+		},
+		{
+			"type": "text", 
+			"id": "headline", 
+			"label": "Headline"
+		},
+		{
+			"type": "richtext",
+			"id": "body",
+			"label": "Body"
+		}
+	],
+	"blocks": [
+		{
+			"type": "review",
+			"name": "Customer Review",
+			"settings": [
+				{
+					"type": "text",
+					"label": "Customer Name", 
+					"id": "customer_name"
+				},
+				{
+					"type": "text",
+					"label": "Review Date",
+					"id": "review_date"
+				},
+				{
+					"type": "text",
+					"label": "Review Title",
+					"id": "review_title"
+				},
+        {
+          "type":      "range",
+          "id":        "star_rating",
+          "min":       1,
+          "max":        5,
+          "step":       1,
+          "unit":       "str",
+          "label":     "Star Rating",
+          "default":   1
+        },
+				{
+					"type": "textarea",
+					"label": "Customer Review",
+					"id": "review_text"
+				}
+			]
+		}
+	]
+}
+
+{%endschema%}
+
