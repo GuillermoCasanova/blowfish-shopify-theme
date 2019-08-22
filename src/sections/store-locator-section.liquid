@@ -30,8 +30,9 @@
 
            <div class="small-10  small-centered medium-8 large-7 medium-uncentered  columns">
 
-             <a href="<?php echo $path; ?>store-locator/"  data-text="find it now" class="button  button--medium  button--primary  button--expanded">
-               <span class="button-textState1">find it now</span>
+             <a href="{{section.settings.cta-link}}"  data-text="find it now" class="button  button--medium  button--primary  button--expanded">
+               <span class="button-textState1">{{section.settings.cta-label}}</span>
+               <span class="button-textState1">{{section.settings.cta-label}}</span>
              </a>
 
            </div>
@@ -54,12 +55,22 @@
     {
       "type": "html",
       "id": "headline",
-      "label": "Store Locator Headline"
+      "label": "Headline"
     },
     {
       "type": "html",
       "id": "body",
-      "label": "Store Locator Body"
+      "label": "Body"
+    },
+    {
+      "type": "text",
+      "id": "cta-label",
+      "label": "CTA Label"
+    },
+    {
+      "type": "url",
+      "id": "cta-link",
+      "label": "CTA Link"
     }
   ],
   "presets": [
@@ -68,7 +79,8 @@
       "name": "Store Locator Section", 
       "settings": {
         "headline": "I Need Blowfish Now",
-        "body" : "Look for Blowfish in the pain reliever aisle in CVS pharmacies and selected supermarkets. Or, get a friend to bring it directly to your couch or bathroom floor."
+        "body" : "Look for Blowfish in the pain reliever aisle in CVS pharmacies and selected supermarkets. Or, get a friend to bring it directly to your couch or bathroom floor.",
+        "cta-label" :"Learn More"
       }
     }
   ]

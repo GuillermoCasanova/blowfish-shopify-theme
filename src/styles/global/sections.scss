@@ -1,5 +1,38 @@
 
 
+
+.section--tertiary {
+  background-color: #38b3e4
+}
+
+.section--tertiary .section-text {
+  color: #fff
+}
+
+.section--tertiary .section-link {
+  color: #fff;
+  border-bottom: 2px solid #f6d83d
+}
+
+.section--tertiary .section-link:focus,
+.section--tertiary .section-link:hover {
+  color: #f6d83d;
+  border-bottom: 2px solid transparent
+}
+
+.section--tertiary .section-bg {
+  background-image: url(../assets/bubbles--bottom--small.svg);
+  background-position: center bottom;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-repeat: repeat-x
+}
+
+
+
 .section {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem
@@ -105,7 +138,6 @@
 }
 
 .section--tertiary .section-bg {
-  ////background-image: url(../assets/images/bubbles--bottom--small.svg);
   background-position: center bottom;
   background-size: contain;
   top: 0;
@@ -130,7 +162,7 @@
     padding-top: 7.125rem
   }
   .section--tertiary .section-bg {
-    ////background-image: url(../assets/images/bubbles--bottom--medium.svg)
+    background-image: url(../assets/bubbles--bottom--medium.svg)
   }
   .section--onePageSlide {
     height: 100vh
@@ -150,3 +182,5 @@
 .section--header {
   margin-top: 3.75rem
 }
+
+

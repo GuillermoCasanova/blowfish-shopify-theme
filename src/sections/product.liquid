@@ -64,58 +64,50 @@
                   </div>
                 
                   <div class="row">
-    
                     <div class="small-12 small-centered  columns">
-                        
-                      <label class="text-mini  uc  txtc1  fwb mr2" for="productType">
-                        HOW MUCH BLOWFISH TODAY?
-                      </label>
-    
-                      <div class="select-customWrapper">
-                      {%for collection in collections %}
-                        {%if collection.id == 372739913 %} 
-                          <select  name="product-options" id="product-option" data-product-options>
-                            {%for product in collection.products%}
-                              <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
-                                {{product.title}}
-                              </option>
-                            {%endfor%}
-                          </select>
-                        {%endif%}
-                       {%endfor%}
-                      </div>
-                    </div>
-                  </div>
-    
-                  <div class="row">
-                  
-                    <div class="small-12  medium-7 large-12  small-centered medium-uncentered columns mb1">
-                
-
-                    </div>
-
-                    {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+                      <div class="product__actions">                        
+                      
+                        <label class="product__actions__label" for="productType">
+                          HOW MUCH BLOWFISH TODAY?
+                        </label>
+      
+                        <div class="product__actions__select select-custom-wrapper">
                         {%for collection in collections %}
                           {%if collection.id == 372739913 %} 
-                          <select name="id"  data-product-variants>
-                            {%for product in collection.products%}
-                              {%for variant in product.variants%}
-                                <option  value="{{variant.id}}" {% if variant == current_variant %}selected="selected"{% endif %} >{{variant.id}}</option>
+                            <select  class="select--primary select--medium" name="product-options" id="product-option" data-product-options>
+                              {%for product in collection.products%}
+                                <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
+                                  {{product.title}}
+                                </option>
                               {%endfor%}
-                            {%endfor%}
-                          </select>
+                            </select>
                           {%endif%}
                          {%endfor%}
-
-                        <button class="button  button--medium  button--primary  button--expanded"        type="submit"
-                                name="add"
-                                data-add-to-cart>
-                            <span>
-                              Add to Cart 
-                            </span>
-                        </button>
-    
-                     {%endform%}
+                        </div>
+  
+                        {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+                          {%for collection in collections %}
+                            {%if collection.id == 372739913 %} 
+                            <select name="id"  data-product-variants class="visually-hidden">
+                              {%for product in collection.products%}
+                                {%for variant in product.variants%}
+                                  <option  value="{{variant.id}}" {% if variant == current_variant %}selected="selected"{% endif %} >{{variant.id}}</option>
+                                {%endfor%}
+                              {%endfor%}
+                            </select>
+                            {%endif%}
+                           {%endfor%}
+  
+                          <button class="button  button--medium  button--primary  button--expanded"        type="submit"
+                                  name="add"
+                                  data-add-to-cart
+                                  data-text="Add to Cart">
+                              <span>
+                                Add to Cart 
+                              </span>
+                          </button>
+                       {%endform%}</div>
+                    </div>
                   </div>
     
                   <!--Payment Options--> 

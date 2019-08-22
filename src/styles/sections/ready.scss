@@ -1,0 +1,53 @@
+
+
+/*------------------------------------*\
+    #Ready For Blowfish
+\*------------------------------------*/
+
+.section--overheadShot .section-img {
+	height: 30vh;
+	max-height: 300px;
+	min-height: 200px;
+	position: relative
+}
+
+.section--overheadShot .section-img img {
+	margin-top: -24px;
+	right: -52px;
+	transform: rotate(-79deg);
+	position: relative
+}
+
+@media only screen and (min-width:43.8125em) {
+	.section--overheadShot .section-img {
+		width: 59vw;
+		height: auto;
+		max-height: 460px;
+		position: absolute
+	}
+	.section--overheadShot .section-img img {
+		margin-top: 0;
+		right: 0;
+		transform: rotate(0);
+		position: relative
+	}
+}
+
+@media only screen and (min-width:64.0625em) {
+	.section--overheadShot {
+		min-height: 530px
+	}
+	.section--overheadShot .section-img {
+		min-width: 601px;
+		width: 40vw;
+		height: auto;
+		max-height: 560px;
+		position: absolute
+	}
+	.section--overheadShot .section-img img {
+		margin-top: 0;
+		right: 0;
+		transform: rotate(0);
+		position: relative
+	}
+}

@@ -12,6 +12,7 @@
 @import url('settings/variables.scss.liquid');
 @import url('settings/colors.scss.liquid');
 @import url('settings/typography.scss');
+@import url('settings/old-css.scss');
 
 
 /*================ GLOBAL ================*/
@@ -20,11 +21,20 @@
 @import url('global/helper-classes.scss');
 @import url('global/sections.scss');
 @import url('global/typography.scss');
+@import url('global/forms.scss');
+
 
 
 /*================ SECTIONS ================*/
+@import url('sections/footer.scss');
 @import url('sections/guarantee.scss');
 @import url('sections/header.scss');
+@import url('sections/hero-header.scss');
+@import url('sections/intro-section.scss');
+@import url('sections/ready.scss');
+@import url('sections/shoutout.scss');
+@import url('sections/store-locator.scss');
+@import url('sections/the-science.scss');
 
 
 
@@ -32,4 +42,5 @@
 @import url('pages/home.scss');
 @import url('pages/product.scss');
 @import url('pages/landing-page-promo.scss');
+@import url('pages/hangover-science.scss');
 

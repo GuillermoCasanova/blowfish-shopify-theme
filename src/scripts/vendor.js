@@ -34,6 +34,13 @@
 
 
 
+/*!
+ * fullpage.min.js
+ */
+// =require vendor/fullpage.js
+
+
+
 
 // Attempts to preserve comments that likely contain licensing information,
 // even if the comment does not have directives such as `@license` or `/*!`.

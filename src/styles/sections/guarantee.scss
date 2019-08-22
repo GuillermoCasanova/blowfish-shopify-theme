@@ -1,5 +1,9 @@
 
 
+/*------------------------------------*\
+    #Guarantee
+\*------------------------------------*/
+
 
 .blowfishGuaranteeBadge {
 	width: 72px;
@@ -9,4 +13,19 @@
 	display: block;
 	margin-left: auto;
 	margin-bottom: 6px
+}
+
+
+
+.guarantee-section {
+	color: #fff;
+	
+	.guarantee-section__headline {
+		color: #fff;
+		text-align: center; 
+	}
+	.guarantee-section__body {
+		color: #fff;
+		text-align: center; 
+	}
 }

@@ -1,0 +1,420 @@
+
+
+/*------------------------------------*\
+    #Hangover Science Page
+\*------------------------------------*/
+
+
+.narrative-menu {
+  right: 0;
+  top: 25%;
+  z-index: 99
+}
+
+.narrative-menu .narrative-menu-bullet {
+  height: .75rem;
+  width: .75rem;
+  background-color: #1b89c7;
+  border: 2px solid #095280;
+  margin-bottom: .75rem;
+  margin-right: .75rem;
+  -moz-transition: all .2s cubic-bezier(.86, 0, .070, 1);
+  -o-transition: all .2s cubic-bezier(.86, 0, .070, 1);
+  -webkit-transition: all .2s cubic-bezier(.86, 0, .070, 1);
+  transition: all .2s cubic-bezier(.86, 0, .070, 1);
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%
+}
+
+.narrative-menu .narrative-menu-bullet.active {
+  background-color: #f6d83d;
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4)
+}
+
+.narrative-menu .narrative-menu-bullet:focus,
+.narrative-menu .narrative-menu-bullet:hover {
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2)
+}
+
+.narrative-menu .narrative-menu-bullet a {
+  width: 100%;
+  height: 100%
+}
+
+.narrative-slide--finalSlide .narrative-slide-mainContent {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide {
+    height: 100vh
+  }
+  .narrative-slide .fp-tableCell {
+    width: 100%;
+    list-style: none;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center
+  }
+  .narrative-slide--finalSlide .narrative-slide-copy {
+    margin-bottom: 1.875rem
+  }
+  .narrative-slide--finalSlide .narrative-slide-cta {
+    margin-bottom: 5rem
+  }
+  .narrative-slide--finalSlide .narrative-slide-mainContent {
+    height: 85vh
+  }
+  .narrative-slide--finalSlide .narrative-slide-footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute
+  }
+
+  .narrative-slide-footer {
+    width: 100%;
+    bottom: 0;
+    position: absolute
+  }
+}
+
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-menu .narrative-menu-bullet {
+    margin-right: 1.125rem
+  }
+  .narrative-slide-title {
+    font-size: 1.5rem;
+    line-height: 1
+  }
+}
+
+.narrative-slide-blowfish {
+  height: 3.75rem;
+  width: 3.75rem;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.narrative-slide-blowfish:before {
+  content: " ";
+ background-image: url(../assets/bubbles--hangoverScience--small.svg);
+  width: 600px;
+  height: 700px;
+  background-size: contain;
+  background-position: left bottom;
+  left: -17.875rem;
+  top: -13.125rem
+}
+
+@media only screen and (orientation:landscape) {
+  .narrative-slide-blowfish:before {
+    left: -18.875rem
+  }
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-blowfish:before {
+   background-image: url(../assets/bubbles--hangoverScience--medium.svg);
+    left: -30.25rem;
+    width: 41rem;
+    height: 43rem;
+    bottom: -5rem
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-blowfish:before {
+   background-image: url(../assets/bubbles--hangoverScience--large.svg);
+    left: -35.25rem;
+    width: 77rem;
+    height: 43rem
+  }
+}
+
+@media only screen and (min-width:100.0625em) {
+  .narrative-slide-blowfish:before {
+   background-image: none
+  }
+}
+
+.narrative-slide-visual {
+  height: 17.5rem;
+  width: 17.5rem
+}
+
+.narrative-slide-visual:after {
+  content: "";
+  width: 15.625rem;
+  height: 15.625rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  background-size: cover
+}
+
+.narrative-slide-visual--dehydration:after {
+ background-image: url(../assets/illustr--dehydration.png);
+  left: -6%
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--dehydration:after {
+   background-image: url(../assets/animation--dehydration--medium.gif);
+    width: 35.625rem;
+    height: 35.625rem;
+    left: -20%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--dehydration:after {
+   background-image: url(../assets/animation--dehydration--large.gif);
+    width: 33rem;
+    height: 33rem;
+    left: -10%
+  }
+}
+
+.narrative-slide-visual--irritability:after {
+ background-image: url(../assets/illustr--irritability.png)
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--irritability:after {
+   background-image: url(../assets/animation--irritability--medium.gif);
+    width: 28rem;
+    height: 28rem;
+    left: 4%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--irritability:after {
+   background-image: url(../assets/animation--irritability--large.gif);
+    width: 32rem;
+    height: 32rem;
+    left: 16%
+  }
+}
+
+.narrative-slide-visual--fatigue:after {
+ background-image: url(../assets/illustr--fatigue.png);
+  top: -13%;
+  left: -6%
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--fatigue:after {
+   background-image: url(../assets/animation--fatigue--medium.gif);
+    width: 30rem;
+    height: 30rem;
+    left: -12%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--fatigue:after {
+   background-image: url(../assets/animation--fatigue--large.gif);
+    left: 2%
+  }
+}
+
+.narrative-slide-visual--impairedMentalFunction:after {
+ background-image: url(../assets/illustr--impairedMentalFunction.png);
+  bottom: 2%;
+  left: -5%;
+  height: 14.5rem
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--impairedMentalFunction:after {
+   background-image: url(../assets/animation--impairedMentalFunction--medium.gif);
+    width: 37rem;
+    height: 37rem;
+    left: -18%;
+    bottom: -90%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--impairedMentalFunction:after {
+   background-image: url(../assets/animation--impairedMentalFunction--large.gif);
+    width: 37rem;
+    height: 37rem;
+    left: -15%;
+    bottom: -35%
+  }
+}
+
+.narrative-slide-visual--sensitivity:after {
+ background-image: url(../assets/illustr--sensitivity.png);
+  width: 21.625rem;
+  height: 21.625rem;
+  left: -38%;
+  bottom: 60%
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--sensitivity:after {
+   background-image: url(../assets/animation--sensitivity--medium.gif);
+    width: 31rem;
+    height: 31rem;
+    left: -20%;
+    bottom: -30%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--sensitivity:after {
+   background-image: url(../assets/animation--sensitivity--large.gif);
+    width: 32rem;
+    height: 32rem;
+    left: -33%;
+    bottom: 30%
+  }
+}
+
+.narrative-slide-visual--difficultyFocusing:after {
+ background-image: url(../assets/illustr--difficultyFocusing.png)
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--difficultyFocusing:after {
+   background-image: url(../assets/animation--difficultyFocusing--medium.gif);
+    width: 31rem;
+    height: 31rem;
+    left: -6%;
+    bottom: -25%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--difficultyFocusing:after {
+   background-image: url(../assets/animation--difficultyFocusing--large.gif);
+    width: 31rem;
+    height: 31rem;
+    left: 5%;
+    bottom: 7%
+  }
+}
+
+.narrative-slide-visual--nausea:after {
+ background-image: url(../assets/illustr--nausea.png)
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--nausea:after {
+   background-image: url(../assets/animation--nausea--large.gif);
+    width: 31rem;
+    height: 31rem;
+    left: -11%;
+    bottom: 4%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--nausea:after {
+   background-image: url(../assets/animation--nausea--large.gif);
+    width: 31rem;
+    height: 31rem;
+    left: -4%;
+    bottom: -25%
+  }
+}
+
+.narrative-slide-visual--headache:after {
+ background-image: url(../assets/illustr--headache.png);
+  width: 20.625rem;
+  height: 16.625rem;
+  left: -4%;
+  top: -5%
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--headache:after {
+   background-image: url(../assets/animation--headache--medium.gif);
+    width: 30rem;
+    height: 30rem;
+    left: -24%;
+    bottom: -130%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--headache:after {
+   background-image: url(../assets/animation--headache--large.gif);
+    left: 4%;
+    bottom: -52%;
+    width: 33rem;
+    height: 33rem
+  }
+}
+
+.narrative-slide-visual--productShot:after {
+ background-image: url(../assets/packagingShot--narrative--medium.jpg);
+  width: 19rem;
+  height: 19rem;
+  bottom: 21%
+}
+
+@media only screen and (min-width:43.8125em) {
+  .narrative-slide-visual--productShot:after {
+    width: 25rem;
+    height: 25rem;
+    bottom: 39%;
+    left: -9%
+  }
+  .narrative-slide.fp-section .narrative-slide-copy {
+    -moz-transition: all 1s cubic-bezier(.86, 0, .070, 1) .4s;
+    -o-transition: all 1s cubic-bezier(.86, 0, .070, 1) .4s;
+    -webkit-transition: all 1s cubic-bezier(.86, 0, .070, 1);
+    -webkit-transition-delay: .4s;
+    transition: all 1s cubic-bezier(.86, 0, .070, 1) .4s
+  }
+  .narrative-slide.fp-section .narrative-slide-cta {
+    -moz-transition: all 1s cubic-bezier(.86, 0, .070, 1) .8s;
+    -o-transition: all 1s cubic-bezier(.86, 0, .070, 1) .8s;
+    -webkit-transition: all 1s cubic-bezier(.86, 0, .070, 1);
+    -webkit-transition-delay: .8s;
+    transition: all 1s cubic-bezier(.86, 0, .070, 1) .8s
+  }
+  .narrative-slide.fp-section .narrative-slide-copy,
+  .narrative-slide.fp-section .narrative-slide-cta {
+    opacity: 0;
+    -moz-transform: translateY(35px);
+    -ms-transform: translateY(35px);
+    -webkit-transform: translateY(35px);
+    transform: translateY(35px)
+  }
+  .narrative-slide.fp-section.active .narrative-slide-copy,
+  .narrative-slide.fp-section.active .narrative-slide-cta {
+    opacity: 1;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .narrative-slide-visual--productShot:after {
+    bottom: 30%;
+    width: 26rem;
+    height: 26rem;
+   background-image: url(../assets/packagingShot--narrative--large.jpg)
+  }
+}

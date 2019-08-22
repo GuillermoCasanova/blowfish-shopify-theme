@@ -1,5 +1,5 @@
 
-<section class="section   section--tertiary">
+<section class="section   section--tertiary  guarantee-section">
 
  <div class="section-bg">
 
@@ -16,14 +16,13 @@
         </a>
 
          <a href="<?php echo $path;?>guarantee/">
-          <h1 class="text-center section-text ">
+          <h1 class="guarantee-section__headline">
           {{section.settings.headline}}
           </h1>
         </a>
 
-        {{section.settings.body}}
-
-        
+        <div class="guarantee-section__body">{{section.settings.body}}</div>
+                
      </div>
 
  </div>
@@ -42,7 +41,7 @@
       "label": "Section Headline"
     }, 
     {
-      "type": "html",
+      "type": "richtext",
       "id": "body",
       "label": "Section Body Copy"
     }
@@ -53,7 +52,7 @@
       "name": "Guarantee Section", 
       "settings": {
         "headline": "A headline for this section of copy",
-        "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "body": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<p/>"
       }
     }
   ]

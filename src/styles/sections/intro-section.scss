@@ -1,0 +1,28 @@
+
+
+/*------------------------------------*\
+    #Intro Section
+\*------------------------------------*/
+
+
+.section--hangOversSolved .section-img {
+	position: absolute;
+}
+
+
+@media only screen and (min-width:43.8125em) {
+	.section--hangOversSolved .section-img {
+		right: -2px;
+		width: 50vw;
+		transform: translateY(150px);
+	}
+}
+
+
+@media only screen and (min-width:64.0625em) {
+	.section--hangOversSolved .section-img {
+		right: -2px;
+		width: 43vw;
+		transform: translateY(159px);
+	}
+}

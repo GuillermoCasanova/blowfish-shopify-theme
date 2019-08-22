@@ -261,16 +261,12 @@
                 </li>
     
                 <li>
-                    <a href="/products/blowfish-for-hangovers" rel="internal" class="mainNav-buyNow  button--small button button--secondary mb0   ">
-                        <span class="button-textState1">buy now</span>
+                    <a href="{{section.settings.buy-now-link}}" rel="internal" class="mainNav-buyNow  button--small button button--secondary mb0   ">
+                        <span class="button-textState1">{{section.settings.buy-now-label}}</span>
                     </a>
-    
                 </li>
-                        
             </ul>
-    
         </div>
-        
     </nav>
   </div>
   <!--End large devices navigation--> 
@@ -326,25 +322,24 @@
         "content": "Header"
       },
       {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo image"
-      },
-      {
-        "type": "range",
-        "id": "logo_max_width",
-        "min": 50,
-        "max": 450,
-        "step": 10,
-        "unit": "px",
-        "label": "Custom logo width",
-        "default": 250
-      },
-      {
         "type": "link_list",
         "id": "menu",
         "label": "Menu",
         "default": "main-menu"
+      },
+      {
+        "type": "header",
+        "content": "Buy Now Button"
+      },
+      {
+        "type": "url",
+        "id": "buy-now-link",
+        "label": "Destination Link"
+      },
+      {
+        "type": "text",
+        "id": "buy-now-label",
+        "label": "Button Label"
       }
     ]
   }

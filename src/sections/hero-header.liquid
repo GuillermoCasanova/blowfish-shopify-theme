@@ -5,13 +5,13 @@
 
       <div class="section-bg">
         <picture>
-            <source srcset="<?php echo $path; ?>assets/images/heroHeader--large.jpg" 
+            <source srcset="{{'heroHeader--large.jpg' | asset_url}}" 
                     media="(min-width: 64.0625em)">
-            <source srcset="<?php echo $path; ?>assets/images/heroHeader--medium.jpg" 
+            <source srcset="{{'heroHeader--medium.jpg' | asset_url}}" 
                     media="(min-width: 43.8125em)">
-                <source srcset="<?php echo $path; ?>assets/images/heroHeader--medium.jpg" 
+          <source srcset="{{'heroHeader--medium.jpg' | asset_url}}" 
                     media="(orientation: landscape)">
-            <img src="<?php echo $path; ?>assets/images/heroHeader--small.jpg" alt="Blowfish Product Shot" class="heroHeader-background lazyload">
+              <img src="{{'heroHeader--small.jpg' | asset_url}}" alt="Blowfish Product Shot" class="heroHeader-background">
         </picture>
       </div>
       <div class="heroHeader-content  row  hide-for-landscape-only">
@@ -54,12 +54,10 @@
 
            <div class="small-7  small-centered medium-uncentered  medium-4 medium-push-3 large-push-3 large-3 columns text-center medium-text-right">
 
-            <a href="<?php echo $path; ?>purchase/" class="button  button--small  button--expanded  button--secondary  ">
-
-              <span class="button-textState1">shop now</span>
-              <span class="button-textState2">shop now</span>
-
-            </a>
+              <a href="{{section.settings.cta-link}}" title="{{section.settings.cta-label}}" rel="internal" class="button  button--small  button--expanded  button--secondary  ">
+                <span class="button-textState1">{{section.settings.cta-label}}</span>
+                <span class="button-textState2">{{section.settings.cta-label}}</span>
+              </a>
 
             </div>
 
@@ -86,9 +84,9 @@
               	 {{section.settings.body}}
               </p>
 
-              <a href="<?php echo $path; ?>purchase/" class="button  button--small  button--expanded  button--secondary  ">
-                <span class="button-textState1">shop now</span>
-                <span class="button-textState2">shop now</span>
+              <a href="{{section.settings.cta-link}}" title="{{section.settings.cta-label}}" rel="internal" class="button  button--small  button--expanded  button--secondary  ">
+                <span class="button-textState1">{{section.settings.cta-label}}</span>
+                <span class="button-textState2">{{section.settings.cta-label}}</span>
               </a>
             </div>
         </div>
@@ -106,22 +104,27 @@
   "settings": [
 		{
 			"type": "text",
-			"id": "headline",
-			"label": "Hero Header Headline"
-		}, 
-		{
-			"type": "text",
 			"id": "body",
-			"label": "Hero Header Body Copy"
-		}
+			"label": "Body Copy"
+		},
+    {
+      "type": "text",
+      "id": "cta-label",
+      "label": "CTA Label" 
+    },
+    {
+      "type": "url",
+      "id": "cta-link",
+      "label": "CTA Link"
+    }
   ],
   "presets": [
     {
       "category": "Headers", 
       "name": "Hero Header", 
       "settings": {
-				"headline": "A hero headline",
-				"body": "Some engaging tagline for conversion!"
+				"body": "Some engaging tagline for conversion!",
+        "cta-label": "Learn More"
     	}
     }
   ]

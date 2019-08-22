@@ -1,0 +1,38 @@
+
+
+
+/*------------------------------------*\
+    #Shoutout
+\*------------------------------------*/
+
+
+.section--partyCompany {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+		
+	.section--partyCompany-headline {
+	  font-size: 1.5rem;
+	  line-height: 1;
+	  font-family: $primary-font-family;
+	}
+}
+
+@media only screen and (min-width:43.8125em) {
+  .section--partyCompany .section--partyCompany-headline {
+    font-size: 2.5rem;
+    line-height: 1.33333;
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .section--partyCompany {
+    padding-top: 4.125rem;
+    padding-bottom: 4.125rem;
+  }
+  .section--partyCompany .section--partyCompany-headline {
+    font-size: 3.5rem;
+    line-height: 1.33333
+  }
+}
+
+

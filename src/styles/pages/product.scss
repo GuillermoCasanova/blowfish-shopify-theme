@@ -21,7 +21,8 @@
 	
 
 	.product__description {
-
+		font-weight: bold; 
+		
 		span {
 			&.is-hidden {
 				display: none; 
@@ -34,6 +35,20 @@
 			&.is-hidden {
 				display: none; 
 			}
+		}
+	}
+
+	.product__actions {
+		.product__actions__label {
+			text-transform: uppercase; 
+			color: $primary-color;
+			font-weight: bold; 
+			margin-right: rem-calc($level2); 
+			@include text-mini();
+		}
+
+		.product__actions__select {
+			margin-bottom: rem-calc($level2); 
 		}
 	}
 }
