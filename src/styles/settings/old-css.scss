@@ -338,62 +338,6 @@ img {
   display: inline-block
 }
 
-.accordion:after,
-.accordion:before,
-.row .row.collapse:after,
-.row .row.collapse:before,
-.row .row:after,
-.row .row:before,
-.row:after,
-.row:before {
-  content: " ";
-  display: table
-}
-
-
-.accordion {
-  margin-bottom: 0;
-  margin-left: 0
-}
-
-.accordion .accordion-navigation,
-.accordion dd {
-  display: block;
-  margin-bottom: 0!important
-}
-
-.accordion .accordion-navigation.active>a,
-.accordion dd.active>a {
-  background: 0 0;
-  color: #222
-}
-
-.accordion .accordion-navigation>a,
-.accordion dd>a {
-  background: 0 0;
-  color: #222;
-  display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  padding: 1rem
-}
-
-.accordion .accordion-navigation>a:hover,
-.accordion dd>a:hover {
-  background: 0 0
-}
-
-.accordion .accordion-navigation>.content,
-.accordion dd>.content {
-  display: none;
-  padding: 1.5rem
-}
-
-.accordion .accordion-navigation>.content.active,
-.accordion dd>.content.active {
-  background: 0 0;
-  display: block
-}
 
 .flex-video {
   height: 0;
@@ -1926,8 +1870,6 @@ th.hide-for-touch {
   clip: auto
 }
 
-.accordion .accordion-element,
-.accordion .accordion-element>a,
 .button--primary,
 .button--quaternary,
 .button--quintenary,
@@ -2025,7 +1967,6 @@ button {
   -webkit-transition: all .4s cubic-bezier(.86, 0, .070, 1)
 }
 
-.accordion .accordion-element:after,
 .arrowCta:after,
 [class*=icon--]:after,
 [class*=icon--]:before,
@@ -4325,73 +4266,6 @@ abbr[title] {
   border-bottom: 0
 }
 
-
-.accordion .accordion-element {
-  border-bottom: 2px #f3f3f3 solid;
-  z-index: 2;
-  padding-right: 2.25rem
-}
-
-.accordion .accordion-element>a {
-  color: #8A8A8A!important;
-  font-family: MuseoSansRounded-500, sans-serif!important;
-  -moz-transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  -o-transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  -webkit-transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  transition: all .2s cubic-bezier(.86, 0, .070, 1)
-}
-
-.accordion .accordion-element:focus a,
-.accordion .accordion-element:hover a {
-  color: #7B7878!important;
-  z-index: 1
-}
-
-.accordion .accordion-element:after {
-  content: '\e813';
-  right: 1.125rem;
-  top: 1.25rem;
-  color: #f6d83d;
-  z-index: 0;
-  -moz-transform: rotate(0);
-  -ms-transform: rotate(0);
-  -webkit-transform: rotate(0);
-  transform: rotate(0);
-  -moz-transition: all .4s cubic-bezier(.86, 0, .070, 1);
-  -o-transition: all .4s cubic-bezier(.86, 0, .070, 1);
-  -webkit-transition: all .4s cubic-bezier(.86, 0, .070, 1);
-  transition: all .4s cubic-bezier(.86, 0, .070, 1)
-}
-
-.accordion .accordion-element.active:after {
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg)
-}
-
-.accordion--large .accordion-element>a {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  font-size: 1.125rem;
-  line-height: 1.33333
-}
-
-@media only screen and (min-width:43.8125em) {
-  .section--hero {
-    height: 94vh
-  }
-  .accordion--large .accordion-element>a {
-    padding-top: 1.875rem;
-    padding-bottom: 1.875rem;
-    font-size: 1.25rem;
-    line-height: 1.2
-  }
-}
-
-.accordion--large .accordion-element:after {
-  top: 1.875rem
-}
 
 .button,
 button {
