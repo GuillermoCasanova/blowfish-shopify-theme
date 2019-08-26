@@ -6,10 +6,9 @@
 input,
 textarea,
 select {
-  border: 1px solid $color-border;
-  border-radius: 0;
   max-width: 100%;
   font-family: $primary-font-family;
+  margin-bottom: rem-calc($level4);
 
   &[disabled] {
     cursor: default;
@@ -26,32 +25,18 @@ textarea {
   min-height: 100px;
 }
 
-/*================ Custom select style ================*/
-select {
-  @include prefix(appearance, none, webkit moz spec);
-  margin-bottom: rem-calc(12px); 
-  background-position: right center;
-  background: {
-    image: url($svg-select-icon);
-    repeat: no-repeat;
-    position: right 10px center;
-    color: transparent;
-  }
-  padding-right: 28px;
-  text-indent: 0.01px;
-  text-overflow: '';
-  cursor: pointer;
+label {
+  display: block;
+  margin-bottom: rem-calc($level1);
 
-  /*================ Hide the svg arrow in IE9 ================*/
-  .ie9 & {
-    padding-right: 10px;
-    background-image: none;
+  @include media-query($medium-up) {
+    @include text-micro(); 
   }
 }
 
-select::-ms-expand {
-  display: none;
-}
+
+
+
 
 /*================ Error styles ================*/
 input,
@@ -66,58 +51,97 @@ textarea {
 
 
 
-/*================ Custom Input style ================*/
+
+/*------------------------------------*\
+    #Text Area Styles
+\*------------------------------------*/
 
 
-input.input--expanded {
-  width: 100%
+textarea {
+  border: 2px solid $tertiary-color;
+  width: 100%;
+  border-radius: 4px; 
+  min-width: 100%; 
 }
 
-input.input--alt {
-  min-height: 3.2rem;
-  border: 2px solid #38b3e4
-}
 
-.input--medium {
-  padding-top: .75rem;
-  padding-bottom: .75rem
-}
 
-input.input--quantity {
-  width: 2.5rem
-}
 
-@media only screen and (min-width:43.8125em) {
-  .form-group.is-filled label,
-  .form-group.is-focused label {
-    -moz-transform: scale(.9) translateY(-27px);
-    -ms-transform: scale(.9) translateY(-27px);
-    -webkit-transform: scale(.9) translateY(-27px);
-    transform: scale(.9) translateY(-27px)
-  }
-  input.input--quantity {
-    width: 3.75rem
-  }
-}
 
-input.input--primary {
-  color: #38b3e4;
+/*------------------------------------*\
+    #Input Styles 
+\*------------------------------------*/
+
+
+input {
+
+  &.input--primary {
   border: 0;
   background-color: transparent;
-  border-bottom: 2px solid #38b3e4
+  border: 2px solid $tertiary-color;
+  border-radius: 5px; 
+  font-weight: bold; 
+
+    &:active,
+    &:focus {
+      border: 2px solid $primary-color; 
+      color: $tertiary-color;
+      outline: 0; 
+    }
+  }
+
+  &.input--secondary {
+    background-color: #fff;
+    height: 3rem;
+    border: 2px solid #38b3e4;
+    width: 100%;
+    color: #808083;
+  }
+
+  &.input--expanded {
+    width: 100%;
+  }
+
+  &.input--alt {
+    min-height: 3.2rem;
+    border: 2px solid #38b3e4;
+  }
+
+
+  &.input--quantity {
+    width: 2.5rem;
+  }
 }
 
-input.input--secondary {
-  background-color: #fff;
-  height: 3rem;
-  border: 2px solid #38b3e4;
-  width: 100%;
-  color: #808083
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: $tertiary-color; 
 }
 
-label {
-  margin-bottom: .25rem
+
+.input--small {
+  padding-top: rem-calc($level1);
+  padding-bottom: rem-calc($level1);
+  padding-left: rem-calc($level1);
+  line-height: 0; 
 }
+
+
+.input--medium {
+  padding-top: rem-calc($level2);
+  padding-bottom: rem-calc($level2);
+  padding-left: rem-calc($level1);
+  line-height: 0; 
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Select Styles 
+\*------------------------------------*/
+
 
 select {
   -webkit-appearance: none;
@@ -126,15 +150,6 @@ select {
   font-size: 1rem;
   line-height: 1.5;
 }
-
-
-textarea {
-  border: 2px solid #38b3e4;
-  width: 100%;
-}
-
-
-/*================ Custom Wrapper (for arrow) ================*/
 
 
 .select-custom-wrapper {
@@ -158,7 +173,7 @@ textarea {
 .select--primary {
   background-color: transparent;
   outline: 0;
-  color: #8A8A8A;
+  color: $tertiary-color;
   border: 2px solid $tertiary-color;
 
   &:active,
@@ -182,3 +197,29 @@ textarea {
     width: 3.75rem;
   }
 }
+
+// select {
+//   @include prefix(appearance, none, webkit moz spec);
+//   margin-bottom: rem-calc(12px); 
+//   background-position: right center;
+//   background: {
+//     image: url($svg-select-icon);
+//     repeat: no-repeat;
+//     position: right 10px center;
+//     color: transparent;
+//   }
+//   padding-right: 28px;
+//   text-indent: 0.01px;
+//   text-overflow: '';
+//   cursor: pointer;
+
+//   /*================ Hide the svg arrow in IE9 ================*/
+//   .ie9 & {
+//     padding-right: 10px;
+//     background-image: none;
+//   }
+// }
+
+// select::-ms-expand {
+//   display: none;
+// }
