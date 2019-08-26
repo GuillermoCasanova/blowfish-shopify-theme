@@ -44,8 +44,6 @@ ul {
   list-style: none
 }
 
-.slideshow .slick-next:before,
-.slideshow .slick-prev:before,
 [class^=icon--],
 a,
 a.styled-link,
@@ -1953,7 +1951,6 @@ th.hide-for-touch {
 .relative,
 .section,
 .section--alt>.row,
-.slideshow,
 .vertical-align,
 input[type=color],
 input[type=date],
@@ -2030,8 +2027,6 @@ button {
 
 .accordion .accordion-element:after,
 .arrowCta:after,
-.slideshow .slick-next:before,
-.slideshow .slick-prev:before,
 [class*=icon--]:after,
 [class*=icon--]:before,
 [class^=icon--]:after,
@@ -2308,8 +2303,6 @@ label {
 .section--alt .section-bg,
 .section--science .section--science-photo:after,
 .section--tertiary .section-bg,
-.slideshow .slick-next,
-.slideshow .slick-prev,
 footer {
   position: absolute
 }
@@ -3144,16 +3137,6 @@ select {
 
 .icon-down-open-big:before {
   content: '\e800'
-}
-
-.icon-left-open-big:before,
-.slideshow .slick-prev:before {
-  content: '\e801'
-}
-
-.icon-right-open-big:before,
-.slideshow .slick-next:before {
-  content: '\e802'
 }
 
 .icon-up-open-big:before {
@@ -5300,7 +5283,6 @@ button {
   }
 }
 
-.slideshow .slick-list,
 table {
   width: 100%
 }
@@ -5364,48 +5346,6 @@ table {
   right: auto
 }
 
-.slideshow .slick-next,
-.slideshow .slick-prev {
-  top: 40%;
-  background-color: transparent;
-  font-size: 1rem;
-  line-height: 1.5
-}
-
-.slideshow .slick-next:before,
-.slideshow .slick-prev:before {
-  color: #f6d83d
-}
-
-.slideshow .slick-prev {
-  left: -24px
-}
-
-.slideshow .slick-next {
-  right: -24px
-}
-
-.slideshow--reviews .slideshow-quote {
-  margin-bottom: 1.125rem
-}
-
-@media only screen and (min-width:43.8125em) {
-  .slideshow .slick-next,
-  .slideshow .slick-prev {
-    font-size: 1.5rem;
-    line-height: 1
-  }
-  .slideshow .slick-prev {
-    left: -9%
-  }
-  .slideshow .slick-next {
-    right: -9%
-  }
-  .slideshow--reviews .slideshow-quote {
-    font-size: 1.125rem;
-    line-height: 1.33333
-  }
-}
 
 table {
   border-collapse: collapse;

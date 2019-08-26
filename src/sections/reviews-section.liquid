@@ -1,51 +1,76 @@
-<!-- Reviews Section-->
-<section class="section  section--secondary">
 
- <div class="row">
-   <div class="small-12 columns text-center">
 
-             <!--Call out for small-->
-             <h1 class="[ fwb  text-center  ff2  txtc4  ]">People Love <br class="hide-for-medium-up">Not Being Hungover </h1>
 
-         </div>
+<section class="section reviews-section">
+ <div class="row  center-md">
+   <div class="col-sm-12">
+    <div class="reviews-section__header">
+      <h1 class="reviews-section__headline">
+        {{section.settings.headline}}
+      </h1>
+    </div>
+   </div>
 
-          <div class="small-11  medium-10 large-8  small-centered columns text-center">
+   <div class="col-sm-12 col-lg-11">
+      <ul class="section-text  [ row  middle-md ]">
+          {%for review in section.blocks%}
+           <li class="col-sm-12  col-md-4">
+              <div class="reviews-section__review">
+                <blockquote class="slideshow-quote">
+                  {{review.settings.quote}}
+                  <cite>
+                    - {{review.settings.customer}}
+                  </cite>
+                </blockquote>
+                <div class="reviews-section__review__rating">
+                 {% assign rating = review.settings.star_rating %}
+                 {%for i in (1..rating) %}
+                  <span class="icon-star">
+                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                  </span>
+                 {%endfor%}
+                </div>
+              </div>
+           </li>
+           {%endfor%}
+       </ul>
 
-          <ul class="slideshow  slideshow--reviews section-text mb4" data-ui-component="reviews-carousel">
-              {%for review in section.blocks%}
-               <li>
-                 <blockquote class="slideshow-quote">
-                   {{review.settings.quote}}
-                 </blockquote>
-          
-                 <div>
-                  {% assign rating = review.settings.star_rating %}
-                  {%for i in (1..rating) %}
-                   <span class="icon-star">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
-                   </span>
-                  {%endfor%}
-                 </div>
-               </li>
-               {%endfor%}
-           </ul>
+      <div class="reviews-section__cta">
+        <a href="{{section.settings.cta-link}}" rel="internal">
+         {{section.settings.cta-label}}
+        </a>
+      </div>
 
-           <a href="<?php echo $path;?>reviews/" class="white-link yellow-link">
-             read more reviews
-           </a>
-
-         </div>
-
-       </div>
-
+     </div>
+   </div>
 </section>
-<!--End Reviews Section-->
-
 
 
 {%schema%}
 {
   "name": "Reviews",
+  "max_blocks": 3, 
+  "settings": [ 
+    {
+      "type": "text", 
+      "label": "Headline",
+      "id": "headline"
+    },
+    {
+      "type": "header", 
+      "content": "Link Settings"
+    },
+    {
+      "type": "url", 
+      "label": "CTA Link",
+      "id": "cta-link"
+    }, 
+    {
+      "type": "text", 
+      "label": "CTA Label",
+      "id": "cta-label"
+    }
+  ],
   "blocks": [
     {
       "type": "quote",
@@ -54,6 +79,11 @@
         {
           "label": "Review Quote",
           "id": "quote", 
+          "type": "text"
+        },
+        {
+          "label": "Customer",
+          "id": "customer", 
           "type": "text"
         },
         {
@@ -110,9 +140,7 @@ if ($('[data-ui-component="reviews-carousel"]').length > 0) {
         pauseOnHover: true,
         responsive: [{
             breakpoint: medium,
-            settings: {
-                arrows: true
-            }
+            settings: 'unslick'
         }]
     });
 
