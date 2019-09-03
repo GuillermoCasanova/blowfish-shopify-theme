@@ -1,51 +1,53 @@
-    <!-- Stock up for later-->
-     <section class="[ section section--alt section--overheadShot ] [ grid  grid--center grid--flexDirectionColumn  med-grid--flexDirectionRowReverse ]">
 
-       <div class="section-img">
-          <picture>
-            <source data-srcset="{{'guaranteePhoto--large.jpg' | asset_url}}" media="(min-width: 64.0625em)">
-            <source data-srcset="{{'guaranteePhoto--medium.jpg' | asset_url}}"  media="(min-width: 43.8125em)">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{'assets/images/guaranteePhoto--small.jpg' | asset_url}}" alt="Glass of water mixed with Blowfish and Blowfish packaging next to it" class="lazyload" data-sizes="auto"  >
-          </picture>
-       </div>
+<section class="[ section section--alt section--overheadShot ] [ row  center-sm  middle-sm  ] ready-section">
 
-       <div class="row">
+ <div class="ready-section__img">
+    <picture>
+      <source data-srcset="{{'guaranteePhoto--large.jpg' | asset_url}}" media="(min-width: 64.0625em)">
+      <source data-srcset="{{'guaranteePhoto--medium.jpg' | asset_url}}"  media="(min-width: 43.8125em)">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{'guaranteePhoto--small.jpg' | asset_url}}" alt="Glass of water mixed with Blowfish and Blowfish packaging next to it" class="lazyload" data-sizes="auto"  >
+    </picture>
+ </div>
 
-         <div class="small-12 medium-6 medium-push-1  large-5 columns">
+  <div class="container-fluid  ready-section__content">
+    <div class="row">
+    
+      <div class="col-sm-12  col-md-6 col-md-offset-1 col-lg-5">
+    
+          <h1 class="headline  ready-section__headline">
+           {{section.settings.headline}}
+          </h1>
+    
+          <p class="mb4 ready-section__body">
+          {{section.settings.body}}
+          </p>
+    
+          <div class="row  center-sm  start-md">
+    
+            <div class="col-sm-10 col-md-8  col-lg-7">
+    
+              <a href="{{section.settings.cta-link}}" rel="internal"
+                class="button  button--medium  button--secondary  button--expanded  ready-section__cta">
+    
+                <span class="button-textState1">buy online</span>
+                <span class="button-textState2">buy online</span>
+    
+              </a>
+    
+               <span class="cta-deal-label">
+                 Free shipping too!
+               </span>
+    
+            </div>
+    
+          </div>
+    
+      </div>
+    
+    </div>
+  </div>
 
-             <h1 class="ff2 fwb text-left txtc1 lh2">
-              {{section.settings.headline}}
-             </h1>
-
-             <p class="mb4">
-             {{section.settings.body}}
-             </p>
-
-             <div class="row">
-
-               <div class="small-10  small-centered medium-8 large-7 medium-uncentered  columns text-center">
-
-                 <a href="<?php echo $path; ?>purchase/"
-                   class="button  button--medium  button--secondary  button--expanded  mb1">
-
-                   <span class="button-textState1">buy online</span>
-                   <span class="button-textState2">buy online</span>
-
-                 </a>
-
-                  <span class="display-block text-micro">
-                    Free shipping too!
-                  </span>
-
-               </div>
-
-             </div>
-
-         </div>
-
-       </div>
-
-     </section>
+</section>
 
 
 
@@ -63,6 +65,16 @@
       "type": "html",
       "id": "body",
       "label": "Ready? Body"
+    },
+    {
+      "type": "url",
+      "id": "cta-link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta-label",
+      "label": "CTA Label"
     }
   ],
   "presets": [

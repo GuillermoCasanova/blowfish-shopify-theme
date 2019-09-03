@@ -4,28 +4,42 @@
     #Ready For Blowfish
 \*------------------------------------*/
 
-.section--overheadShot .section-img {
-	height: 30vh;
-	max-height: 300px;
-	min-height: 200px;
-	position: relative
+
+.ready-section {
+	overflow: hidden;
+	position: relative; 
+
+	.ready-section__content {
+		z-index: 1; 
+		position: relative; 
+	}
+
+	.ready-section__img {
+		height: 30vh;
+		max-height: 300px;
+		min-height: 200px;
+		position: relative;
+		right: 0; 
+		z-index: 0; 
+
+		img {
+			margin-top: -24px;
+			right: -52px;
+			transform: rotate(-79deg);
+			position: relative;
+		}
+	}
 }
 
-.section--overheadShot .section-img img {
-	margin-top: -24px;
-	right: -52px;
-	transform: rotate(-79deg);
-	position: relative
-}
 
 @media only screen and (min-width:43.8125em) {
-	.section--overheadShot .section-img {
+	.ready-section .ready-section__img {
 		width: 59vw;
 		height: auto;
 		max-height: 460px;
 		position: absolute
 	}
-	.section--overheadShot .section-img img {
+	.ready-section .ready-section__img img {
 		margin-top: 0;
 		right: 0;
 		transform: rotate(0);
@@ -34,20 +48,39 @@
 }
 
 @media only screen and (min-width:64.0625em) {
-	.section--overheadShot {
+	.ready-section {
 		min-height: 530px
 	}
-	.section--overheadShot .section-img {
+	.ready-section .ready-section__img {
 		min-width: 601px;
 		width: 40vw;
 		height: auto;
 		max-height: 560px;
 		position: absolute
 	}
-	.section--overheadShot .section-img img {
+	.ready-section .ready-section__img img {
 		margin-top: 0;
 		right: 0;
 		transform: rotate(0);
 		position: relative
 	}
+}
+
+
+.ready-section .ready-section__img {
+  background-size: contain;
+  background-position: right bottom;
+  background-repeat: no-repeat
+}
+
+@media only screen and (min-width:43.8125em) {
+  .ready-section {
+    height: 27rem
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .ready-section .ready-section__img {
+    background-size: 67%
+  }
 }

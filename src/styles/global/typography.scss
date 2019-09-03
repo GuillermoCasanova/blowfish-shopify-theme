@@ -13,12 +13,12 @@ h5,
 h6 {
 	font-family: $secondary-font-family; 	
 	font-weight: bold; 
-	margin-bottom: rem-calc(12px);
+	margin-bottom: rem-calc($level3);
 }
 
 
 p {
-margin-bottom: rem-calc(12px);
+  margin-bottom: rem-calc($level3);
 }
 
 body {
