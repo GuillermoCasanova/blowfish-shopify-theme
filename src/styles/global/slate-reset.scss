@@ -47,6 +47,14 @@ label[for] {
   cursor: pointer;
 }
 
+
+a,
+a.styled-link,
+p a {
+  text-decoration: none
+}
+
+
 optgroup {
   font-weight: $font-weight-bold;
 }

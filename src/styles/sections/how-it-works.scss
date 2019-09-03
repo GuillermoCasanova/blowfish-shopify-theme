@@ -1,0 +1,230 @@
+
+
+
+/*------------------------------------*\
+    #How it Works
+\*------------------------------------*/
+
+
+.how-it-works {
+  .how-it-works__header {
+    margin-bottom: rem-calc($level7);
+  }
+
+  .how-it-works__cta {
+    margin-bottom: rem-calc($level2); 
+    max-width: rem-calc(220px);
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+}
+
+.glassDiagram {
+  margin-bottom: rem-calc($level7);
+}
+
+
+.glassDiagram,
+.glassDiagram .glassDiagram-bullet .glassDiagram-bullet-icon,
+.glassDiagram .glassDiagram-bullet .glassDiagram-bullet-text {
+  position: relative;
+}
+
+
+.glassDiagram .glassDiagram-bullet,
+.glassDiagram .glassDiagram-bullet:after,
+.glassDiagram .glassDiagram-bulletContainer {
+  position: absolute;
+}
+
+.glassDiagram .glassDiagram-staticGlass {
+  display: block
+}
+
+.glassDiagram .glassDiagram-bullet:nth-child(1) {
+  -moz-transition-delay: 60ms;
+  -o-transition-delay: 60ms;
+  -webkit-transition-delay: 60ms;
+  transition-delay: 60ms
+}
+
+.glassDiagram .glassDiagram-bullet:nth-child(2) {
+  -moz-transition-delay: .12s;
+  -o-transition-delay: .12s;
+  -webkit-transition-delay: .12s;
+  transition-delay: .12s
+}
+
+.glassDiagram .glassDiagram-bullet:nth-child(3) {
+  -moz-transition-delay: .18s;
+  -o-transition-delay: .18s;
+  -webkit-transition-delay: .18s;
+  transition-delay: .18s
+}
+
+.glassDiagram .glassDiagram-bullet:nth-child(4) {
+  -moz-transition-delay: .24s;
+  -o-transition-delay: .24s;
+  -webkit-transition-delay: .24s;
+  transition-delay: .24s
+}
+
+.glassDiagram.is-showing-bullets .glassDiagram-bullet .glassDiagram-bullet-text {
+  opacity: 1
+}
+
+.glassDiagram.is-showing-bullets .glassDiagram-bullet:after {
+  width: 100%
+}
+
+@media only screen and (min-width:43.8125em) {
+  .glassDiagram .glassDiagram-staticGlass {
+    display: none
+  }
+  .glassDiagram .glassDiagram-glass {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 37.5rem;
+    width: 90%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .glassDiagram .glassDiagram-glass {
+    max-width: 43.75rem;
+    width: 100%
+  }
+}
+
+.glassDiagram .glassDiagram-bulletContainer {
+  max-width: 31.25rem;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto
+}
+
+.glassDiagram .glassDiagram-bullet {
+  -moz-transition: all 1.2s cubic-bezier(.86, 0, .070, 1);
+  -o-transition: all 1.2s cubic-bezier(.86, 0, .070, 1);
+  -webkit-transition: all 1.2s cubic-bezier(.86, 0, .070, 1);
+  transition: all 1.2s cubic-bezier(.86, 0, .070, 1)
+}
+
+.glassDiagram .glassDiagram-bullet .glassDiagram-bullet-icon {
+  height: 1.125rem;
+  width: 1.125rem;
+  background-color: #1b89c7;
+  border: 3px solid #095280;
+  top: 13px;
+  z-index: 50;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%
+}
+
+.glassDiagram .glassDiagram-bullet .glassDiagram-bullet-text {
+  opacity: 0;
+  padding-bottom: .1875rem;
+  -moz-transition: all .8s cubic-bezier(.86, 0, .070, 1) .4s;
+  -o-transition: all .8s cubic-bezier(.86, 0, .070, 1) .4s;
+  -webkit-transition: all .8s cubic-bezier(.86, 0, .070, 1);
+  -webkit-transition-delay: .4s;
+  transition: all .8s cubic-bezier(.86, 0, .070, 1) .4s
+}
+
+.glassDiagram .glassDiagram-bullet:after {
+  content: " ";
+  width: 5%;
+  height: 3px;
+  background-color: #095280;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -moz-transition: all .6s cubic-bezier(.86, 0, .070, 1);
+  -o-transition: all .6s cubic-bezier(.86, 0, .070, 1);
+  -webkit-transition: all .6s cubic-bezier(.86, 0, .070, 1);
+  transition: all .6s cubic-bezier(.86, 0, .070, 1)
+}
+
+.glassDiagram .glassDiagram-bullet--reverse,
+.glassDiagram .glassDiagram-bullet--reverse .glassDiagram-bullet-text {
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
+}
+
+@media only screen and (min-width:43.8125em) {
+  .glassDiagram .glassDiagram-bullet--h2o {
+    top: 37%;
+    left: 6%;
+    width: 9.375rem
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .glassDiagram .glassDiagram-bulletContainer {
+    max-width: 37.5rem
+  }
+  .glassDiagram .glassDiagram-bullet .glassDiagram-bullet-text {
+    font-size: 1rem;
+    line-height: 1.5
+  }
+  .glassDiagram .glassDiagram-bullet--h2o {
+    width: 10rem;
+    left: 3%;
+    top: 33%
+  }
+}
+
+@media only screen and (min-width:43.8125em) {
+  .glassDiagram .glassDiagram-bullet--bubbles {
+    top: 22%;
+    right: 1%;
+    width: 11.25rem
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .glassDiagram .glassDiagram-bullet--bubbles {
+    width: 11.25rem;
+    right: -1%;
+    top: 24%
+  }
+}
+
+@media only screen and (min-width:43.8125em) {
+  .glassDiagram .glassDiagram-bullet--aspirin {
+    width: 12.5rem;
+    right: 13%;
+    bottom: 28%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .glassDiagram .glassDiagram-bullet--aspirin {
+    width: 12.8125rem;
+    right: 14%
+  }
+}
+
+
+@media only screen and (min-width:43.8125em) {
+  .glassDiagram .glassDiagram-bullet--caffeine {
+    width: 10.625rem;
+    bottom: 20%;
+    left: 8%
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .glassDiagram .glassDiagram-bullet--caffeine {
+    width: 11.875rem;
+    left: 7%
+  }
+}
+

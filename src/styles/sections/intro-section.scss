@@ -5,24 +5,35 @@
 \*------------------------------------*/
 
 
-.section--hangOversSolved .section-img {
-	position: absolute;
-}
+.intro-section {
+	position: relative; 
+	overflow: hidden;
 
-
-@media only screen and (min-width:43.8125em) {
-	.section--hangOversSolved .section-img {
-		right: -2px;
-		width: 50vw;
-		transform: translateY(150px);
+	.intro-section__img {
+		position: absolute;
 	}
-}
 
+	.intro-section__content {
+		z-index: 1; 
+		position: relative; 
+	}
 
-@media only screen and (min-width:64.0625em) {
-	.section--hangOversSolved .section-img {
-		right: -2px;
-		width: 43vw;
-		transform: translateY(159px);
+	@media only screen and (min-width:43.8125em) {
+		height: 24rem;
+    padding-top: 0;
+
+		.intro-section__img{
+			right: -2px;
+			width: 50vw;
+			transform: translateY(150px);
+		}
+	}
+
+	@media only screen and (min-width:64.0625em) {
+		.intro-section__img{
+			right: -2px;
+			width: 43vw;
+			transform: translateY(159px);
+		}
 	}
 }

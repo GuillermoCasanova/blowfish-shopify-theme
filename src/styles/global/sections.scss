@@ -1,5 +1,9 @@
 
 
+/*------------------------------------*\
+    #Section Types
+\*------------------------------------*/
+
 
 .section--tertiary {
   background-color: #38b3e4
@@ -53,11 +57,12 @@
 }
 
 .section--main {
-  padding-top: 6rem
+  padding-top: 6rem;
+  min-height: 100vh;
 }
 
 .section--alt {
-  width: 100%
+ // width: 100%
 }
 
 .section--alt .section-text--highlight {

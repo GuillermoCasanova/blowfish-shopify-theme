@@ -18,16 +18,34 @@ h6 {
 
 
 p {
-	margin-bottom: rem-calc(12px);
+margin-bottom: rem-calc(12px);
 }
 
 body {
-	font-family: $primary-font-family;
-	font-weight: bold; 
+  font-family: $primary-font-family;
+  color: $tertiary-color;
+  line-height: 1.5;
+}
+
+
+body,
+html {
+  height: 100%;
+  font-size: 100%
 }
 
 
 
+
+
+/*------------------------------------*\
+    #Headlines
+\*------------------------------------*/
+
+
+.headline {
+    color: $primary-color;
+}
 
 
 

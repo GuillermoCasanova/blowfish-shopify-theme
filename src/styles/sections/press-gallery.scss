@@ -1,0 +1,29 @@
+
+
+/*------------------------------------*\
+    #Press Gallery 
+\*------------------------------------*/
+
+
+
+.pressGallery {
+	padding-top: 0;
+	padding-bottom: 0; 
+
+	.pressGallery-press {
+		margin-bottom: 0; 
+
+		.pressGallery-press-logo {
+		  border-right: 1px solid #fff;
+		  padding-top: 1.125rem;
+		  padding-bottom: 1.125rem;
+		  padding-left: 1rem;
+		  padding-right: 1rem;
+		}
+
+		.pressGallery-press-logo:first-child {
+ 			border-left: 1px solid #fff	
+		}
+	}	
+}
+

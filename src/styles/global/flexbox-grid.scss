@@ -2,12 +2,21 @@
 // -- Start editing -- //
 //
 
+
+.box-row {
+  background-color: red;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 20px;
+}
+
+
 // Set the number of columns you want to use on your layout.
 $flexboxgrid-grid-columns: 12 !default;
 // Set the gutter between columns.
-$flexboxgrid-gutter-width: 24px !default;
+$flexboxgrid-gutter-width: 1rem !default;
 // Set a margin for the container sides.
-$flexboxgrid-outer-margin: 24px !default;
+$flexboxgrid-outer-margin: 2rem !default;
 // Create or remove breakpoints for your project
 // Syntax:
 // name SIZErem,
@@ -43,8 +52,12 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  // margin-right: $gutter-compensation;
-  // margin-left: $gutter-compensation;
+  margin-right: $gutter-compensation;
+  margin-left: $gutter-compensation;
+}
+
+.row--no-wrap {
+  flex-wrap: nowrap;
 }
 
 .row--contained { 

@@ -12,19 +12,20 @@
 @import url('settings/variables.scss.liquid');
 @import url('settings/colors.scss.liquid');
 @import url('settings/typography.scss');
-@import url('settings/old-css.scss');
+//@import url('settings/old-css.scss');
 
 
 /*================ GLOBAL ================*/
 @import url('global/normalize.scss');
+@import url('global/buttons.scss');
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
 @import url('global/sections.scss');
 @import url('global/typography.scss');
 @import url('global/forms.scss');
-@import url('global/grid.scss');
 @import url('global/flexbox-grid.scss');
-
+@import url('global/flexbox.scss');
+@import url('global/visibility.scss');
 
 
 
@@ -38,8 +39,10 @@
 @import url('sections/reviews-capture-section.scss');
 @import url('sections/shoutout.scss');
 @import url('sections/store-locator.scss');
-@import url('sections/the-science.scss');
+@import url('sections/press-gallery.scss');
 @import url('sections/reviews-section.scss');
+@import url('sections/the-science.scss');
+@import url('sections/how-it-works.scss');
 
 
 
