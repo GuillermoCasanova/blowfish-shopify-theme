@@ -7,14 +7,14 @@
   background-color: red;
   margin-bottom: 10px;
   width: 100%;
-  height: 20px;
+  height: 20px;  
 }
 
 
 // Set the number of columns you want to use on your layout.
 $flexboxgrid-grid-columns: 12 !default;
 // Set the gutter between columns.
-$flexboxgrid-gutter-width: 1rem !default;
+$flexboxgrid-gutter-width: 3rem !default;
 // Set a margin for the container sides.
 $flexboxgrid-outer-margin: 2rem !default;
 // Create or remove breakpoints for your project
@@ -22,8 +22,8 @@ $flexboxgrid-outer-margin: 2rem !default;
 // name SIZErem,
 $flexboxgrid-breakpoints:
   sm 0 719px,
-  md 720px 960px,
-  lg 961px 1440px !default;
+  md 43.8125em 960px,
+  lg 64.0625em 1440px !default;
 $flexboxgrid-max-width: 1200px !default;
 
 //

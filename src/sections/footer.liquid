@@ -9,19 +9,21 @@
     </picture>
   </div>
 
-  <div class="row">
-      <div class="small-12  medium-11  large-11  medium-centered    columns">
-          <div class="row  grid  grid--center grid--flexDirectionColumn  med-grid--flexDirectionRow">
-              <div class="small-12 medium-3   columns ">
-                  <div class="row  mt4">
-                    <div class="small-8 columns  medium-11  large-9  medium-push-1 large-push-2 small-centered medium-uncentered text-center  medium-text-right">
-                      <a href="/" rel="internal">
-                          <img src="{{'logo--blowfish--white.svg' | asset_url}}" 
-                             alt="Blowfish logo"
-                             title="Blowfish Logo"
-                             class="mb3"
-                             width="260">
-                      </a>
+  <div class="row  center-md">
+      <div class="col-sm-12 col-md-11">
+          <div class="row center-sm">
+              <div class="col-sm-12 col-md-3">
+                  <div class="row  mt4  center-sm start-md">
+                    <div class="col-sm-8  col-md-11  col-lg-9 col-md-offset-1  col-lg-offset-2">
+                      <div class="footer__logo">
+                        <a href="/" rel="internal">
+                            <img src="{{'logo--blowfish--white.svg' | asset_url}}" 
+                               alt="Blowfish logo"
+                               title="Blowfish Logo"
+                               class="mb3"
+                               width="260">
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -53,10 +55,10 @@
 
               </div>
 
-              <div class="small-12  medium-9 large-7 large-push-2  columns">
+              <div class="col-sm-12  col-md-9  col-lg-7  col-lg-offset-2">
                   <div class="row">
                       <!--footer nav for small--> 
-                      <div class="small-12 columns">
+                      <div class="col-sm-12">
                         {%- assign footer_linklist = section.settings.footer_linklist -%}
                         {% if linklists[footer_linklist].links.size > 0 %}
                         <ul class="[ grid  grid--center grid--justifySpaceBetween  grid--flexDirectionColumn grid--flexWrap ] med-grid--justifySpaceAround med-grid--flexDirectionRow   med-grid--fit mb0  footer-nav">

@@ -1,0 +1,42 @@
+
+
+/*------------------------------------*\
+    #The Science Section
+\*------------------------------------*/
+
+
+.the-science-section {
+	position: relative; 
+	overflow: hidden; 
+
+	.the-science-section__photo {
+		width: 100%;
+    margin-left: -9vw;
+    margin-top: -8vh;
+
+    @include media-query($medium-up) {
+	    height: 23.25rem;
+	    width: 50vw;
+	    margin-left: -21vw;
+    }
+
+    @include media-query($large-up) {
+    	height: 21.75rem;
+    	width: 50vw;
+    	margin-left: -11vw;	
+    }
+	}
+
+	.the-science-section__photo img {
+		height: 100%;
+    width: 100%;
+    object-fit: cover;
+	
+		@include media-query($large-up) {
+		  margin-top: -100px;
+    	width: 42vw;
+    	height: auto;	
+		}
+	}
+}
+
