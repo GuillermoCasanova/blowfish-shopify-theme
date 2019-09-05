@@ -20,6 +20,14 @@
 	}
 	
 
+	.product__price {
+		span {
+			&.is-hidden {
+				display: none; 
+			}
+		}
+	}
+
 	.product__description {
 		font-weight: bold; 
 		

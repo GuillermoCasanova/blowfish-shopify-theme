@@ -50,6 +50,17 @@
                        {%endfor%}
                       </h1>
 
+                      <span class="product__price" data-product-prices>
+                        {%for collection in collections %}
+                          {%if collection.id == 372739913 %} 
+                            {%for product in collection.products%}
+                              <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.price  | money}}
+                               </span>
+                            {%endfor%}
+                          {%endif%}
+                         {%endfor%}
+                       </span>
+
                       <div class="product__description  mb3 text-micro" data-product-descriptions>
                       {%for collection in collections %}
                         {%if collection.id == 372739913 %} 
@@ -157,6 +168,7 @@ $(document).ready(function() {
     var selectors = {
       images: "[data-product-images]", 
       titles: "[data-product-titles]",
+      prices: "[data-product-prices]",
       descriptions: "[data-product-descriptions]",
       productOptions: '[data-product-options]',
       variants: "[data-product-variants]"
@@ -167,6 +179,7 @@ $(document).ready(function() {
     var $images = $(selectors.images); 
     var $descriptions = $(selectors.descriptions); 
     var $titles = $(selectors.titles); 
+    var $prices = $(selectors.prices); 
 
 
     function changeActiveProduct(pProductId, pCollectionProducts) {
@@ -181,6 +194,10 @@ $(document).ready(function() {
 
       $titles.find('span').addClass('is-hidden');
       $titles.find(id).removeClass('is-hidden');
+
+      $prices.find('span').addClass('is-hidden');
+      $prices.find(id).removeClass('is-hidden');
+
 
       for(var i = 0; i < pCollectionProducts.length; i++) {
         if(pProductId == pCollectionProducts[i].id) {
