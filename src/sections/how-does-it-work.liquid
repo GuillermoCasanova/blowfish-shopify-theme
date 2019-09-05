@@ -135,7 +135,7 @@
                 </a>
     
                  <span class="cta-deal-label">
-                   Free shipping too!
+                  {{section.settings.cta-deal}}
                  </span>
     
               </div>
@@ -184,19 +184,28 @@ $(document).ready(function() {
       "label": "Section Headline"
     },
     {
-      "type": "html",
+      "type": "richtext",
       "id": "body",
       "label": "Section Body"
     },
     {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
       "type": "text",
       "id": "cta-label",
-      "label": "Section CTA Link"
+      "label": "CTA Link"
     },
     {
       "type": "url",
       "id": "cta-link",
-      "label": "Section CTA Label"
+      "label": "CTA Label"
+    },
+    {
+      "type": "text",
+      "id": "cta-deal",
+      "label": "CTA Deal"
     }
   ],
   "presets": [
@@ -205,7 +214,7 @@ $(document).ready(function() {
       "name": "How Does It Work Section", 
       "settings": {
         "headline": "A headline for how does it work",
-        "body": "Just drop two tablets in water and drink. Blowfish is real medicine specifically formulated to relieve hangover symptoms. The effervescent tablets rapidly deliver maximum-strength pain reliever and pharmaceutical-grade caffeine to your hurting body, while being gentle on your stomach. So don’t worry. Everything’s gonna be okay."
+        "body": "<p>Just drop two tablets in water and drink. Blowfish is real medicine specifically formulated to relieve hangover symptoms. The effervescent tablets rapidly deliver maximum-strength pain reliever and pharmaceutical-grade caffeine to your hurting body, while being gentle on your stomach. So don’t worry. Everything’s gonna be okay.</p>"
       }
     }
   ]
