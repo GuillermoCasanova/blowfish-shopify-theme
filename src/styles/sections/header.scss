@@ -34,6 +34,109 @@
 }
 
 
+
+/*------------------------------------*\
+    #Small Main Navigation 
+\*------------------------------------*/
+
+.main-nav--small {
+  .menuToggle-icon {
+    border-bottom: 4px solid $tertiary-color; 
+    width: 35px;
+    position: absolute;
+    top: 18px;
+    height: 4px;
+    left: 17px;
+    margin: auto;
+    border-radius: 12px;
+    transition: all .2s cubic-bezier(.86,0,.070,1);
+
+    &:before,
+    &:after {
+      height: 4px;
+      width: 100%;
+      border-radius: 24px;
+      width: 100%;
+      content: " ";
+      position: absolute;
+      top: 10px;
+      background-color: $tertiary-color; 
+      transition: all .2s cubic-bezier(.86,0,.070,1);
+    }
+
+    &:after {
+      top: 20px; 
+    }
+  }
+
+  .main-nav-menuToggle:hover, 
+  .main-nav-menuToggle:focus {
+
+    .menuToggle-icon {
+       border-bottom: 4px solid $accent-color;
+      
+      &:before,
+      &:after {
+        background-color: $accent-color; 
+      }
+    }
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Off Canvas Main Navigation 
+\*------------------------------------*/
+
+
+.main-nav--offCanvas .main-nav-navToggle {
+  width: 100%;
+  height: rem-calc(60px);
+  width: rem-calc(60px);
+  position: relative;
+  display: block;
+}
+
+.main-nav--offCanvas .main-nav-navToggle .navToggle-icon {
+  color: #8a8a8a;
+  transition: all .4s cubic-bezier(.86,0,.070,1);
+  width: rem-calc(36px);
+  position: relative;
+  height: 100%;
+  border-radius: 12px;
+  z-index: 201;
+  left: rem-calc($level2);
+
+  &:before,
+  &:after {
+    height: 4px;
+    width: 100%;
+    border-radius: 24px;
+    width: 100%;
+    content: " ";
+    position: absolute;
+    top: 30px;
+    background-color: $accent-color;
+  }
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+}
+
+
+
+
+
+
+
 .main-nav--large .main-nav-menu .main-nav-menu-link:after,
 .main-nav--large .main-nav-title .main-nav-title-logo,
 .main-nav--large .main-nav-title .main-nav-title-logo--alt,
