@@ -1,7 +1,7 @@
 
-<footer class="section--primary  footer {%if template.suffix == 'science' %}narrative-slide-footer {%endif%}">
+<footer class="{%if template.suffix == 'science' %}narrative-slide-footer {%endif%}">
 
-  <div class="footer-bg">
+  <div class="footer__bg">
     <picture>
       <source media="(min-width: 64.0625em)" srcset="{{'bubbles--footer--large.svg' | asset_url}}">
       <source media="(min-width: 43.8125em)" srcset="{{'bubbles--footer--medium.svg' | asset_url}}">
@@ -9,113 +9,104 @@
     </picture>
   </div>
 
-  <div class="row  center-md">
-      <div class="col-sm-12 col-md-11">
-          <div class="row center-sm">
-              <div class="col-sm-12 col-md-3">
-                  <div class="row  mt4  center-sm start-md">
-                    <div class="col-sm-8  col-md-11  col-lg-9 col-md-offset-1  col-lg-offset-2">
-                      <div class="footer__logo">
-                        <a href="/" rel="internal">
+  <div class="container-fluid  footer__content">
+    <div class="row  center-md">
+        <div class="col-sm-12 col-lg-11">
+            <div class="row  middle-sm  around-md">
+                <div class="col-sm-12  col-md-3">
+                    <div class="row  center-sm  end-md">
+                      <div class="col-sm-8  col-md-11 col-lg-9">
+                        <div class="footer__logo">
+                          <a href="/" rel="internal" title="Blowfish Homepage">
                             <img src="{{'logo--blowfish--white.svg' | asset_url}}" 
                                alt="Blowfish logo"
                                title="Blowfish Logo"
-                               class="mb3"
                                width="260">
-                        </a>
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="row show-for-medium-up">
-                      
-                    <div class="small-12 columns medium-11  large-9  medium-push-1 large-push-2 small-centered medium-uncentered">
-
-                    {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-                      <ul class="footer-social  [ grid  grid--center  grid--justifyCenter med-grid--justifyEnd ]  section-text mb0">
-
-                        {% for social in social_accounts %}
-                           {%- assign social_handle = social | handleize -%}
-                            {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-                            {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-                            {% if settings[social_link] != blank %}
-                              <li>
-                                <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="icon--large section-text  mrl1">
-                                  {% include social_icon %}
-                                </a>
-                              </li>
-                            {% endif %}
-                        {% endfor %}
-                      </ul>
-
-                    </div>
-                              
-                  </div>
-
-              </div>
-
-              <div class="col-sm-12  col-md-9  col-lg-7  col-lg-offset-2">
-                  <div class="row">
-                      <!--footer nav for small--> 
+    
+                    <div class="row show-for-medium-up center-sm end-md">
+                        
                       <div class="col-sm-12">
-                        {%- assign footer_linklist = section.settings.footer_linklist -%}
-                        {% if linklists[footer_linklist].links.size > 0 %}
-                        <ul class="[ grid  grid--center grid--justifySpaceBetween  grid--flexDirectionColumn grid--flexWrap ] med-grid--justifySpaceAround med-grid--flexDirectionRow   med-grid--fit mb0  footer-nav">
-                          {% for link in linklists[footer_linklist].links %}
-                            <li><a href="{{ link.url }}" class="footer-nav-link">{{ link.title }}</a></li>
+    
+                      {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+                        <ul class="footer__social row  around-md">
+    
+                          {% for social in social_accounts %}
+                             {%- assign social_handle = social | handleize -%}
+                              {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                              {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+    
+                              {% if settings[social_link] != blank %}
+                                <li>
+                                  <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="footer__social__link">
+                                    {% include social_icon %}
+                                  </a>
+                                </li>
+                              {% endif %}
                           {% endfor %}
                         </ul>
-                        {% endif %}
+    
                       </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <div class="row">
-
-    <div class="medium-6  medium-push-6  medium-text-right  columns  show-for-medium-up">
-       <span class="text-mini section-text">  {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }} Rally Labs LLC </span>
+                                
+                    </div>
+    
+                </div>
+    
+                <div class="col-sm-12  col-md-8  col-lg-7  col-lg-offset-2">
+                  {%- assign footer_linklist = section.settings.footer_linklist -%}
+                  {% if linklists[footer_linklist].links.size > 0 %}
+                  <ul class="footer-nav  row  columns-sm  middle-sm  row-md  around-md">
+                    {% for link in linklists[footer_linklist].links %}
+                      <li class="footer-nav__item"><a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+            </div>
+        </div>
     </div>
-
-  </div>
-
-  <div class="row  hide-for-medium-up">
-      
-      <div class="small-12 medium-4  columns text-center medium-text-right mb3">
-
-              
-      {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-        <ul class="[ grid  grid--center  grid--justifyCenter med-grid--justifyStart ]  section-text">
-          {% for social in social_accounts %}
-            {%- assign social_handle = social | handleize -%}
-            {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-            {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-            {% if settings[social_link] != blank %}
-              <li>
-                <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="icon--large section-text  mrl1">
-                  {% include social_icon %}
-                </a>
-              </li>
-            {% endif %}
-
-          {% endfor %}
-        </ul>
-
-
+    
+    <div class="row show-for-medium-up">
+      <div class="col-md-12">
+         <span class="footer__credit">  
+         {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }} Rally Labs LLC </span>
       </div>
+    </div>
+    
+    <div class="row  hide-for-medium-up">
+        <div class="col-sm-12">
 
-      <div class="small-12 medium-8   medium-text-right  columns text-center">
-          <span class="text-micro  section-text">
-              {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }} Rally Labs LLC
-          </span>
-      </div>
+          {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+            <ul class="footer__social row  around-sm center-sm">
 
+              {% for social in social_accounts %}
+                 {%- assign social_handle = social | handleize -%}
+                  {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                  {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+
+                  {% if settings[social_link] != blank %}
+                    <li>
+                      <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="">
+                        {% include social_icon %}
+                      </a>
+                    </li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+    
+        </div>
+    
+        <div class="col-sm-12">
+            <span class="footer__credit">
+                {{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }} Rally Labs LLC
+            </span>
+        </div>
+    
+    </div>
   </div>
-
 </footer>
 
 {% schema %}

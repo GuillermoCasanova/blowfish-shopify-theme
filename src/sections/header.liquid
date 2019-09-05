@@ -8,27 +8,22 @@
 
   <!--Free Shipping Header--> 
   {%- if section.settings.announcement_bar_enabled -%}
-  <alert class="mainNav-message">
-        
-    <div class="section--secondary">
-
-      <div class="row text-mini text-center ">
-      
-        <div class="small-12 columns">
-        {%- if section.settings.announcement_bar_link != blank -%}
-          <a href="{{ section.settings.announcement_bar_link }}" rel="internal" title="{{section.settings.announcement_bar_link_title}}">
-            {{ section.settings.announcement_bar_text | escape }}
-          </a>
-        {%- else -%}
-          <span>{{ section.settings.announcement_bar_text | escape }}</span>
-        {%- endif -%}
-        
+  <alert class="header-alert">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+           <div class="header-alert__inner">
+            {%- if section.settings.announcement_bar_link != blank -%}
+               <a href="{{ section.settings.announcement_bar_link }}" rel="internal" title="{{section.settings.announcement_bar_link_title}}">
+                 {{ section.settings.announcement_bar_text | escape }}
+               </a>
+             {%- else -%}
+               <span>{{ section.settings.announcement_bar_text | escape }}</span>
+             {%- endif -%}
+           </div>
         </div>
-      
       </div>
-
     </div>
-
   </alert>
   {%- endif -%}
   <!-- End Free Shipping Header--> 
@@ -37,28 +32,39 @@
   <!-- Navigation for small devices--> 
   <div class="hide-for-medium-up" role="navigation">
 
-    <nav class="mainNav  mainNav--small  grid  grid--justifySpaceBetween  grid--center"
+    <nav class="main-nav  main-nav--small  row  middle-sm  between-sm"
          data-ui-component="main-navigation">
             
-        <a data-action="off-canvas-toggle" class="mainNav-menuToggle">
+        <a data-action="off-canvas-toggle" class="main-nav-menuToggle">
           <div class="menuToggle-icon">
-            Toggle
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="124"><path d="M112 6H12C5.4 6 0 11.4 0 18s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12zM112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12zM112 94H12c-6.6 0-12 5.4-12 12s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z"/></svg>
           </div>
         </a>
     
-        <div class="mainNav-title">
-    
-          <a href="<?php echo $path; ?>"
+        <div class="main-nav-title">
+          <a class="main-nav-title" href="<?php echo $path; ?>"
              data-action="off-canvas-toggle">
-             
-            <img src="{{'logo--blowfish.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="mainNav-title-logo">
-            
-            <img src="{{'logo--blowfish--white.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="mainNav-title-logo  mainNav-title-logo--alt">
-          </a>
-    
+              {% if template.name == 'index' %}
+                <h1 class="row middle-sm">
+              {% else %}
+              <div>
+              {%endif%}
+               <a href="/" class="logo-image" rel="internal" title="{{ shop.name }}">
+                <span class="visually-hidden">Blowfish For Hangovers</span>
+                
+                <img src="{{'logo--blowfish.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo">
+
+                <img src="{{'logo--blowfish--white.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo  main-nav-title-logo--alt">
+               </a>
+              {% if template.name == 'index' %}
+                </h1>
+              {% else %}
+              </div>
+              {%endif%}
+            </a>
         </div>
 
-        <a href="/cart" class="mainNav-menu-cart"> 
+        <a href="/cart" class="main-nav-menu-cart"> 
          <div class="cart">
             {%if cart.item_count > 0 %}
               <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="">
@@ -75,13 +81,13 @@
 
 
   <!-- Off canvas navigation for small devices--> 
-  <nav class="mainNav--offCanvas"  data-ui-component="off-canvas-navigation">
+  <nav class="main-nav--offCanvas"  data-ui-component="off-canvas-navigation">
 
       <a 
-         class="mainNav-navToggle"
+         class="main-nav-navToggle"
          data-action="off-canvas-toggle">
         <div class="navToggle-icon" >
-          toggle
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971"><path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"/></svg>
         </div>
       </a>
 
@@ -115,13 +121,13 @@
 
       <div class="row">
         
-        <ul class="mainNav-menu  [ small-10 small-centered columns ]">
+        <ul class="main-nav-menu  [ small-10 small-centered columns ]">
         
             <li class="row">
                 
               <div class="small-9 columns small-centered">
 
-                <a href="products/blowfish-for-hangovers" class="mainNav-buyNow  button--small button button--secondary button--expanded mb4">
+                <a href="products/blowfish-for-hangovers" class="main-nav-buyNow  button--small button button--secondary button--expanded mb4">
                     <span class="button-textState1">buy now</span>
                 </a>
               </div>
@@ -130,8 +136,8 @@
 
               {% for link in linklists[section.settings.menu].links %}
                 {% if link.links != blank %}
-                  <li class="mainNav--minimal-hiddenElm">
-                    <a class="mainNav-menu-link" href="{{ link.url }}">
+                  <li class="main-nav--minimal-hiddenElm">
+                    <a class="main-nav-menu-link" href="{{ link.url }}">
                       {{ link.title }}
                       {% include 'icon-arrow-down' %}
                     </a>
@@ -147,7 +153,7 @@
                   </li>
                 {% else %}
                   <li>
-                    <a class="mainNav-menu-link"  href="{{ link.url }}">
+                    <a class="main-nav-menu-link"  href="{{ link.url }}">
                       {{ link.title }}
                     </a>
                   </li>
@@ -156,22 +162,22 @@
 
             <li>
 
-            <ul class="[ grid  grid--center  grid--justifyCenter ]  mainNav-menu-animElem  mainNav-secondaryMenu ">
+            <ul class="[ grid  grid--center  grid--justifyCenter ]  main-nav-menu-animElem  main-nav-secondaryMenu ">
 
                <li>
-                  <a target="_blank" href="https://www.facebook.com/Blowfish/" class="icon-facebook mainNav-secondaryMenu-link ml1">
+                  <a target="_blank" href="https://www.facebook.com/Blowfish/" class="icon-facebook main-nav-secondaryMenu-link ml1">
                     <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 100 100">Facebook<path d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z"/></svg>
                   </a>
                 </li>
 
                 <li>
-                  <a target="_blank" href="https://www.instagram.com/blowfishangover/" class="mainNav-secondaryMenu-link ml1 icon-instagram">
+                  <a target="_blank" href="https://www.instagram.com/blowfishangover/" class="main-nav-secondaryMenu-link ml1 icon-instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">Instagram<path d="M122.406 0H46.654C20.929 0 0 20.93 0 46.655v75.752c0 25.726 20.929 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.063 20.93 148.133 0 122.406 0zm31.657 122.407c0 17.455-14.201 31.655-31.656 31.655H46.654C29.2 154.063 15 139.862 15 122.407V46.655C15 29.201 29.2 15 46.654 15h75.752c17.455 0 31.656 14.201 31.656 31.655v75.752z"/><path d="M84.531 40.97c-24.021 0-43.563 19.542-43.563 43.563 0 24.02 19.542 43.561 43.563 43.561s43.563-19.541 43.563-43.561c0-24.021-19.542-43.563-43.563-43.563zm0 72.123c-15.749 0-28.563-12.812-28.563-28.561 0-15.75 12.813-28.563 28.563-28.563s28.563 12.813 28.563 28.563c0 15.749-12.814 28.561-28.563 28.561zM129.921 28.251c-2.89 0-5.729 1.17-7.77 3.22a11.053 11.053 0 0 0-3.23 7.78c0 2.891 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z"/></svg>
                   </a> 
                 </li>
 
                 <li>
-                  <a target="_blank" href="https://twitter.com/blowfishangover?lang=en" class="mainNav-secondaryMenu-link ml1 icon-twitter">
+                  <a target="_blank" href="https://twitter.com/blowfishangover?lang=en" class="main-nav-secondaryMenu-link ml1 icon-twitter">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612">Twitter<path d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z" /></svg>
                   </a>
                 </li>
@@ -187,30 +193,23 @@
   <!-- Navigation for large devices--> 
   <div class="show-for-medium-up">
 
-    <nav class="mainNav  mainNav--large"
+    <nav class="main-nav  main-nav--large"
          data-ui-component="main-navigation">
         
-        <div class="mainNav-inner  grid  grid--justifySpaceBetween  grid--center">
+        <div class="main-nav-inner  row  center-md  middle-md between-md">
             
-            <div class="mainNav-title  grid-cell grid-cell--autoSize" >
+            <div class="main-nav-title row  middle-md">
               {% if template.name == 'index' %}
                 <h1>
               {% else %}
               <div>
               {%endif%}
                <a href="/" class="logo-image" rel="internal" title="{{ shop.name }}">
-                 <!--  {% if section.settings.logo != blank %}
-                    {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-                    <img src="{{ section.settings.logo | img_url: image_size }}"
-                        srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                        alt="{{ section.settings.logo.alt | default: shop.name }}">
-                  {% else %}
-                    {{ shop.name }}
-                  {% endif %} -->
-    
-                <img src="{{'logo--blowfish.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="mainNav-title-logo">
+                <span class="visually-hidden">Blowfish For Hangovers</span>
+                
+                <img src="{{'logo--blowfish.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo">
 
-                <img src="{{'logo--blowfish--white.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="mainNav-title-logo  mainNav-title-logo--alt">
+                <img src="{{'logo--blowfish--white.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo  main-nav-title-logo--alt">
                </a>
               {% if template.name == 'index' %}
                 </h1>
@@ -219,12 +218,12 @@
               {%endif%}
             </div>
                 
-            <ul class="mainNav-menu  grid  grid--center  grid--justifySpaceAround grid-cell  grid-cell--autoSize">
+            <ul class="main-nav-menu  row center-md  middle-md  around-md">
         
               {% for link in linklists[section.settings.menu].links %}
                 {% if link.links != blank %}
-                  <li class="mainNav--minimal-hiddenElm">
-                    <a class="mainNav-menu-link" href="{{ link.url }}">
+                  <li class="main-nav--minimal-hiddenElm">
+                    <a class="main-nav-menu-link" href="{{ link.url }}">
                       {{ link.title }}
                       {% include 'icon-arrow-down' %}
                     </a>
@@ -240,16 +239,15 @@
                   </li>
                 {% else %}
                   <li>
-                    <a class="mainNav-menu-link"  href="{{ link.url }}">
+                    <a class="main-nav-menu-link"  href="{{ link.url }}">
                       {{ link.title }}
                     </a>
                   </li>
                 {% endif %}
               {% endfor %}
 
-                
                 <li>
-                  <a href="/cart" class="mainNav-menu-cart"> 
+                  <a href="/cart" class="main-nav-menu-cart"> 
                    <div class="cart">
                     {%if cart.item_count > 0 %}
                       <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="">
@@ -261,7 +259,7 @@
                 </li>
     
                 <li>
-                    <a href="{{section.settings.buy-now-link}}" rel="internal" class="mainNav-buyNow  button--small button button--secondary mb0   ">
+                    <a href="{{section.settings.buy-now-link}}" rel="internal" class="main-nav-buyNow  button--small button button--secondary mb0   ">
                         <span class="button-textState1">{{section.settings.buy-now-label}}</span>
                     </a>
                 </li>
@@ -395,13 +393,13 @@ $(document).ready(function() {
                   
                   if(100 < currentScroll) {
 
-                    navBar.addClass('mainNav--fixed');  
-                    navBar.removeClass('mainNav--alt');
+                    navBar.addClass('main-nav--fixed');  
+                    navBar.removeClass('main-nav--alt');
                     cart.removeClass('cart--alt'); 
 
                   } else {
                     
-                    navBar.removeClass('mainNav--fixed');
+                    navBar.removeClass('main-nav--fixed');
 
                   }
 
@@ -428,7 +426,7 @@ $(document).ready(function() {
       //
       //Enable off  Canvas functionality by adding and removing the 'is-open class'
       //
-      function toggleMainNavSmall() {
+      function togglemainNavSmall() {
 
           if(offCanvasNav.hasClass('is-open')) {
 
@@ -446,7 +444,7 @@ $(document).ready(function() {
 
 
       $('[data-action="off-canvas-toggle"]').on('click', function() {
-          toggleMainNavSmall();
+          togglemainNavSmall();
       });
 
 

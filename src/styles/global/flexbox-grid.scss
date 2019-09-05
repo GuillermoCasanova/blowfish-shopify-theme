@@ -52,8 +52,13 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: $gutter-compensation;
-  margin-left: $gutter-compensation;
+}
+
+.container-fluid {
+  .row {
+    margin-right: $gutter-compensation;
+    margin-left: $gutter-compensation;
+  }
 }
 
 .row--no-wrap {
