@@ -44,6 +44,7 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
   margin-left: auto;
   padding-right: $flexboxgrid-outer-margin;
   padding-left: $flexboxgrid-outer-margin;
+  height: auto; 
 }
 
 .row {

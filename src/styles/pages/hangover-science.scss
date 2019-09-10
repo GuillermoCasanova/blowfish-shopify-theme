@@ -5,52 +5,72 @@
 \*------------------------------------*/
 
 
+
+/*------------------------------------*\
+    #Narrative Menu
+\*------------------------------------*/
+
 .narrative-menu {
   right: 0;
   top: 25%;
-  z-index: 99
+  z-index: 99;
+  position: fixed; 
+
+  .narrative-menu-bullet {
+    height: .75rem;
+    width: .75rem;
+    background-color: #1b89c7;
+    border: 2px solid #095280;
+    margin-bottom: .75rem;
+    margin-right: .75rem;
+    -moz-transition: all .2s cubic-bezier(.86, 0, .070, 1);
+    -o-transition: all .2s cubic-bezier(.86, 0, .070, 1);
+    -webkit-transition: all .2s cubic-bezier(.86, 0, .070, 1);
+    transition: all .2s cubic-bezier(.86, 0, .070, 1);
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%
+  }
+
+  .narrative-menu-bullet.active {
+    background-color: #f6d83d;
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4)
+  }
+
+  .narrative-menu-bullet:focus,
+  .narrative-menu-bullet:hover {
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+  }
+
+  .narrative-menu-bullet a {
+    width: 100%;
+    height: 100%;
+    display: block; 
+  }
 }
 
-.narrative-menu .narrative-menu-bullet {
-  height: .75rem;
-  width: .75rem;
-  background-color: #1b89c7;
-  border: 2px solid #095280;
-  margin-bottom: .75rem;
-  margin-right: .75rem;
-  -moz-transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  -o-transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  -webkit-transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  transition: all .2s cubic-bezier(.86, 0, .070, 1);
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%
-}
 
-.narrative-menu .narrative-menu-bullet.active {
-  background-color: #f6d83d;
-  -moz-transform: scale(1.4);
-  -ms-transform: scale(1.4);
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4)
-}
 
-.narrative-menu .narrative-menu-bullet:focus,
-.narrative-menu .narrative-menu-bullet:hover {
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2)
-}
 
-.narrative-menu .narrative-menu-bullet a {
-  width: 100%;
-  height: 100%
+
+/*------------------------------------*\
+    #Narrative Slides
+\*------------------------------------*/
+
+
+.narrative-slide {
+  overflow: hidden; 
 }
 
 .narrative-slide--finalSlide .narrative-slide-mainContent {
-  padding-top: 1.875rem;
-  padding-bottom: 1.875rem
+  padding-top: rem-calc($level4);
+  padding-bottom: rem-calc($level4)
 }
 
 @media only screen and (min-width:43.8125em) {
@@ -92,11 +112,7 @@
 
 @media only screen and (min-width:64.0625em) {
   .narrative-menu .narrative-menu-bullet {
-    margin-right: 1.125rem
-  }
-  .narrative-slide-title {
-    font-size: 1.5rem;
-    line-height: 1
+    margin-right: rem-calc($level2); 
   }
 }
 
@@ -104,7 +120,9 @@
   height: 3.75rem;
   width: 3.75rem;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  margin-bottom: rem-calc($level2);
+  position: relative; 
 }
 
 .narrative-slide-blowfish:before {
@@ -115,7 +133,8 @@
   background-size: contain;
   background-position: left bottom;
   left: -17.875rem;
-  top: -13.125rem
+  top: -13.125rem;
+  position: absolute; 
 }
 
 @media only screen and (orientation:landscape) {
@@ -164,6 +183,61 @@
   top: 0;
   margin: auto;
   background-size: cover
+}
+
+
+.narrative-slide-blowfish:before,
+.narrative-slide-visual:after {
+  position: absolute;
+}
+
+
+.narrative-slide {
+  position: relative; 
+  min-height: 100vh;
+
+  .narrative-slide__headline {
+    font-family: $primary-font-family; 
+
+    @include media-query($medium-up) {
+      @include h1();       
+    }
+  } 
+}
+
+.narrative-slide--alt {
+  background-color: $primary-color;
+  color: #fff; 
+
+  .narrative-slide__headline {
+    color: $accent-color; 
+  }
+}
+
+.narrative-slide--intro {
+  background-color: $primary-color; 
+  color: #fff;
+  text-align: center; 
+
+  .narrative-slide__headline {
+    color: $accent-color;
+  }
+
+  .narrative-slide__body {
+    color: #fff;
+
+    @include media-query($large-up) {
+      max-width: rem-calc(400px);
+      margin-right: auto;
+      margin-left: auto;   
+    }
+  }
+}
+
+
+.narrative-slide-visual {
+  position: relative; 
+  margin-bottom: rem-calc($level2);
 }
 
 .narrative-slide-visual--dehydration:after {
@@ -256,7 +330,7 @@
     width: 37rem;
     height: 37rem;
     left: -15%;
-    bottom: -35%
+    bottom: -50%
   }
 }
 
@@ -307,7 +381,7 @@
    background-image: url(../assets/animation--difficultyFocusing--large.gif);
     width: 31rem;
     height: 31rem;
-    left: 5%;
+    left: 6%;
     bottom: 7%
   }
 }
@@ -357,10 +431,10 @@
 @media only screen and (min-width:64.0625em) {
   .narrative-slide-visual--headache:after {
    background-image: url(../assets/animation--headache--large.gif);
-    left: 4%;
+    left: 3%;
     bottom: -52%;
-    width: 33rem;
-    height: 33rem
+    width: 32rem;
+    height: 32rem
   }
 }
 
