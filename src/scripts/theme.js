@@ -10,10 +10,12 @@ window.theme = window.theme || {};
 // =require slate/currency.js
 // =require slate/images.js
 // =require slate/variants.js
-// =require slate/ajaxify-cart.js
 
 /*================ Sections ================*/
 // =require sections/product.js
+
+/*================ Services ================*/
+// =require services/navigation.js
 
 /*================ Templates ================*/
 // =require templates/customers-addresses.js

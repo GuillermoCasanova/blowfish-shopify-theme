@@ -6,11 +6,18 @@
  * @namespace hangover science
  */
 
+
 theme.hangoverScience = (function() {
 
 	$(document).ready(function() {
 
 	  if($('[data-ui-component="hangover-science-narrative"]').length > 0 ) {
+
+
+      //
+      //Uses the NavState service to toggle classes of the navigation
+      //
+      NavState.makeNavAlt();
 
 	    var nextSlideBtn = $('[data-action="go-to-next-slide"]'); 
 
@@ -86,26 +93,30 @@ theme.hangoverScience = (function() {
 		          //
 		          //Uses the NavState service to toggle classes of the navigation
 		          //
-		          //NavState.makeNavMinimal();
+		          NavState.makeNavMinimal();
 
-		          // setTimeout(function() {
+		          setTimeout(function() {
 
-		          //   if(nextIndex % 2 === 0 ) {
-		          //     NavState.makeNavNormal(); 
-		          //   } 
+		            if(nextIndex % 2 === 0 ) {
+		              NavState.makeNavNormal(); 
+		            } 
 
-		          //   if(nextIndex % 2 === 1) {
+		            if(nextIndex % 2 === 1) {
 
-		          //     NavState.makeNavAlt(); 
-		          //   }
+		              NavState.makeNavAlt(); 
+		            }
 
-		          //   if(nextIndex === 1) {
+		            if(nextIndex === 1) {
 
-		          //     NavState.makeNavFull();
+		              NavState.makeNavFull();
 
-		          //   }
+		            }
 
-		          // }, 400);  
+		            if(nextIndex === 10) {
+		          		NavState.makeNavFull();
+		            }
+
+		          }, 400);  
 		          
 		        }
 

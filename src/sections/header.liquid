@@ -40,7 +40,7 @@
              
           </div>
         </a>
-    
+  
         <div class="main-nav-title">
           <a class="main-nav-title" href="<?php echo $path; ?>"
              data-action="off-canvas-toggle">
@@ -129,7 +129,7 @@
 
                 <a href="products/blowfish-for-hangovers" class="main-nav-buyNow  button--small button button--secondary button--expanded mb4">
                     <span class="button-textState1">buy now</span>
-                </a>
+                    <span class="button-textState2">buy now</span>
               </div>
 
             </li>
@@ -222,7 +222,7 @@
         
               {% for link in linklists[section.settings.menu].links %}
                 {% if link.links != blank %}
-                  <li class="main-nav--minimal-hiddenElm">
+                  <li class="main-nav--minimal-hiddenElm ">
                     <a class="main-nav-menu-link" href="{{ link.url }}">
                       {{ link.title }}
                       {% include 'icon-arrow-down' %}
@@ -238,8 +238,8 @@
                     </ul>
                   </li>
                 {% else %}
-                  <li>
-                    <a class="main-nav-menu-link"  href="{{ link.url }}">
+                  <li class="main-nav--minimal-hiddenElm">
+                    <a class="main-nav-menu-link "  href="{{ link.url }}">
                       {{ link.title }}
                     </a>
                   </li>
@@ -261,6 +261,7 @@
                 <li>
                     <a href="{{section.settings.buy-now-link}}" rel="internal" class="main-nav-buyNow  button--small button button--secondary mb0   ">
                         <span class="button-textState1">{{section.settings.buy-now-label}}</span>
+                        <span class="button-textState2">{{section.settings.buy-now-label}}</span>
                     </a>
                 </li>
             </ul>
