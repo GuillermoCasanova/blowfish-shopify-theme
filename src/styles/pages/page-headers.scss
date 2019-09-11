@@ -1,0 +1,13 @@
+
+/*------------------------------------*\
+    #Page Headers
+\*------------------------------------*/
+
+.page-header {
+	text-align: center; 
+	margin-bottom: rem-calc($level4);
+
+	@include media-query($large-up) {
+		margin-bottom: rem-calc($level7);
+	}
+}

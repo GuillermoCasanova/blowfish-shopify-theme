@@ -1,43 +1,44 @@
 
 
-<section class="section--main">
+<section class="section  section--main">
 
+<div class="container-fluid">
 	<!--Begin headline-->
-	<div class="">
-	  <div class="small-12 medium-9  medium-centered  columns">
-	    <div class="row  grid  grid--center small-grid--flexDirectionColumn med-grid--flexDirectionRow">
-	      <div class="small-12 medium-7  columns text-center medium-text-left">
+	<div class="row">
+	  <div class="col-sm-12 col-md-9">
+	    <div class="row">
+	      <div class="col-sm-12 col-md-7">
 	          <h1>
 	            {{section.settings.headline}}
 	          </h1>
-
+	
 	          <div class="row ">
-
-	            <div class="small-12 columns medium-10  large-9  ">
+	
+	            <div class="col-sm-12 col-md-10 col-lg-9">
 	      					{{section.settings.body}}
 	            </div>
-
+	
 	          </div>
-
+	
 	      </div>
-
+	
 	      <div class="small-8  medium-5 large-pull-1 columns small-centered medium-uncentered  text-center">
 	          <img src="{{section.settings.image | img_url: '600x' }}" alt="{{section.settings.image.alt}}">
 	      </div>
-
+	
 	    </div>
-
+	
 	  </div>
-
+	
 	</div>
 	<!--End Headline-->
-
+	
 	<div class="row small-collapse">
 	    <div class="small-12 medium-9   medium-centered  columns">
 	      {{section.settings.embed}}
 	    </div>
 	</div>
-
+</div>
 </section>
 
 

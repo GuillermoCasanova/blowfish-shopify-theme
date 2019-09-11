@@ -1,70 +1,95 @@
-    <main>
-      
-      <section class="section">
-                
-        <!--Begin headline-->
-        <div class="row  section--header">
-          <div class="col-sm-12 col-md-11 col-lg-9">
-              <h1 class="headline">
-                {{ 'cart.general.title' | t }}
-              </h1>
+
+<section class="empty-cart  section--main">
+          
+  <!--Contact Main Content--> 
+  <div class="row  middle-md  center-md">
+    <div class="col-sm-12  col-md-11  col-lg-9">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          
+           <h1 class="headline  empty-cart__headline">
+            {{ 'cart.general.empty' | t }}
+           </h1>
+
+           <div class="empty-cart__body">
+             {{section.settings.body}}
+           </div>
+
+          {% comment %}
+          Cart empty state
+          {% endcomment %}
+          <a href="{{section.settings.cta-link}}" rel="internal" 
+            class="button  button--medium  button--secondary  button--expanded  empty-cart__cta  supports-cookies">
+            <span class="button-textState1">{{section.settings.cta-label}}</span>
+            <span class="button-textState2">{{section.settings.cta-label}}</span>
+          </a>
+          <span class="cta-deal-label">
+            {{section.settings.cta-deal}}
+          </span>
+          
+          {% comment %}
+          Cart no cookies state
+          ---------------------
+          Browser cookies are required to use the cart. If cookies aren't enabled in the
+          browser a message is displayed prompting the user to enable them.
+          {% endcomment %}
+          <span class="supports-no-cookies">
+            <p>{{ 'cart.general.cookies_required' | t }}</p>
+          </span>
+
+             
           </div>
-        </div>  
-        <!--End Headline--> 
-        
-      
-        <!--Contact Main Content--> 
-        <div class="row  middle-md  center-md">
-          <div class="col-sm-12  col-md-10  col-lg-9">
-            <div class="row">
-              <div class="col-sm-12 col-md-6">
-                
-                 <h2 class="headline">
-                 {{ 'cart.general.empty' | t }}
-                 </h2>
-
-                  <p>
-                  You may not be hungover right now, but let’s be honest, at some point you definitely will be. Do yourself a favor and order some Blowfish now so it’s right there when you need it. Your future you will thank you. Did we mention Free Shipping?  
-                  </p>
-     
-                 <div class="row">
-                   <div class="small-12  small-centered medium-5 large-7 large-uncentered  columns">
-
-                    {% comment %}
-                    Cart empty state
-                    {% endcomment %}
-                    <div class="supports-cookies">
-                     <a href="<?php echo $path;?>purchase/" 
-                       class="button  button--medium  button--secondary  button--expanded">
-                       <span class="button-textState1">let’s do this</span>
-                       <span class="button-textState2">let’s do this</span>
-                     </a>
-                    </div>
-
-                    {% comment %}
-                    Cart no cookies state
-                    ---------------------
-                    Browser cookies are required to use the cart. If cookies aren't enabled in the
-                    browser a message is displayed prompting the user to enable them.
-                    {% endcomment %}
-                    <div class="supports-no-cookies">
-                      <p>{{ 'cart.general.cookies_required' | t }}</p>
-                    </div>
-                   </div>
-         
-                 </div>
-                </div>
-                <div class="col-lg-6 columns">
-                  <div class="show-for-large-up">
-                    <img src="{{'animation--headache--medium.gif' | asset_url}}" alt="Woman hungover laying head on desk">
-                  </div>
-                </div>
+          <div class="col-lg-6">
+            <div class="show-for-large-up">
+              <img src="{{'animation--headache--medium.gif' | asset_url}}" alt="Woman hungover laying head on desk">
             </div>
           </div>
-        </div>
-        <!--End Contact Main Content--> 
-      </section>
-    </main>
+      </div>
+    </div>
+  </div>
+  <!--End Contact Main Content--> 
+</section>
+
+
+{%schema%}
+{ 
+  "name": "Empty Cart",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Headline",
+      "info": "Headline for empty cart page is edited in the theme's general settings."
+    },
+    {
+      "type": "richtext", 
+      "id": "body", 
+      "label": "Body"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text", 
+      "id": "cta-label", 
+      "label": "CTA Label"
+    },
+    {
+      "type": "url", 
+      "id": "cta-link", 
+      "label": "CTA Link"
+    },
+    {
+      "type": "text", 
+      "id": "cta-deal", 
+      "label": "CTA Deal"
+    }
+  ]
+}
+
+{%endschema%}
+
+
 
 
 

@@ -4,6 +4,25 @@
     #Section Types
 \*------------------------------------*/
 
+
+
+
+section {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+
+  @include media-query($medium-up) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  @include media-query($large-up) {
+    padding-top: 4.125rem;
+    padding-bottom: 4.125rem;
+  }
+}
+
+
 .section--tertiary {
   background-color: #38b3e4
 }
@@ -36,28 +55,8 @@
 
 
 
-.section {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem
-}
-
-@media only screen and (min-width:43.8125em) {
-  .section {
-    padding-top: 3rem;
-    padding-bottom: 3rem
-  }
-}
-
-@media only screen and (min-width:64.0625em) {
-  .section {
-    padding-top: 4.125rem;
-    padding-bottom: 4.125rem
-  }
-}
-
 .section--main {
   padding-top: 6rem;
-  min-height: 100vh;
 }
 
 .section--alt {

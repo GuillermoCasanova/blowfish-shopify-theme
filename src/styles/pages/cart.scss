@@ -1,0 +1,20 @@
+
+
+/*------------------------------------*\
+    #Cart Page
+\*------------------------------------*/
+
+.empty-cart {
+	margin-top: rem-calc($level7);
+
+	@include media-query($medium-up) {
+		margin-top: rem-calc($level7 + $level7);
+	}
+
+	.empty-cart__headline {
+		@include h2(); 
+	}
+	.empty-cart__cta {
+		max-width: rem-calc(200px);
+	}
+}

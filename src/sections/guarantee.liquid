@@ -1,42 +1,44 @@
 
-<section class="section--main  ">
-          
-  <!--Begin headline-->
-  <div class="">
-    <div class="">
-        <h1 class="[ txtc1  ff2  fwb  lh3 ]">
-            {{section.settings.headline}} 
-        </h1>
-    </div>
-  </div>  
-  <!--End Headline--> 
+<section class="section  section--main">
+  <div class="container-fluid">
+    <!--Contact Main Content--> 
+    <div class="row  middle-sm center-sm">
+      <div class="col-sm-12 col-md-11 col-lg-9">
 
-  <!--Contact Main Content--> 
-  <div class="row">
-    <div class="">
-      <div class="">
-        <div class="">
-          {{section.settings.body}}         
-          <div class="">
-             <div class="">
-               <a href="{{section.settings.cta-destination}}" data-text="{{section.settings.cta-text}}" class="button  button--medium  button--secondary  button--expanded">
-                 <span class="button-textState1">{{section.settings['cta-text']}}</span>
-               </a>
-             </div>
-           </div>
-        </div>
-
-        <div class="">
-          <div class="">
-            <img src="{{section.settings.image | img_url: '1200x'}}" alt="{{section.settings.image.alt}}">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="page-header">
+              <h1 class="page-header__headline  headline">
+                {{section.settings.headline}}
+              </h1>
+            </div>
           </div>
+        </div>  
+
+        <div class="row">
+          <div class="col-sm-12  col-md-6">
+            {{section.settings.body}}         
+            <div class="row">
+               <div class="col-sm-12  col-md-7">
+                 <a href="{{section.settings.cta-destination}}" data-text="{{section.settings.cta-text}}" class="button  button--medium  button--secondary  button--expanded">
+                   <span class="button-textState1">{{section.settings['cta-text']}}</span>
+                 </a>
+               </div>
+             </div>
+          </div>
+        
+          <div class="col-sm-12  col-md-6">
+            <div class="">
+              <img src="{{section.settings.image | img_url: '1200x'}}" alt="{{section.settings.image.alt}}">
+            </div>
+          </div>
+          </div>
+         
         </div>
       </div>
     </div>
- 
-  </div>
-  <!--End Contact Main Content--> 
-</section>
+    <!--End Contact Main Content--> </div>
+  </section>
 
 
 {%schema%}
@@ -52,7 +54,7 @@
     {
       "label": "Copy", 
       "id": "body",
-      "type": "html"
+      "type": "richtext"
     },
     {
       "label": "CTA Text", 
