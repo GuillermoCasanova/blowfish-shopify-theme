@@ -65,7 +65,7 @@
         </div>
 
         <a href="/cart" class="main-nav-menu-cart"> 
-         <div class="cart">
+         <div class="header-cart">
             {%if cart.item_count > 0 %}
               <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="">
             {%else%}
@@ -248,7 +248,7 @@
 
                 <li>
                   <a href="/cart" class="main-nav-menu-cart"> 
-                   <div class="cart">
+                   <div class="header-cart">
                     {%if cart.item_count > 0 %}
                       <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="">
                     {%else%}

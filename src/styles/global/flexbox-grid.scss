@@ -79,14 +79,10 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
   align-items: stretch; 
 }
 
-.row--no-gutters {
-  & > [class^='col-'],
-  & > [class*="col-"]  {
-    padding-right: 0; 
-    padding-left: 0; 
-    margin-right: 0; 
-    margin-left: 0; 
-  }
+
+.contained-sm {
+  margin-right: 0 !important; 
+  margin-left: 0 !important; 
 }
 
 .row.reverse {
