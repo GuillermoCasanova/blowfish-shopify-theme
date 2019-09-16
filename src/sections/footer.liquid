@@ -28,31 +28,29 @@
                     </div>
     
                     <div class="row show-for-medium-up center-sm end-md">
-                        
                       <div class="col-sm-12">
     
-                      {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-                        <ul class="footer__social row  around-md  end-md">
-    
-                          {% for social in social_accounts %}
-                             {%- assign social_handle = social | handleize -%}
-                              {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-                              {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-    
-                              {% if settings[social_link] != blank %}
-                                <li>
-                                  <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="footer__social__link">
-                                    {% include social_icon %}
-                                  </a>
-                                </li>
-                              {% endif %}
-                          {% endfor %}
-                        </ul>
-    
+                        <div class="footer__social">
+                          {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+                            <ul class="row  around-md  end-md  contained-sm">
+                              
+                              {% for social in social_accounts %}
+                                 {%- assign social_handle = social | handleize -%}
+                                  {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                                  {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+                              
+                                  {% if settings[social_link] != blank %}
+                                    <li>
+                                      <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="footer__social__link">
+                                        {% include social_icon %}
+                                      </a>
+                                    </li>
+                                  {% endif %}
+                              {% endfor %}
+                            </ul>
+                        </div>
                       </div>
-                                
                     </div>
-    
                 </div>
     
                 <div class="col-sm-12  col-md-8  col-lg-7  col-lg-offset-2">
@@ -78,25 +76,25 @@
     
     <div class="row  hide-for-medium-up">
         <div class="col-sm-12">
-
-          {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-            <ul class="footer__social row  around-sm center-sm">
-
-              {% for social in social_accounts %}
-                 {%- assign social_handle = social | handleize -%}
-                  {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-                  {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-                  {% if settings[social_link] != blank %}
-                    <li>
-                      <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="">
-                        {% include social_icon %}
-                      </a>
-                    </li>
-                  {% endif %}
-              {% endfor %}
-            </ul>
-    
+          <div class="footer__social">
+            {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+              <ul class="row  around-sm  center-sm  contained-sm">
+            
+                {% for social in social_accounts %}
+                   {%- assign social_handle = social | handleize -%}
+                    {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+                    {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+            
+                    {% if settings[social_link] != blank %}
+                      <li>
+                        <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}" class="">
+                          {% include social_icon %}
+                        </a>
+                      </li>
+                    {% endif %}
+                {% endfor %}
+              </ul>
+          </div>
         </div>
     
         <div class="col-sm-12">

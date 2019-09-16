@@ -1,0 +1,23 @@
+
+
+/*------------------------------------*\
+    #Store Locator Page
+\*------------------------------------*/
+
+
+.store-locator-header {
+	text-align: left; 
+
+	.store-locator-header__headline {
+
+		@include media-query($large-up) {
+			max-width: rem-calc(290px);
+		}
+	}
+
+	.store-locator-header__body {
+		@include media-query($large-up) {
+			max-width: rem-calc(340px);
+		}
+	}
+}

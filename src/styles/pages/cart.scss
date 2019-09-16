@@ -41,26 +41,24 @@ table {
   width: 100%;
 }
 
-.table--primary thead tr th {
-  padding-bottom: .375rem;
-}
+.table--primary {
+	thead tr th {
+		padding-bottom: rem-calc($level1);
+	}
 
-.tablet--primary {
-		
-		th {
-			text-align: left; 
-		}
-}
+	th {
+		text-align: left; 
+	}
 
-.table--primary tr {
-  border-bottom: 2px #f3f3f3 solid;
-}
+	tr {
+		border-bottom: 2px #f3f3f3 solid;
+	}
 
-.table--primary tr td {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
+	tr td {
+		padding-top: .75rem;
+		padding-bottom: .75rem;
+	}
 }
-
 
 
 .cart {
@@ -80,17 +78,34 @@ table {
 	.cart__line-item__title {
 		display: block;
 		color: $tertiary-color;
+		transition: all .2s cubic-bezier(.86,0,.070,1);
 		@include h6(); 
+
+		&:hover, 
+		&:focus  {
+			opacity: .6;
+		}
 	}
 
 	.cart__line-item__remove {
 		color: $primary-color; 
+
+		&:hover, 
+		&:focus {
+			text-decoration: underline
+		}
 	}
 
 	.cart__line-item__image {
 	  width: 100%;
 	  text-align: center;
 	  display: block;
+		transition: all .2s cubic-bezier(.86,0,.070,1);
+
+		&:hover, 
+		&:focus  {
+			transform: translateX(6px);
+		}
 
 	  img {
 	  	max-width: rem-calc(100px);
@@ -102,10 +117,25 @@ table {
 		max-width: rem-calc(90px);
 	}
 
- .cart__line-item {
+  .cart__line-item {
 
 		@include media-query($medium-up) {
 			@include text-micro(); 
+		}
+	}
+	
+	.cart__qty-select {
+		min-width: rem-calc(40px);
+		max-width: rem-calc(60px);
+		margin-right: rem-calc($level3);
+
+		@include media-query($medium-up) {
+			min-width: 0; 
+			max-width: 3rem;
+		}
+
+		select {
+			margin-bottom: 0; 
 		}
 	}
 
@@ -129,14 +159,20 @@ table {
 			@include h2(); 
 		}
 	}
+	
+	.cart__cta-container {
+		text-align: center; 
 
-	.cart__cta {
-		max-width: rem-calc(260px);
+		.cart__cta {
+		max-width: rem-calc(300px);
+		margin-right: 0; 
 		margin-bottom: rem-calc($level2);
-	}
+		min-width: 14rem;
+		}
 
-	.cart__shipping-costs-note {
-		@include text-micro(); 
+		.cart__shipping-costs-note {
+			@include text-mini(); 
+		}
 	}
 }
 

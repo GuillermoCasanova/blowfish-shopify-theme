@@ -103,6 +103,7 @@ footer {
 			max-width: rem-calc(100px);
 			margin-left: auto;
 			margin-right: 0; 
+			width: 100%;
 		}
 
 		.footer__social__link {
@@ -113,7 +114,7 @@ footer {
 			}
 		}
 
-		li:last-child .footer__social__link {
+		ul li:last-child .footer__social__link {
 			@include media-query($medium-up) {
 				margin-right: 0;
 			}	

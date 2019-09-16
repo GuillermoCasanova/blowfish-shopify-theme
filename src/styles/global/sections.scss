@@ -53,18 +53,14 @@ section {
 }
 
 
-
 .section--main {
-  padding-top: 2rem;
+  padding-top: rem-calc($level7 + $level3);
 
   @include media-query($medium-up) {
     padding-top: 4rem;
   }
 }
 
-.section--alt {
- // width: 100%
-}
 
 .section--alt .section-text--highlight {
   color: #f6d83d

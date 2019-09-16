@@ -9,15 +9,13 @@
 		  <div class="col-sm-12 col-md-9">
 		    <div class="row">
 		      <div class="col-sm-12 col-md-7">
-		          <h1 class="headline">
-		            {{section.settings.headline}}
-		          </h1>
-		
-		          <div class="row ">
-		            <div class="col-sm-12 col-md-10 col-lg-9">
-		      					{{section.settings.body}}
-		            </div>
-		          </div>
+						<div class="page-header  store-locator-header">
+							<h1 class="headline  store-locator-header__headline">
+							{{section.settings.headline}}
+							</h1>
+
+							<div class="store-locator-header__body">{{section.settings.body}}</div>
+						</div>
 		      </div>
 		
 		      <div class="col-sm-8 col-md-5">
@@ -43,6 +41,10 @@
 
   "name": "Store Locator Page", 
   "settings": [
+	  {	
+			"type": "header", 
+			"content": "Header"
+	  },
     {
       "label": "Headline", 
       "id": "headline",
@@ -51,13 +53,17 @@
     {
       "label": "Copy", 
       "id": "body",
-      "type": "html"
+      "type": "richtext"
     },
     {
       "label": "Store Locator Image", 
       "id": "image",
       "type": "image_picker"
     },
+ 	  {	
+			"type": "header", 
+			"content": "Embed Code"
+	  },
     {
       "label": "Store Locator Embed", 
       "id": "embed",

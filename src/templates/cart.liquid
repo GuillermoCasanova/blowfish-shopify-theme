@@ -1,7 +1,7 @@
-<div class="section--main">{% if cart.item_count > 0 %}
-   
-  
-  
+
+<div class="section--main"  id="Cart-page">
+
+  {% if cart.item_count > 0 %}
   <section class="section">
   
   <div class="container-fluid">
@@ -23,7 +23,7 @@
         <div class="col-sm-12 col-md-11">
           <div class="cart__inner">
             <!--Cart form begins-->
-            <form action="#" onSubmit="return false;" method="post" name="cart">
+            <form action="/cart" method="post" novalidate>
               <div class="cart__line-items">
                 <div class="row">
                   <div class="col-sm-12">
@@ -71,12 +71,13 @@
                           </td>
                       
                           <td>
-                            <input type="number"
-                                 name="updates[]"
-                                 id="updates_{{ item.key }}"
-                                 value="{{ item.quantity }}"
-                                 min="0"
-                                 aria-label="{{ 'cart.general.item_quantity' | t }}">
+                            <div class="select-wrapper  select-wrapper--primary  select-wrapper--small  cart__qty-select">
+                              <select id="updates_{{ item.id }}" name="updates[]" aria-label="{{ 'cart.general.item_quantity' | t }}" data-quantity-select> 
+                               {% for i in (1..10) %} {% assign q = i %}
+                                   <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}>{{ i }}</option>
+                               {% endfor %}
+                               </select>
+                            </div>
                           </td>
                       
                           <td>
@@ -110,9 +111,7 @@
               {% endif %}
               
                <div class="row end-sm contained-sm">
-                <div>
-                  <!-- <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" > -->
-
+                <div class="cart__cta-container">
                    <button type="submit" name="checkout" class="button button--secondary  button--small  button--expanded cart__cta" id="goto-shopify-checkout">
                      
                      <span class="button-textState1">{{ 'cart.general.checkout' | t }}</span>
@@ -143,4 +142,7 @@
   
   {%section 'cart-empty'%}
   
-  {% endif %}</div>
+  {% endif %}
+
+</div>
+

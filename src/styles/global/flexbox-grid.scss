@@ -56,7 +56,7 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
 }
 
 .container-fluid {
-  .row {
+   .row {
     margin-right: $gutter-compensation;
     margin-left: $gutter-compensation;
   }

@@ -200,6 +200,24 @@ select {
 }
 
 
+.select-wrapper--small {
+
+  &:after {
+    content: " ";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid $tertiary-color;
+    top: 1rem;
+  }
+
+  select {
+    padding-top: rem-calc($level1);
+    padding-bottom: rem-calc($level1);
+    padding-left: rem-calc($level1);
+  }
+}
+
+
 @media only screen and (min-width:43.8125em) {
   .select--quantity {
     width: 3.75rem;
