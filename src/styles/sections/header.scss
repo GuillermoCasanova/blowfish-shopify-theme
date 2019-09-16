@@ -27,6 +27,9 @@
 }
 .main-nav {
   .main-nav-title {
+    transition:  all 0 linear; 
+  }
+  .main-nav-title {
     h1 {
       margin-bottom: 0; 
     }
@@ -40,13 +43,15 @@
 \*------------------------------------*/
 
 .main-nav--small {
+
+
   .menuToggle-icon {
     border-bottom: 4px solid $tertiary-color; 
     width: 35px;
     position: absolute;
     top: 18px;
     height: 4px;
-    left: 17px;
+    left: 0;
     margin: auto;
     border-radius: 12px;
     transition: all .2s cubic-bezier(.86,0,.070,1);
@@ -67,6 +72,14 @@
     &:after {
       top: 20px; 
     }
+  }
+
+  .main-nav-menuToggle {
+    display: block; 
+    width: 36px;
+    height: 100%;
+    position: relative;
+    cursor: pointer; 
   }
 
   .main-nav-menuToggle:hover, 
@@ -90,6 +103,64 @@
 /*------------------------------------*\
     #Off Canvas Main Navigation 
 \*------------------------------------*/
+
+
+.main-nav--offCanvas {
+
+  .main-nav__logo {
+    width: 100%;
+    margin-bottom: rem-calc($level2);
+  }
+
+  .main-nav-menu {
+    li {
+      margin-bottom: rem-calc($level2);
+    }
+  }
+
+  .main-nav--offCanvas__social {
+    margin-top: rem-calc($level4);
+    margin-bottom: rem-calc($level4);
+    max-width: rem-calc(160px);
+    margin-left: auto; 
+    margin-right: auto; 
+
+    @include media-query($medium-up) {
+      margin-top: 0; 
+      margin-bottom: 0; 
+      max-width: rem-calc(100px);
+      margin-left: auto;
+      margin-right: 0; 
+    }
+
+    .main-nav--offCanvas__social__link {
+      border-bottom: 0;
+      margin-right: rem-calc($level2); 
+
+      @include media-query($medium-up) {
+        margin-right: rem-calc($level1);
+      }
+    }
+
+    li:last-child .main-nav--offCanvas__social__link {
+      @include media-query($medium-up) {
+        margin-right: 0;
+      } 
+    }
+
+    svg {
+      fill: #fff;
+      color: #fff;
+      height: rem-calc(24px);
+      width: rem-calc(24px);
+
+      @include media-query($medium-up) {
+        height: rem-calc(20px);
+        width: rem-calc(20px);
+      }
+    }
+  }
+}
 
 
 .main-nav--offCanvas .main-nav-navToggle {
@@ -310,11 +381,11 @@
 .main-nav--offCanvas .main-nav-menu .main-nav-menu-link {
   color: #fff;
   width: 100%;
-  padding-bottom: 1.125rem;
-  -moz-transform: translateY(40px);
-  -ms-transform: translateY(40px);
-  -webkit-transform: translateY(40px);
-  transform: translateY(40px)
+  // padding-bottom: 1.125rem;
+  // -moz-transform: translateY(40px);
+  // -ms-transform: translateY(40px);
+  // -webkit-transform: translateY(40px);
+  // transform: translateY(40px)
 }
 
 .main-nav--offCanvas.is-closed,

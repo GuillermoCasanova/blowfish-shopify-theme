@@ -1,162 +1,166 @@
 
 
 
-<section class="section  section--main  row  middle-sm center-sm" data-section-id="{{ section.id }}" data-section-type="product">
-
-  {%- assign current_variant = product.selected_or_first_available_variant -%}
-  {%- assign current_product = product -%}
-
-  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
-  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
-  <meta itemprop="brand" content="{{ product.vendor }}">
-  <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
-  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
-
-
-  <div class="product">
-    <div class="container-fluid">
-      <div class="row center-md">
-          <div class="col-sm-12  col-md-10 col-lg-10">
-            <div class="productContainer">
-              <div class="row  center-lg middle-lg">
-                    
-                <div class="col-sm-12  col-md-12 col-lg-6">
-                   <div class="row  center-md">
-                      <div class="col-sm-12 col-md-11 col-lg-12" id="scroll-to-product">  
-                        <div class="product__images" data-product-images>
-                          {%for collection in collections %}
-                            {%if collection.id == 372739913 %} 
-                              {%for product in collection.products%}
-                                <img data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}" src="{{ product.images[0].src | img_url: '500x' }}" alt="{{ product.images[0].alt | escape }}">
-                              {%endfor%}
-                            {%endif%}
-                           {%endfor%}
+<div class="section--main">
+  <section class="section  row  middle-sm center-sm" data-section-id="{{ section.id }}" data-section-type="product">
+  
+    {%- assign current_variant = product.selected_or_first_available_variant -%}
+    {%- assign current_product = product -%}
+  
+    <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+    <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+    <meta itemprop="brand" content="{{ product.vendor }}">
+    <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
+    <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+  
+  
+    <div class="product">
+      <div class="container-fluid">
+        <div class="row center-md">
+            <div class="col-sm-12  col-md-10 col-lg-10">
+              <div class="productContainer">
+                <div class="row  center-lg middle-lg">
+                      
+                  <div class="col-sm-12  col-md-12 col-lg-6">
+                     <div class="row  center-md">
+                        <div class="col-sm-12 col-md-11 col-lg-12" id="scroll-to-product">  
+                          <div class="product__images" data-product-images>
+                            {%for collection in collections %}
+                              {%if collection.id == 372739913 %} 
+                                {%for product in collection.products%}
+                                  <img data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}" src="{{ product.images[0].src | img_url: '500x' }}" alt="{{ product.images[0].alt | escape }}">
+                                {%endfor%}
+                              {%endif%}
+                             {%endfor%}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                </div>
-                      
-                <div class="col-sm-12  col-lg-5">
-                    <div class="row">
-                      <div class="col-sm-12  columns">
-                        <h1 class="product__title" data-product-titles>
-                        {%for collection in collections %}
-                          {%if collection.id == 372739913 %} 
-                            {%for product in collection.products%}
-                              <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.title}}
-                               </span>
-                            {%endfor%}
-                          {%endif%}
-                         {%endfor%}
-                        </h1>
-                    
-                        <span class="product__price" data-product-prices>
+                  </div>
+                        
+                  <div class="col-sm-12  col-lg-5">
+                      <div class="row">
+                        <div class="col-sm-12  columns">
+                          <h1 class="product__title" data-product-titles>
                           {%for collection in collections %}
                             {%if collection.id == 372739913 %} 
                               {%for product in collection.products%}
-                                <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.price  | money}}
+                                <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.title}}
                                  </span>
                               {%endfor%}
                             {%endif%}
                            {%endfor%}
-                         </span>
-                    
-                        <div class="product__description  mb3 text-micro" data-product-descriptions>
-                        {%for collection in collections %}
-                          {%if collection.id == 372739913 %} 
-                            {%for product in collection.products%}
-                               <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.description}}
-                               </span>
-                            {%endfor%}
-                          {%endif%}
-                         {%endfor%}
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <div class="row  center-sm">
-                      <div class="col-sm-12">
-                        <div class="product__actions">                        
-                        
-                          <label class="product__actions__label" for="productType">
-                            HOW MUCH BLOWFISH TODAY?
-                          </label>
+                          </h1>
                       
-                          <div class="product__actions__select select-custom-wrapper">
+                          <span class="product__price" data-product-prices>
+                            {%for collection in collections %}
+                              {%if collection.id == 372739913 %} 
+                                {%for product in collection.products%}
+                                  <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.price  | money}}
+                                   </span>
+                                {%endfor%}
+                              {%endif%}
+                             {%endfor%}
+                           </span>
+                      
+                          <div class="product__description  mb3 text-micro" data-product-descriptions>
                           {%for collection in collections %}
                             {%if collection.id == 372739913 %} 
-                              <select  class="select--primary select--medium" name="product-options" id="product-option" data-product-options>
-                                {%for product in collection.products%}
-                                  <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
-                                    {{product.title}}
-                                  </option>
-                                {%endfor%}
-                              </select>
+                              {%for product in collection.products%}
+                                 <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.description}}
+                                 </span>
+                              {%endfor%}
                             {%endif%}
                            {%endfor%}
                           </div>
-                      
-                          {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+                        </div>
+                      </div>
+                    
+                      <div class="row  center-sm">
+                        <div class="col-sm-12">
+                          <div class="product__actions">                        
+                          
+                            <label class="product__actions__label" for="productType">
+                              HOW MUCH BLOWFISH TODAY?
+                            </label>
+                        
+                            <div class="product__actions__select select-custom-wrapper">
                             {%for collection in collections %}
                               {%if collection.id == 372739913 %} 
-                              <select name="id"  data-product-variants class="visually-hidden">
-                                {%for product in collection.products%}
-                                  {%for variant in product.variants%}
-                                    <option  value="{{variant.id}}" {% if variant == current_variant %}selected="selected"{% endif %} >{{variant.id}}</option>
+                                <select  class="select--primary select--medium" name="product-options" id="product-option" data-product-options>
+                                  {%for product in collection.products%}
+                                    <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
+                                      {{product.title}}
+                                    </option>
                                   {%endfor%}
-                                {%endfor%}
-                              </select>
+                                </select>
                               {%endif%}
                              {%endfor%}
-                      
-                            <button class="button  button--medium  button--primary  button--expanded"        type="submit"
-                                    name="add"
-                                    data-add-to-cart
-                                    data-text="Add to Cart">
-                                <span>
-                                  Add to Cart 
-                                </span>
-                            </button>
-                         {%endform%}</div>
-                      </div>
-                    </div>
-                    
-                    <!--Payment Options--> 
-                    <div class="row">
-                      
-                      <div class="col-sm-12 columns">
+                            </div>
                         
-                        <div class="paymentOptions">
-                    
-                          <ul class="paymentOptions-list row middle-sm around-sm">
-                          
-                            <li class=" text-center">
-                              <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="paymentOptions-logo" >
-                            </li>
-                            <li class="text-center">
-                               <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="paymentOptions-logo" >
-                            </li>               
-                            <li class=" text-center">
-                              <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="paymentOptions-logo" >
-                            </li>
-                                      
-                          </ul>
-                    
+                            {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+                              {%for collection in collections %}
+                                {%if collection.id == 372739913 %} 
+                                <select name="id"  data-product-variants class="visually-hidden">
+                                  {%for product in collection.products%}
+                                    {%for variant in product.variants%}
+                                      <option  value="{{variant.id}}" {% if variant == current_variant %}selected="selected"{% endif %} >{{variant.id}}</option>
+                                    {%endfor%}
+                                  {%endfor%}
+                                </select>
+                                {%endif%}
+                               {%endfor%}
+                        
+                              <button class="button  button--medium  button--primary  button--expanded" type="submit"
+                                      name="add"
+                                      data-add-to-cart
+                                      data-text="Add to Cart">
+                                  <span class="button-textState1">
+                                    Add to Cart 
+                                  </span>
+                                  <span class="button-textState2">
+                                    Add to Cart 
+                                  </span>
+                              </button>
+                           {%endform%}</div>
                         </div>
-                    
                       </div>
-                    
-                    </div>
-                    <!--Payment Options--> 
+                      
+                      <!--Payment Options--> 
+                      <div class="row">
+                        
+                        <div class="col-sm-12 columns">
+                          
+                          <div class="paymentOptions">
+                      
+                            <ul class="paymentOptions-list row middle-sm around-sm">
+                            
+                              <li class=" text-center">
+                                <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="paymentOptions-logo" >
+                              </li>
+                              <li class="text-center">
+                                 <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="paymentOptions-logo" >
+                              </li>               
+                              <li class=" text-center">
+                                <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="paymentOptions-logo" >
+                              </li>
+                                        
+                            </ul>
+                      
+                          </div>
+                      
+                        </div>
+                      
+                      </div>
+                      <!--Payment Options--> 
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
+</div>
 
 
 {%javascript%}

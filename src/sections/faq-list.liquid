@@ -1,50 +1,52 @@
 
 
-<section class="section--main">
-  <div class="wrapper">
-    <div class="container-fluid">
-      <div class="faq">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="faq__header">
-              <h1 class="faq__headline">
-                {{section.settings.headline}}
-              </h1>
+<div class="section--main">
+  <section >
+    <div class="wrapper">
+      <div class="container-fluid">
+        <div class="faq">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="faq__header">
+                <h1 class="faq__headline">
+                  {{section.settings.headline}}
+                </h1>
+              </div>
+            </div>
+          </div>  
+        
+          <div class="row center-sm">
+            <div class="col-sm-12 col-md-11">
+              <ul class="faq__list" data-accordion>
+                {%for block in section.blocks%}
+                  <li>
+                    <div class="faq__item" data-faq-item>
+                      <span class="faq__question" data-question data-panel-id="{{forloop.index}}" role="button">
+                        {{block.settings.question}}
+                      </span>
+                      <span class="faq__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129"><title>Arrow Icon</title><path d="M121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c.8.8 1.8 1.2 2.9 1.2 1 0 2.1-.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2.1-5.8z"/></svg>
+                      </span>
+                      <div data-panel-id="{{forloop.index}}" data-answer class="faq__answer">
+                        {{block.settings.answer}}
+                      </div>
+                    </div>
+                  </li>
+                {%endfor%}
+              </ul>
             </div>
           </div>
-        </div>  
-      
-        <div class="row center-sm">
-          <div class="col-sm-12 col-md-11">
-            <ul class="faq__list" data-accordion>
-              {%for block in section.blocks%}
-                <li>
-                  <div class="faq__item" data-faq-item>
-                    <span class="faq__question" data-question data-panel-id="{{forloop.index}}" role="button">
-                      {{block.settings.question}}
-                    </span>
-                    <span class="faq__icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129"><title>Arrow Icon</title><path d="M121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c.8.8 1.8 1.2 2.9 1.2 1 0 2.1-.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2.1-5.8z"/></svg>
-                    </span>
-                    <div data-panel-id="{{forloop.index}}" data-answer class="faq__answer">
-                      {{block.settings.answer}}
-                    </div>
-                  </div>
-                </li>
-              {%endfor%}
-            </ul>
-          </div>
-        </div>
-      
-        <div class="row center-sm">
-          <div class="col-sm-12 col-md-11">
-            {{section.settings.other_info}}
+        
+          <div class="row center-sm">
+            <div class="col-sm-12 col-md-11">
+              {{section.settings.other_info}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 
 {% schema %}

@@ -50,7 +50,7 @@
 			padding-left: rem-calc($level1);
 
 			blockquote {
-				@include text-micro()
+				@include h6(); 
 			}
 
 			.reviews-section__review__rating {
