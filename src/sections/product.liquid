@@ -17,8 +17,8 @@
     <div class="product">
       <div class="container-fluid">
         <div class="row center-md">
-            <div class="col-sm-12  col-md-10 col-lg-10">
-              <div class="productContainer">
+            <div class="col-sm-12  col-md-10  col-lg-12">
+              <div class="product__inner">
                 <div class="row  center-lg middle-lg">
                       
                   <div class="col-sm-12  col-md-12 col-lg-6">
@@ -77,16 +77,17 @@
                     
                       <div class="row  center-sm">
                         <div class="col-sm-12">
+                          <!---Product Actions--> 
                           <div class="product__actions">                        
                           
                             <label class="product__actions__label" for="productType">
                               HOW MUCH BLOWFISH TODAY?
                             </label>
                         
-                            <div class="product__actions__select select-custom-wrapper">
+                            <div class="product__actions__select select-wrapper select-wrapper--primary  select-wrapper--medium">
                             {%for collection in collections %}
                               {%if collection.id == 372739913 %} 
-                                <select  class="select--primary select--medium" name="product-options" id="product-option" data-product-options>
+                                <select name="product-options" id="product-option" data-product-options>
                                   {%for product in collection.products%}
                                     <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
                                       {{product.title}}
@@ -121,37 +122,26 @@
                                     Add to Cart 
                                   </span>
                               </button>
-                           {%endform%}</div>
-                        </div>
-                      </div>
-                      
-                      <!--Payment Options--> 
-                      <div class="row">
-                        
-                        <div class="col-sm-12 columns">
-                          
-                          <div class="paymentOptions">
-                      
-                            <ul class="paymentOptions-list row middle-sm around-sm">
-                            
-                              <li class=" text-center">
-                                <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="paymentOptions-logo" >
-                              </li>
-                              <li class="text-center">
-                                 <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="paymentOptions-logo" >
-                              </li>               
-                              <li class=" text-center">
-                                <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="paymentOptions-logo" >
-                              </li>
-                                        
-                            </ul>
-                      
+                           {%endform%}
+
+                              <!--Payment Options--> 
+                                <ul class="product__payment-options row middle-sm between-sm center-md contained-sm">
+                                
+                                  <li class=" text-center">
+                                    <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="product__payment-options__option" >
+                                  </li>
+                                  <li class="text-center">
+                                     <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="product__payment-options__option" >
+                                  </li>               
+                                  <li class=" text-center">
+                                    <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="product__payment-options__option" >
+                                  </li>
+                                </ul>
+                            <!--Payment Options--> 
                           </div>
-                      
+                          <!---End Product Actions--> 
                         </div>
-                      
                       </div>
-                      <!--Payment Options--> 
                   </div>
                 </div>
               </div>

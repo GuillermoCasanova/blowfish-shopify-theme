@@ -152,43 +152,51 @@ select {
 }
 
 
-.select-custom-wrapper {
+.select-wrapper {
   position: relative; 
+  width: 100%; 
+
+  &:after {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid $tertiary-color;
+    right: rem-calc($level2);
+    top: 1.125rem;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none
+  }
 }
 
-.select-custom-wrapper:after {
-  content: " ";
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 8px solid $tertiary-color;
-  right: 1rem;
-  top: 1.125rem;
-  bottom: 0;
-  position: absolute;
-  pointer-events: none
-}
+.select-wrapper--primary {
 
-.select--primary {
-  background-color: transparent;
-  outline: 0;
-  color: $tertiary-color;
-  border: 2px solid $tertiary-color;
+  select {
+    width: 100%;
+    background-color: transparent;
+    outline: 0;
+    color: $tertiary-color;
+    border: 2px solid $tertiary-color;
+    border-radius: 4px;
 
-  &:active,
-  &:focus {
-    background-color: #fff;
-    border: 2px solid #38b3e4;
+    &:active,
+    &:focus {
+      background-color: #fff;
+      border: 2px solid #38b3e4;
+    }
   }
 }
 
 
-.select--medium {
-  padding-top: rem-calc($level1);
-  padding-bottom:  rem-calc($level1);
-  padding-right: rem-calc($level2);
-  padding-left:  rem-calc($level2);
+.select-wrapper--medium {
+  select {
+    padding-top: rem-calc($level2);
+    padding-bottom:  rem-calc($level2);
+    padding-right: rem-calc($level2);
+    padding-left:  rem-calc($level2);
+  }
 }
 
 
