@@ -28,7 +28,11 @@
                             {%for collection in collections %}
                               {%if collection.id == 372739913 %} 
                                 {%for product in collection.products%}
-                                  <img data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}" src="{{ product.images[0].src | img_url: '500x' }}" alt="{{ product.images[0].alt | escape }}">
+                                  <picture>
+                                    <source src="{{ product.images[0].src | img_url: '1000x' }}" media="(min-width: 64.0625em)">
+                                    <source src="{{ product.images[0].src | img_url: '700x' }}" media="(min-width: 43.8125em)">
+                                    <img src="{{ product.images[0].src | img_url: '450x' }}" alt="{{ product.images[0].alt | escape }}"  class="{%if product.id != current_product.id %}is-hidden{%endif%}"  data-product-id="{{product.id}}">
+                                  </picture>
                                 {%endfor%}
                               {%endif%}
                              {%endfor%}

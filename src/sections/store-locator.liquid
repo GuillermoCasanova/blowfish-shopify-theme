@@ -6,8 +6,8 @@
 	<div class="container-fluid">
 		<!--Begin headline-->
 		<div class="row center-sm">
-		  <div class="col-sm-12 col-md-9">
-		    <div class="row">
+		  <div class="col-sm-12 col-md-10  col-lg-9">
+		    <div class="row  middle-md">
 		      <div class="col-sm-12 col-md-7">
 						<div class="page-header  store-locator-header">
 							<h1 class="headline  store-locator-header__headline">
@@ -18,8 +18,12 @@
 						</div>
 		      </div>
 		
-		      <div class="col-sm-8 col-md-5">
-		          <img src="{{section.settings.image | img_url: '600x' }}" alt="{{section.settings.image.alt}}">
+		      <div class="col-sm-12 col-md-5">
+            <picture>
+              <source src="{{section.settings.image | img_url: '700x' }}" media="(min-width: 64.0625em)">
+              <source src="{{section.settings.image | img_url: '500x' }}" media="(min-width: 43.8125em)">
+              <img src="{{section.settings.image | img_url: '480x' }}" alt="{{ section.settings.image.alt | escape }}" >
+            </picture>
 		      </div>
 		    </div>
 		  </div>

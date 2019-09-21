@@ -60,7 +60,21 @@
 	}
 
 	.product__images {
+		max-width: rem-calc(280px);
+    margin-right: auto;
+    margin-left: auto;
+    
+    @include media-query($medium-up) {
+			max-width: rem-calc(420px); 
+    }
+
+    @include media-query($large-up) {
+			max-width: 100%;
+    }
+
 		img {
+			width: 100%; 
+
 			&.is-hidden {
 				display: none; 
 			}
