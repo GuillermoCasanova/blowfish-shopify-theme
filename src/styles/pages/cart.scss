@@ -73,6 +73,11 @@ table {
 
 	.cart__line-items {
 		margin-bottom: rem-calc($level3); 
+		@include text-micro(); 
+
+		@include media-query($medium-up) {
+			@include h6(); 
+		}
 	}
 
 	.cart__line-item__title {
@@ -127,7 +132,8 @@ table {
 	.cart__qty-select {
 		min-width: rem-calc(40px);
 		max-width: rem-calc(60px);
-		margin-right: rem-calc($level3);
+    margin-right: 2.25rem;
+    margin-left: 1rem;
 
 		@include media-query($medium-up) {
 			min-width: 0; 
@@ -148,7 +154,7 @@ table {
 			margin-bottom: 0; 
 			font-weight: bold; 
 			margin-right: rem-calc($level1);
-			@include h2(); 
+			@include h3(); 
 		}
 
 		.cart__pricing__total {

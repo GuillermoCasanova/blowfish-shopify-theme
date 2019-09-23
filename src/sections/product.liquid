@@ -84,7 +84,7 @@
                           <!---Product Actions--> 
                           <div class="product__actions">                        
                           
-                            <label class="product__actions__label" for="productType">
+                            <label class="product__actions__label " for="productType">
                               HOW MUCH BLOWFISH TODAY?
                             </label>
                         
@@ -94,7 +94,7 @@
                                 <select name="product-options" id="product-option" data-product-options>
                                   {%for product in collection.products%}
                                     <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
-                                      {{product.title}}
+                                      {{product.title}}  {{product.price | money}}
                                     </option>
                                   {%endfor%}
                                 </select>
@@ -131,12 +131,13 @@
                               <!--Payment Options--> 
                                 <ul class="product__payment-options row middle-sm between-sm center-md contained-sm">
                                 
-                                  <li class=" text-center">
-                                    <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="product__payment-options__option" >
-                                  </li>
+
                                   <li class="text-center">
                                      <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="product__payment-options__option" >
-                                  </li>               
+                                  </li>         
+                                  <li class=" text-center">
+                                    <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="product__payment-options__option" >
+                                  </li>      
                                   <li class=" text-center">
                                     <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="product__payment-options__option" >
                                   </li>

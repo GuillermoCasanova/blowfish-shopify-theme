@@ -36,6 +36,18 @@ html {
 
 
 
+p {
+  a {
+    color: $body-color;
+    border-bottom: 2px solid $accent-color;
+
+    &:hover, 
+    &:focus {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}
+
 
 
 /*------------------------------------*\

@@ -93,7 +93,7 @@
 
 @media only screen and (min-width:43.8125em) {
   .narrative-slide {
-    height: 100vh
+    min-height: 100vh
   }
   .narrative-slide .fp-tableCell {
     width: 100%;
@@ -193,8 +193,6 @@
 
 .narrative-slide {
   position: relative; 
-  min-height: 100vh;
-
   .narrative-slide__headline {
     font-family: $primary-font-family; 
 
@@ -217,6 +215,7 @@
   background-color: $primary-color; 
   color: #fff;
   text-align: center; 
+  min-height: 696px;
 
   .narrative-slide__headline {
     color: $accent-color;

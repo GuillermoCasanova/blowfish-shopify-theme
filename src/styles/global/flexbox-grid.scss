@@ -42,9 +42,14 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  height: auto; 
+
+  @include media-query($medium-up) {
   padding-right: $flexboxgrid-outer-margin;
   padding-left: $flexboxgrid-outer-margin;
-  height: auto; 
+  }
 }
 
 .row {
@@ -182,6 +187,12 @@ $name: xs;
 .columns-#{$name} {
   flex-direction: column; 
 }
+
+// .no-col-padding-sm {
+//   [class*="col-#{$name}"] {
+//     padding: 0; 
+//   }
+// }
 
 .row-#{$name} {
   flex-direction: row; 

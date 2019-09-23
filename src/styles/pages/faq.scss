@@ -58,6 +58,7 @@
         display: block;
         z-index: 1;
         position: relative; 
+        padding-right: 2.5rem;
         @include h3(); 
      }
   }

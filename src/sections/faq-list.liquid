@@ -21,7 +21,7 @@
                 {%for block in section.blocks%}
                   <li>
                     <div class="faq__item" data-faq-item>
-                      <a href="#" class="faq__question" data-question data-panel-id="{{forloop.index}}" role="button">
+                      <a class="faq__question" data-question data-panel-id="{{forloop.index}}" role="button">
                         {{block.settings.question}}
                       </a>
                       <span class="faq__icon">
@@ -39,7 +39,9 @@
         
           <div class="row center-sm">
             <div class="col-sm-12 col-md-11">
-              {{section.settings.other_info}}
+             <p> For Drug Facts click <a href="{{'Drug_Facts.pdf' | asset_url}}"  target="_blank" rel="internal">here</a> <br>
+               For Privacy Policy click <a href="/pages/privacy-policy" rel="internal">here</a>. <br>
+               For Terms & Conditions click <a href="/pages/terms-and-conditions" rel="internal">here</a>.</p>
             </div>
           </div>
         </div>
