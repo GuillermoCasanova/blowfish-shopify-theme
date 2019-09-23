@@ -13,7 +13,7 @@
   }
 
   .how-it-works__cta {
-    margin-bottom: rem-calc($level2); 
+    margin-bottom: rem-calc($level1); 
     max-width: rem-calc(220px);
     margin-left: auto; 
     margin-right: auto; 
@@ -21,8 +21,15 @@
 }
 
 .glassDiagram {
-  margin-bottom: rem-calc($level7);
-  text-align: center; 
+  text-align: center;
+  margin-bottom: rem-calc($level4); 
+  transform: translateX(8px); 
+
+  @include media-query($medium-up) {
+    margin-right: 0;
+    transform: translateX(0); 
+    margin-bottom: rem-calc($level7);
+  }
 }
 
 

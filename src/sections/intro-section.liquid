@@ -1,52 +1,32 @@
 
 <!--Introduction section-->
-<section class="[ section  section--alt  intro-section ] [ row  center-sm  middle-sm ]">
+ <section class="section  intro-section">
+    <div class="container-fluid">
+     <div class="row  middle-md">
 
-  <div class="intro-section__img  show-for-medium-up">
-    <picture>
-      <source srcset="{{'introPhoto--large2.gif' | asset_url }}" 
-                    media="(min-width: 64.0625em)">
-            <source srcset="{{'introPhoto--medium2.gif' | asset_url }}" 
-                    media="(min-width: 43.8125em)">
-            <img src="{{'introPhoto--small2.jpg' | asset_url }}" alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish" data-sizes="auto">
-    </picture>
-    
-  </div>
-
-  <div class="col-sm-12  intro-section__content">
-    <div class="row center-sm">
-      
-      <div class="col-sm-12">
-      
-        <div class="container-fluid">
-          <div class="row">
-                
-            <div class="col-sm-12  col-md-6  col-md-offset-1  col-lg-5">
-                
-              <h1 class="headline  intro-section__headline">
-              {{section.settings.headline}}
-              </h1>
-                
-              <p>
-                {{section.settings.body}}
-              </p>
-                
-            </div>
-                
-          </div>
+      <div class="col-sm-12 col-md-6 col-md-offset-1 col-lg-5">
+        <div class="intro-section__content">
+          <h1 class="headline  intro-section__headline">
+           {{section.settings.headline}}
+           </h1>
+           <p>
+             {{section.settings.body}}
+           </p>
         </div>
+      </div>
 
+      <div class="col-sm-12  col-md-4  col-md-offset-1">
+        <picture>
+          <source srcset="{{'introPhoto--large2.gif' | asset_url }}" 
+                        media="(min-width: 64.0625em)">
+                <source srcset="{{'introPhoto--medium2.gif' | asset_url }}" 
+                        media="(min-width: 43.8125em)">
+                <img src="{{'introPhoto--small2.jpg' | asset_url }}" alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish" data-sizes="auto" class="intro-section__img ">
+        </picture>
+        
       </div>
-      
-      <div class="col-sm-12 col-md-4 columns"  class="hide-for-medium-up">
-        <img data-src="{{'introPhoto--small2.jpg' | asset_url }}"
-             alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish"
-             data-sizes="auto"
-             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-             class="hide-for-medium-up lazyload">
-      </div>
+
     </div>
-  </div>
 </section>
 
 
