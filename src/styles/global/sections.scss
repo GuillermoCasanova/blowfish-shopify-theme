@@ -57,7 +57,7 @@ section {
   padding-top: rem-calc($level7 + $level3);
 
   @include media-query($medium-up) {
-    padding-top: 4rem;
+    padding-top: 3.5rem;
   }
 }
 

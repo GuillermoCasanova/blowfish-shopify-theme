@@ -21,10 +21,13 @@
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
 @import url('global/sections.scss');
-@import url('global/typography.scss');
 @import url('global/forms.scss');
 @import url('global/flexbox-grid.scss');
+@import url('global/rte.scss');
+@import url('global/typography.scss');
 @import url('global/visibility.scss');
+
+
 
 
 
@@ -33,6 +36,7 @@
 @import url('sections/guarantee-section.scss');
 @import url('sections/header.scss');
 @import url('sections/hero-header.scss');
+@import url('sections/how-it-works.scss');
 @import url('sections/intro-section.scss');
 @import url('sections/ready.scss');
 @import url('sections/reviews-capture-section.scss');
@@ -41,13 +45,13 @@
 @import url('sections/press-gallery.scss');
 @import url('sections/reviews-section.scss');
 @import url('sections/the-science.scss');
-@import url('sections/how-it-works.scss');
 @import url('sections/the-science-section.scss');
 
 
 
 /*================ PAGES ================*/
 @import url('pages/cart.scss');
+@import url('pages/contact.scss');
 @import url('pages/faq.scss');
 @import url('pages/hangover-science.scss');
 @import url('pages/home.scss');
