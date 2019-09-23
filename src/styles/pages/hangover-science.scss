@@ -197,7 +197,7 @@
     font-family: $primary-font-family; 
 
     @include media-query($medium-up) {
-      @include h1();       
+      @include h2();       
     }
   } 
 }
@@ -448,7 +448,7 @@
     width: 25rem;
     height: 25rem;
     bottom: 39%;
-    left: -9%
+    left: -18%;
   }
   .narrative-slide.fp-section .narrative-slide-copy {
     -moz-transition: all 1s cubic-bezier(.86, 0, .070, 1) .4s;

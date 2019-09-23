@@ -680,6 +680,23 @@
 }
 
 
+.header-cart {
+ .icon {
+    display: block; 
+  }
+  .alt-icon {
+    display: none; 
+  }
+  &.is-alt {
+    .icon {
+      display: none; 
+    }
+    .alt-icon {
+      display: block; 
+    }
+  }
+}
+
 
 
 

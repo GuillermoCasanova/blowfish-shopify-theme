@@ -18,14 +18,14 @@ var NavState = (function() {
     var makeNavAlt = function() {
 
        $('[data-ui-component="main-navigation"]').addClass('main-nav--alt');  
-       $('[data-ui-component="cart-icon"]').addClass('cart--alt');
+       $('[data-ui-component="cart-icon"]').addClass('is-alt');
     };
 
 
     var makeNavNormal = function() {
 
        $('[data-ui-component="main-navigation"]').removeClass('main-nav--alt');  
-       $('[data-ui-component="cart-icon"]').removeClass('cart--alt');
+       $('[data-ui-component="cart-icon"]').removeClass('is-alt');
 
     };
 

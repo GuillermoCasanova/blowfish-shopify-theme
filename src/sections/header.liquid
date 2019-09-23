@@ -65,11 +65,13 @@
         </div>
 
         <a href="/cart" class="main-nav-menu-cart"> 
-         <div class="header-cart">
+         <div class="header-cart" data-ui-component="cart-icon">
             {%if cart.item_count > 0 %}
-              <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="">
+              <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt=""  class="icon">
+              <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt=""  class="alt-icon">
             {%else%}
-              <img src="{{ 'cart.svg' | asset_url}}" alt="">
+              <img src="{{ 'cart.svg' | asset_url}}" alt=""  class="icon">
+              <img src="{{ 'cart---alt.svg' | asset_url}}" alt="" class="alt-icon">
             {%endif%}
           </div>
         </a>
@@ -237,13 +239,15 @@
 
                 <li>
                   <a href="/cart" class="main-nav-menu-cart"> 
-                   <div class="header-cart">
-                    {%if cart.item_count > 0 %}
-                      <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="">
-                    {%else%}
-                      <img src="{{ 'cart.svg' | asset_url}}" alt="">
-                    {%endif%}
-                  </div>
+                     <div class="header-cart" data-ui-component="cart-icon">
+                      {%if cart.item_count > 0 %}
+                        <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt=""  class="icon">
+                        <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt=""  class="alt-icon">
+                      {%else%}
+                        <img src="{{ 'cart.svg' | asset_url}}" alt=""  class="icon">
+                        <img src="{{ 'cart---alt.svg' | asset_url}}" alt="" class="alt-icon">
+                      {%endif%}
+                    </div>
                   </a>
                 </li>
     
@@ -341,6 +345,7 @@
 
 
 $(document).ready(function() {
+
 
 /*------------------------------------*\
           #Sticky Main Nav Styles Toggle
@@ -459,8 +464,38 @@ $(document).ready(function() {
 
 
       $('[data-action="off-canvas-toggle"]').on('click', function() {
-          togglemainNavSmall();
+        togglemainNavSmall();
       });
+
+
+        //
+        //Function that can be used and inserted to check if we are on a mobile device
+        //
+        var checkIfMobile = function() {
+
+          var mediumUpDeviceBreakpoint  = 700; 
+
+          var windowWidth = $(window).width(); 
+
+          if(windowWidth > mediumUpDeviceBreakpoint) {
+
+              return false;
+
+          } else {
+
+              return true; 
+          }
+
+        };
+
+
+      $('.main-nav-menu-link').on('click', function() {
+
+        if(checkIfMobile()) {
+          offCanvasNav.removeClass('is-open'); 
+          offCanvasNav.addClass('is-closed');        
+        }
+      }); 
 
 
 }, 200); 

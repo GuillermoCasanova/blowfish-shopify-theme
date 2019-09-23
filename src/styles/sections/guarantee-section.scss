@@ -20,6 +20,11 @@
 	background-color: $primary-color; 
 	position: relative; 
 
+	.container-fluid {
+		z-index: 1; 
+		position: relative;
+	}
+
 	.guarantee-section__headline {
 		color: #fff;
 		text-align: center; 
@@ -47,6 +52,7 @@
 	  height: 100%;
 	  position: absolute;
 	  background-repeat: repeat-x;
+	  z-index: 0; 
 
 	  @include media-query($medium-up) {
     	background-image: url('bubbles--bottom--medium.svg')
