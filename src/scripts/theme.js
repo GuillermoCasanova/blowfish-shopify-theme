@@ -21,7 +21,6 @@ window.theme = window.theme || {};
 // =require templates/customers-addresses.js
 // =require templates/customers-login.js
 // =require templates/hangover-science.js
-// =require templates/cart.js
 
 
 

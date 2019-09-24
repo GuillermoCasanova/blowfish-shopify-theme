@@ -23,7 +23,7 @@
         <div class="col-sm-12 col-md-11">
           <div class="cart__inner">
             <!--Cart form begins-->
-            <form action="/cart" method="post" novalidate>
+            <form action="/cart" method="post" novalidate data-cart-form>
               <div class="cart__line-items">
                 <div class="row">
                   <div class="col-sm-12">
@@ -72,7 +72,7 @@
                       
                           <td>
                             <div class="select-wrapper  select-wrapper--primary  select-wrapper--small  cart__qty-select">
-                              <select id="updates_{{ item.id }}" name="updates[]" aria-label="{{ 'cart.general.item_quantity' | t }}" data-quantity-select> 
+                              <select id="updates_{{ item.id }}" name="updates[]" aria-label="{{ 'cart.general.item_quantity' | t }}" data-quantity-select onChange="this.form.submit();"> 
                                {% for i in (0..10) %} {% assign q = i %}
                                    <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}>{{ i }}</option>
                                {% endfor %}
