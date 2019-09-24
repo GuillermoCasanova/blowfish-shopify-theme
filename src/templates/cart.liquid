@@ -52,7 +52,7 @@
                       
                           <td>
                             <a href="{{ item.url }}" class="cart__line-item__title">{{ item.product.title }}</a>
-                            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__line-item__remove">
+                            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__line-item__remove  visually-hidden" data-remove-item>
                               <small>{{ 'cart.general.remove' | t }}</small>
                             </a>
                           </td>
@@ -73,7 +73,7 @@
                           <td>
                             <div class="select-wrapper  select-wrapper--primary  select-wrapper--small  cart__qty-select">
                               <select id="updates_{{ item.id }}" name="updates[]" aria-label="{{ 'cart.general.item_quantity' | t }}" data-quantity-select> 
-                               {% for i in (1..10) %} {% assign q = i %}
+                               {% for i in (0..10) %} {% assign q = i %}
                                    <option value="{{ q }}"{% if item.quantity == q %} selected{% endif %}>{{ i }}</option>
                                {% endfor %}
                                </select>

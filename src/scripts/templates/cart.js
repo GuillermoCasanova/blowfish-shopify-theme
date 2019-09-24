@@ -22,7 +22,11 @@ theme.cart = (function() {
   const $body = $(config.body); 
 
   $body.on('change', config.quantitySelectors, function() {
-  	$(config.form).submit(); 
+    if($(this).val() == 0) {
+      $(this).parents('.cart__line-item').find('[data-remove-item]').get(0).click(); 
+    } else {
+      $(config.form).submit(); 
+    }
   });
 
 })(); 

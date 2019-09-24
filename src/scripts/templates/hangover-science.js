@@ -95,31 +95,31 @@ theme.hangoverScience = (function() {
 		          //
 		          NavState.makeNavMinimal();
 
-		          setTimeout(function() {
+	            if(nextIndex % 2 === 0 ) {
+	              NavState.makeNavNormal(); 
+	            } 
 
-		            if(nextIndex % 2 === 0 ) {
-		              NavState.makeNavNormal(); 
-		            } 
+	            if(nextIndex % 2 === 1) {
 
-		            if(nextIndex % 2 === 1) {
+	              NavState.makeNavAlt(); 
+	            }
 
-		              NavState.makeNavAlt(); 
-		            }
+	            if(nextIndex === 1) {
 
-		            if(nextIndex === 1) {
+	              NavState.makeNavFull();
 
-		              NavState.makeNavFull();
+	            }
 
-		            }
+	            if(nextIndex === 10) {
+	          		NavState.makeNavFull();
+	            }
 
-		            if(nextIndex === 10) {
-		          		NavState.makeNavFull();
-		            }
-
-		          }, 400);  
-		          
+	            if(nextIndex === 10) {
+	            	$('.narrative-footer').addClass("is-showing"); 
+	            } else {
+	            	$('.narrative-footer').removeClass("is-showing"); 
+	            }
 		        }
-
 		    }); 
 
 	    }

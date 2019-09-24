@@ -19,6 +19,8 @@
 	}
 
 	.empty-cart__headline {
+		font-family: $primary-font-family; 
+		font-weight: bold; 
 		@include h2(); 
 	}
 	.empty-cart__cta {
