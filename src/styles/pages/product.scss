@@ -27,7 +27,11 @@
 		font-family: $secondary-font-family; 
 		font-weight: bold; 
 		margin-bottom: rem-calc($level1);
-		@include h2();
+		@include h3();
+
+		@include media-query($medium-up) {
+			@include h2();
+		}
 
 		span {
 			&.is-hidden {

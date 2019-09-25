@@ -15,18 +15,18 @@
 	}
 
 	.ready-section__img {
-		height: 30vh;
-		max-height: 300px;
-		min-height: 200px;
+    height: 45vh;
+    max-height: 320px;
+		min-height: 320px;
 		position: relative;
 		right: 0; 
 		z-index: 0; 
 
 		img {
-			margin-top: -24px;
-			right: -52px;
-			transform: rotate(-79deg);
-			position: relative;
+	    margin-top: -1rem;
+	    right: -3.5rem;
+	    transform: rotate(-25deg);
+	    position: relative;
 		}
 	}
 }
@@ -62,7 +62,8 @@
 		margin-top: 0;
 		right: 0;
 		transform: rotate(0);
-		position: relative
+		position: relative;
+		bottom: -3vh;
 	}
 }
 

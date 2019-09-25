@@ -76,10 +76,6 @@ theme.Product = (function() {
         .trigger('change');
     });
 
-    this.initSecondaryInfo(); 
-
-    this.initQtyBtns(); 
-
   }
 
   Product.prototype = $.extend({}, Product.prototype, {

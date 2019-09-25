@@ -180,6 +180,14 @@ $(document).ready(function() {
     var $prices = $(selectors.prices); 
 
 
+    
+    $(selectors.productOptions).on('change', function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 600);
+    })
+
+
     function changeActiveProduct(pProductId, pCollectionProducts) {
 
       var id = '[data-product-id=' + "\"" + pProductId + "\"]"
