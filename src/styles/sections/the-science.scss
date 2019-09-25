@@ -4,62 +4,43 @@
     #The Science Section
 \*------------------------------------*/
 
+.section--science {
 
-.section--science .section--science-photo {
-  height: 16.25rem;
-  width: 16.25rem
+	.section--science-body {
+		margin-bottom: 1.5rem;
+		font-size: 1.125rem;
+		line-height: 1.33333
+	}
+
+	.section--science-headline {
+		font-size: 2rem;
+		line-height: 1.5;
+	}
+
+	.section--science-photo {
+		width: 100%;
+		margin-left: -6vw;
+		margin-top: -8vh;
+	  height: 16.25rem;
+	  width: 16.25rem;
+
+	  &:after {
+			position: absolute; 
+		}
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			max-width: rem-calc(380px);
+
+			@include media-query($medium-up) {
+				max-width: 100%; 
+			}
+		}
+	}
 }
 
-.section--science .section--science-photo {
-	width: 100%;
-	margin-left: -9vw;
-	margin-top: -8vh
-}
-
-.section--science .section--science-photo:after {
-	position: absolute; 
-}
-
-
-.section--science .section--science-photo img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-}
-
-
-.section--science .section--science-headline {
-	font-size: 2rem;
-	line-height: 1.5;
-}
-
-
-.section--science .section--science-body {
-	margin-bottom: 1.5rem;
-	font-size: 1.125rem;
-	line-height: 1.33333
-}
-
-
-.section--science .section--science-photo {
-	width: 100%;
-	margin-left: -9vw;
-	margin-top: -8vh;
-}
-
-
-.section--science .section--science-photo img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-}
-
-
-.section--science .section--science-body {
-	margin-bottom: 1.5rem;
-	font-size: 1.125rem;
-	line-height: 1.33333;
-}
 
 
 @media only screen and (min-width:43.8125em) {

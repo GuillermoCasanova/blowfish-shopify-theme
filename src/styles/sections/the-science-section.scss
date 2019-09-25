@@ -11,8 +11,9 @@
 
 	.the-science-section__photo {
 		width: 100%;
-    margin-left: -9vw;
+    margin-left: -8vw;
     margin-top: -8vh;
+    left: 0; 
 
     @include media-query($medium-up) {
 	    height: 23.25rem;
@@ -31,6 +32,11 @@
 		height: 100%;
     width: 100%;
     object-fit: cover;
+    max-width: rem-calc(460px); 
+
+    @include media-query($medium-up) {
+    	max-width: 100%; 
+    }
 	
 		@include media-query($large-up) {
 		  margin-top: -100px;

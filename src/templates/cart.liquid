@@ -58,7 +58,7 @@
                           </td>
                       
                           <td>
-                            <span id="bfshp-unit-p">
+                            <div class="cart__line-item__price">
                                {% if item.original_line_price != item.line_price %}
                               <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
                               {{ item.price | money }}
@@ -67,7 +67,7 @@
                             {% else %}
                               {{ item.price | money }}
                             {% endif %}
-                              </span>
+                              </div>
                           </td>
                       
                           <td>
@@ -81,7 +81,7 @@
                           </td>
                       
                           <td>
-                            <span  class="odometer" id="galutinis">
+                            <span>
                                {{ item.line_price | money }}
                             </span>
                           </td>

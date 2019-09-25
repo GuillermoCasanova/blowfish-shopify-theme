@@ -681,21 +681,51 @@
 
 
 .header-cart {
- .icon {
-    display: block; 
-  }
-  .alt-icon {
-    display: none; 
-  }
-  &.is-alt {
-    .icon {
-      display: none; 
+
+   .icon {
+      display: block; 
     }
     .alt-icon {
-      display: block; 
+      display: none; 
+    }
+    &.is-alt {
+       @include media-query($medium-up) {
+      .icon {
+        display: none; 
+      }
+      .alt-icon {
+        display: block; 
+      }
     }
   }
 }
+
+// .main-nav--minimal {
+//   .header-cart {
+//     .alt-icon {
+//       display: none; 
+//     }
+//   }
+
+//   .header-cart {
+//     @include media-query($medium-up) {
+//      .icon {
+//         display: block; 
+//       }
+//       .alt-icon {
+//         display: none; 
+//       }
+//       &.is-alt {
+//         .icon {
+//           display: none; 
+//         }
+//         .alt-icon {
+//           display: block; 
+//         }
+//       }
+//     }
+//   }
+// }
 
 
 
