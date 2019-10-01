@@ -59,6 +59,10 @@
   max-width: 610px;
   margin-left: auto;
   margin-right: auto;
+	
+	@include media-query($medium-up) {
+  	max-width: 800px;
+	}
 
   @include media-query($large-up) {
   	max-width: 100%;
@@ -67,12 +71,18 @@
 	.landing-promo-press__headline {
 		font-family: $tertiary-font-family;
 		color: $primary-color;
+		margin-bottom: rem-calc($level2);
 		@include h3(); 
 	}
 
 	.landing-promo-press__logo {
 		margin: rem-calc(12px);
+		margin-bottom: rem-calc($level4);
 		margin-top: 0; 
+
+		@include media-query($medium-up) {
+			margin-right: rem-calc($level3); 
+		}
 	}
 }
 

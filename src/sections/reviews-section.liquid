@@ -12,27 +12,27 @@
    </div>
 
    <div class="col-sm-12 col-lg-11">
-      <ul class="section-text  [ row  middle-md ]">
-          {%for review in section.blocks%}
-           <li class="col-sm-12  col-md-4">
-              <div class="reviews-section__review">
-                <blockquote class="slideshow-quote">
-                  {{review.settings.quote}}
-                  <cite>
-                    - {{review.settings.customer}}
-                  </cite>
-                </blockquote>
-                <div class="reviews-section__review__rating">
-                 {% assign rating = review.settings.star_rating %}
-                 {%for i in (1..rating) %}
-                  <span class="icon-star">
-                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
-                  </span>
-                 {%endfor%}
-                </div>
+      <ul class="section-text  [ row  top-md  ]">
+        {%for review in section.blocks%}
+         <li class="col-sm-12  col-md-4">
+            <div class="reviews-section__review">
+              <blockquote class="slideshow-quote">
+                {{review.settings.quote}}
+                <cite>
+                  - {{review.settings.customer}}
+                </cite>
+              </blockquote>
+              <div class="reviews-section__review__rating">
+               {% assign rating = review.settings.star_rating %}
+               {%for i in (1..rating) %}
+                <span class="icon-star">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.481 19.481"><path d="M10.201.758l2.478 5.865 6.344.545a.5.5 0 0 1 .285.876l-4.812 4.169 1.442 6.202a.5.5 0 0 1-.745.541l-5.452-3.288-5.452 3.288a.5.5 0 0 1-.745-.541l1.442-6.202-4.813-4.17a.5.5 0 0 1 .285-.876l6.344-.545L9.28.758a.5.5 0 0 1 .921 0z"/></svg>
+                </span>
+               {%endfor%}
               </div>
-           </li>
-           {%endfor%}
+            </div>
+         </li>
+         {%endfor%}
        </ul>
 
       <div class="reviews-section__cta">
