@@ -61,7 +61,7 @@
   margin-right: auto;
 	
 	@include media-query($medium-up) {
-  	max-width: 800px;
+  	max-width: 860px;
 	}
 
   @include media-query($large-up) {
@@ -81,7 +81,12 @@
 		margin-top: 0; 
 
 		@include media-query($medium-up) {
+			max-width: 120px;
 			margin-right: rem-calc($level3); 
+		}
+
+		@include media-query($large-up) {
+			max-width: 100%;
 		}
 	}
 }
