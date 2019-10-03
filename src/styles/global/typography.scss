@@ -11,7 +11,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $secondary-font-family; 	
+	font-family: $primary-font-family; 	
 	font-weight: bold; 
 	margin-bottom: rem-calc($level3);
 }
@@ -51,6 +51,23 @@ p {
 
 
 /*------------------------------------*\
+    #Text Colors
+\*------------------------------------*/
+
+.txtc1 {
+  color: $primary-color;
+}
+
+.txtc2 {
+  color: $secondary-color;
+}
+
+.txtc3 {
+  color: $accent-color;
+}
+
+
+/*------------------------------------*\
     #Headlines
 \*------------------------------------*/
 
@@ -59,6 +76,9 @@ p {
     color: $primary-color;
 }
 
+.headline--alt {
+  font-family: $secondary-font-family !important; 
+}
 
 
 

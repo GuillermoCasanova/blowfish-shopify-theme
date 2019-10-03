@@ -11,28 +11,13 @@
     "name": "Typography",
     "settings": [
       {
-        "type": "select",
-        "id": "type_base_size",
-        "label": "Base size",
-        "default": "16px",
-        "options": [
-          {
-            "value": "14px",
-            "label": "14px"
-          },
-          {
-            "value": "15px",
-            "label": "15px"
-          },
-          {
-            "value": "16px",
-            "label": "16px"
-          },
-          {
-            "value": "17px",
-            "label": "17px"
-          }
-        ]
+        "type": "radio",
+        "id": "altHeadlineOn",
+        "label": "Use alternative type for headlines?",
+         "options": [
+           { "value": "off", "label": "Alt Type Off" },
+           { "value": "on", "label": "Alt Type On" }
+         ]
       }
     ]
   },
