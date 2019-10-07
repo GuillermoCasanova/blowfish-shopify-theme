@@ -224,28 +224,3 @@ select {
   }
 }
 
-// select {
-//   @include prefix(appearance, none, webkit moz spec);
-//   margin-bottom: rem-calc(12px); 
-//   background-position: right center;
-//   background: {
-//     image: url($svg-select-icon);
-//     repeat: no-repeat;
-//     position: right 10px center;
-//     color: transparent;
-//   }
-//   padding-right: 28px;
-//   text-indent: 0.01px;
-//   text-overflow: '';
-//   cursor: pointer;
-
-//   /*================ Hide the svg arrow in IE9 ================*/
-//   .ie9 & {
-//     padding-right: 10px;
-//     background-image: none;
-//   }
-// }
-
-// select::-ms-expand {
-//   display: none;
-// }
