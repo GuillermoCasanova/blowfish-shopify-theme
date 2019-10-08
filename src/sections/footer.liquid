@@ -1,4 +1,28 @@
 
+
+<div class="footer-email-sign-up {%if section.settings.email-capture-color-scheme == 'dark' %}footer-email-sign-up--alt {%endif%}">
+  <div class="footer-email-sign-up__inner">
+      <div class="container-fluid">
+          <div class="row  center-sm">
+            <div class="col-sm-12 col-lg-11">
+              <div class="row  columns-sm  row-md  middle-md">
+                <div class="col-sm-12  col-md-6 col-lg-6 col-lg-offset-1">
+                  <h1 class="footer-email-sign-up__headline {%if settings.altHeadlineOn %}headline--alt {%endif%}">
+                    {{section.settings.email-capture-headline}}
+                  </h1>
+                </div>
+                <div class="col-sm-12  col-md-6  col-lg-5">
+                  <div class="footer-email-sign-up__embed">
+                    {{section.settings.email-capture-embed}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 <footer class="{%if template.suffix == 'science' %}narrative-footer {%endif%}">
 
   <div class="footer__bg">
@@ -118,10 +142,27 @@
         "default": "footer"
       },
       {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
+        "type": "header", 
+        "content": "Email Capture Section"
+      },
+      {
+        "type": "text", 
+        "id": "email-capture-headline", 
+        "label": "Headline"
+      },
+      {
+        "type": "html", 
+        "id": "email-capture-embed", 
+        "label": "Form Embed"
+      },
+      {
+        "type": "radio", 
+        "id": "email-capture-color-scheme", 
+        "label": "What color scheme to use for the capture section?",
+         "options": [
+           { "value": "dark", "label": "Dark Color Scheme" },
+           { "value": "light", "label": "Light Color Scheme" }
+         ]
       }
     ]
   }

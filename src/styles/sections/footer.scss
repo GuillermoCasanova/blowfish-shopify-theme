@@ -170,6 +170,126 @@ footer {
 }
 
 
+.footer-email-sign-up {
+	border-top: 1px solid $quaternary-color;
+	padding-top: rem-calc($level3);
+
+		@include media-query($medium-up) {
+			padding-top: 0;
+		}
+
+	.footer-email-sign-up__headline {
+		color: $primary-color;
+		margin-bottom: 0;
+		@include h2();
+
+		@include media-query($medium-up) {
+			position: relative; 
+			bottom: -1px; 
+		}
+
+		@include media-query($large-up) {
+			@include h1(); 
+		}
+	}
+
+	.footer-email-sign-up__embed {
+		min-height: rem-calc(90px); 
+
+		@include media-query($medium-up) {
+			margin-left: -2rem;
+		}
+		@include media-query($large-up) {
+			margin-left: -4rem;
+		}
+	}
+
+	form {
+		padding-left: 0 !important; 
+	}
+	
+	input {
+	  border: 0 !important;
+	  background-color: transparent !important;
+	  border: 2px solid $tertiary-color !important;
+	  border-radius: 5px !important; 
+	  font-weight: bold !important; 
+		padding-left: rem-calc($level1) !important;
+		line-height: 4 !important; 
+		height: rem-calc(46px) !important;
+		font-family: $primary-font-family !important;
+		font-size: 1rem !important;
+		width: 100% !important;
+
+    &:active,
+    &:focus {
+      border: 2px solid $primary-color !important; 
+      color: $tertiary-color !important;
+      outline: 0 !important; 
+    }
+	}
+
+	button {
+		padding: 0 !important; 
+	  -moz-border-radius: 6px !important;
+	  -webkit-border-radius: 6px !important;
+	  transition: none !important;
+	  color: #fff !important;
+	  cursor: pointer !important;
+	  white-space: nowrap !important;
+	  position: relative !important; 
+	  overflow: hidden !important;
+	  border-radius: 40px !important;
+	  margin-bottom: 1.125rem !important;
+	  display: block !important;
+	  vertical-align: middle !important;
+	  margin-bottom: 0 !important;
+	  font-weight: bold !important; 
+	  font-family: $primary-font-family !important; 
+	  height: rem-calc(46px) !important;
+	  border: 2px solid transparent !important;
+  	color: #1b89c7 !important;
+ 	  background-color: #f6d83d !important;
+	  transition: all .3s cubic-bezier(.2, 1, .3, 1) !important; 
+	  font-size: 1rem !important; 
+	  margin-left: rem-calc($level1) !important;
+	  line-height: 0 !important; 
+	  min-width: rem-calc(100px) !important;
+
+
+	  @include media-query($medium-up) {
+	  	min-width: rem-calc(110px) !important;
+	  }
+
+
+	  @include media-query($large-up) {
+	  	min-width: rem-calc(130px) !important;
+	  }
+
+
+	 	&:active,
+		&:focus,
+		&:hover {
+		  border: 2px solid #095280 !important;
+		}
+	}
+}
+
+
+.footer-email-sign-up--alt {
+	background-color: $secondary-color; 
+	border-top: 0; 
+
+	.footer-email-sign-up__headline { 
+		color: #fff;
+	}
+
+	input {
+		background: #fff !important; 
+		color: #fff;
+		border: none; 
+	}
+}
 
 
 @media only screen and (max-width:43.8125em) and (orientation:landscape) {

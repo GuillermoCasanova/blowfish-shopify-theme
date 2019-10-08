@@ -11,6 +11,11 @@
 	padding-right: rem-calc($level4);
 	overflow: hidden; 
 
+	@include media-query($medium-up) {
+		padding-left: 0;
+		padding-right: 0;		
+	}
+
 	.reviews-section__header {
 		margin-bottom: rem-calc($level4); 
 
