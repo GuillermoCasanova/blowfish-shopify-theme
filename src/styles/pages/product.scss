@@ -42,7 +42,7 @@
 	
 
 	.product__price {
-		margin-bottom: rem-calc($level2); 
+		margin-bottom: rem-calc($level1); 
 		display: block; 
 		@include h3(); 
 
@@ -51,6 +51,10 @@
 				display: none; 
 			}
 		}
+	}
+
+	.product__rating {
+		margin-bottom: rem-calc($level2);
 	}
 
 	.product__description {

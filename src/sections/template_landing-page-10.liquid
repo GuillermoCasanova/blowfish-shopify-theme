@@ -7,12 +7,13 @@
 
 		{%when 'email-capture-template'%}
 		{%include 'snippet_email-capture-template'%}
+	
+		{%when 'code-offer-template'%}
+		{%include 'snippet_code-offer-template'%}
+
 
 		{%when 'promo-press-template'%}
 		{%include 'snippet_promo-press-template'%}
-
-		{%when 'code-offer-template'%}
-		{%include 'snippet_code-offer-template'%}
 
 		{%endcase%}
 	</div>
@@ -55,6 +56,11 @@
 					"id": "image",
 					"type": "image_picker",
 					"label": "Image"
+				},
+				{
+					"id": "email-embed",
+					"type": "html",
+					"label": "Email Embed Code"
 				}
 			]
 	},
@@ -133,5 +139,4 @@
 	]
 }
 {%endschema%}
-
 
