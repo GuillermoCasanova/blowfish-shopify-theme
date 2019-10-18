@@ -65,6 +65,7 @@
                               {%endif%}
                              {%endfor%}
                            </span>
+
                             <div class="product__rating  yotpo bottomLine"
                               data-product-id="{{ product.id }}">
                               {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
@@ -82,6 +83,7 @@
                              {{ product.metafields.yotpo.bottomline }}
                             {%- endif %}
                             </div>
+                            
                           <div class="product__description  mb3 text-micro" data-product-descriptions>
                           {%for collection in collections %}
                             {%if collection.id == 372739913 %} 

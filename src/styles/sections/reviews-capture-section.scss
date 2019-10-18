@@ -9,7 +9,7 @@
 \*------------------------------------*/
 
 .reviews-capture__header {
-	margin-bottom: rem-calc($level7 + $level3);
+	margin-bottom: rem-calc($level5);
 
 	.reviews-capture__header__headline {
 		color: $primary-color;
@@ -27,6 +27,9 @@
 	}
 }
 
+.reviews-capture__embed {
+		min-height: 100vh;
+}
 
 .reviews-capture__footer {
 	margin-right: auto; 

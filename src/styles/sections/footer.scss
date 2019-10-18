@@ -171,7 +171,6 @@ footer {
 
 
 .footer-email-sign-up {
-	border-top: 1px solid $quaternary-color;
 	padding-top: rem-calc($level3);
 
 		@include media-query($medium-up) {
@@ -181,26 +180,31 @@ footer {
 	.footer-email-sign-up__headline {
 		color: $primary-color;
 		margin-bottom: 0;
+		text-align: center; 
 		@include h2();
 
 		@include media-query($medium-up) {
 			position: relative; 
 			bottom: -1px; 
-		}
-
-		@include media-query($large-up) {
-			@include h1(); 
+			text-align: right; 
+			@include h3();
 		}
 	}
 
 	.footer-email-sign-up__embed {
 		min-height: rem-calc(90px); 
 
-		@include media-query($medium-up) {
-			margin-left: -2rem;
-		}
-		@include media-query($large-up) {
-			margin-left: -4rem;
+		label {
+			color: #38b4e4;
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    left: -110px;
+	    top: 40px;
+	    font-family: $primary-font-family; 
+	    display: none; 
+
+	    @include media-query($medium-up) {
+	    }
 		}
 	}
 
@@ -208,10 +212,14 @@ footer {
 		padding-left: 0 !important; 
 	}
 	
+	div {
+		padding-bottom: 0 !important; 
+	}
+
 	input {
 	  border: 0 !important;
 	  background-color: transparent !important;
-	  border: 2px solid $tertiary-color !important;
+	  border: 2px solid $quaternary-color !important;
 	  border-radius: 5px !important; 
 	  font-weight: bold !important; 
 		padding-left: rem-calc($level1) !important;
@@ -255,6 +263,7 @@ footer {
 	  margin-left: rem-calc($level1) !important;
 	  line-height: 0 !important; 
 	  min-width: rem-calc(100px) !important;
+	  margin-bottom: 0 !important; 
 
 
 	  @include media-query($medium-up) {

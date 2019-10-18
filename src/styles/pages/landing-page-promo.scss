@@ -6,7 +6,6 @@
 
 
 .landing-promo {
-	margin-top: rem-calc(60px);
 	padding-bottom: rem-calc($level4); 
 	margin-bottom: rem-calc($level5); 
 
@@ -22,9 +21,10 @@
 		margin-bottom: rem-calc($level4);
 
 		img {
-			max-width: 85%;
+			max-width: 70%;
 			margin-right: auto;
 			margin-left: auto; 
+			display: block; 
 
 			@include media-query($medium-up) {
 				width: 100%;
@@ -37,8 +37,16 @@
 	}
 
 	.landing-promo__logo {
-		margin-bottom: rem-calc($level4);
+		margin-bottom: rem-calc($level1);
 		max-width: rem-calc(280px);
+		margin-left: auto; 
+		margin-right: auto; 
+		display: block; 
+
+		@include media-query($medium-up) {
+			margin-left: 0; 
+			margin-right: 0; 
+		}
 	}
 
 	.landing-promo__headline {
@@ -82,7 +90,8 @@
 	.landing-promo-press__headline {
 		font-family: $tertiary-font-family;
 		color: $primary-color;
-		margin-bottom: rem-calc($level2);
+		margin-bottom: rem-calc($level4);
+		font-weight: normal; 
 		@include h3(); 
 	}
 
@@ -114,12 +123,13 @@
 	div,
 	form {
 		padding-left: 0 !important; 
+		padding-bottom: 0 !important;
 	}
 	
 	input {
 	  border: 0 !important;
 	  background-color: transparent !important;
-	  border: 2px solid $tertiary-color !important;
+	  border: 2px solid $quaternary-color !important;
 	  border-radius: 5px !important; 
 	  font-weight: bold !important; 
 		padding-left: rem-calc($level1) !important;
