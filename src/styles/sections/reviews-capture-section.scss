@@ -9,11 +9,19 @@
 \*------------------------------------*/
 
 .reviews-capture__header {
-	margin-bottom: rem-calc($level5);
+	margin-bottom: rem-calc($level1);
+
+	@include media-query($medium-up) {
+		margin-bottom: rem-calc($level1);
+	}
 
 	.reviews-capture__header__headline {
 		color: $primary-color;
 		text-align: center; 
+	}
+
+	p {
+		margin-bottom: 0; 
 	}
 
 	.reviews-capture__header__body {
