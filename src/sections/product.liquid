@@ -29,8 +29,8 @@
                               {%if collection.id == 372739913 %} 
                                 {%for product in collection.products%}
                                   <picture>
-                                    <source src="{{ product.images[0].src | img_url: '1000x' }}" media="(min-width: 64.0625em)">
-                                    <source src="{{ product.images[0].src | img_url: '700x' }}" media="(min-width: 43.8125em)">
+                                    <source srcset="{{ product.images[0].src | img_url: '900x' }}" media="(min-width: 64.0625em)">
+                                    <source srcset="{{ product.images[0].src | img_url: '700x' }}" media="(min-width: 43.8125em)">
                                     <img src="{{ product.images[0].src | img_url: '450x' }}" alt="{{ product.images[0].alt | escape }}"  class="{%if product.id != current_product.id %}is-hidden{%endif%}"  data-product-id="{{product.id}}">
                                   </picture>
                                 {%endfor%}
@@ -119,14 +119,13 @@
                               {%endif%}
                              {%endfor%}
                             </div>
-                        
                             {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
                               {%for collection in collections %}
                                 {%if collection.id == 372739913 %} 
                                 <select name="id"  data-product-variants class="visually-hidden">
                                   {%for product in collection.products%}
                                     {%for variant in product.variants%}
-                                      <option  value="{{variant.id}}" {% if variant == current_variant %}selected="selected"{% endif %} >{{variant.id}}</option>
+                                      <option  value="{{variant.id}}" {% if variant.id == current_variant.id %}selected="selected"{% endif %} >{{variant.id}}</option>
                                     {%endfor%}
                                   {%endfor%}
                                 </select>
