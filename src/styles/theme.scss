@@ -17,6 +17,7 @@
 
 /*================ GLOBAL ================*/
 @import url('global/normalize.scss');
+@import url('global/animations.scss');
 @import url('global/buttons.scss');
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
@@ -26,8 +27,6 @@
 @import url('global/rte.scss');
 @import url('global/typography.scss');
 @import url('global/visibility.scss');
-
-
 
 
 
@@ -45,6 +44,7 @@
 @import url('sections/shoutout.scss');
 @import url('sections/store-locator.scss');
 @import url('sections/the-science-section.scss');
+@import url('sections/off-canvas-cart.scss');
 
 
 

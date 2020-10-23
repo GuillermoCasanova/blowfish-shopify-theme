@@ -11,6 +11,34 @@
 }
 
 
+
+//
+// Sets the breakpoint in the DOM with CSS for JS to detect 
+// 
+
+body {
+&:before {
+    content: 'small';
+    position: fixed; 
+    left: -99999px;
+    opacity: 0; 
+  }
+
+  @include media-query($medium-up) {
+  &:before {
+      content: 'medium-up';
+    }
+  }
+
+  @include media-query($large-up) {
+  &:before {
+      content: 'large-up';
+    }
+  }
+}
+
+
+
 // Set the number of columns you want to use on your layout.
 $flexboxgrid-grid-columns: 12 !default;
 // Set the gutter between columns.

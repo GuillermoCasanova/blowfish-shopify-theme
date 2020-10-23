@@ -40,6 +40,11 @@
 // =require vendor/fullpage.js
 
 
+/*!
+ * ajaxCart.js
+ */
+// =require vendor/ajaxCart.js
+
 
 
 // Attempts to preserve comments that likely contain licensing information,
