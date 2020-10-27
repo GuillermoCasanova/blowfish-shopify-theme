@@ -88,7 +88,6 @@ theme.Product = (function() {
 
         let that = this; 
 
-        this.navHeight = $(selectors.header).height(); 
         this.$productPageNavLinks = $(selectors.productPageNavLinks); 
         this.currentProductHandle = (window.location.pathname).replace('/products/', ''); 
         this.$productPageNavItems = $(selectors.productPageNavItems);
@@ -141,7 +140,7 @@ theme.Product = (function() {
         let sectionDistanceFromTop = this.$products.find(pProductId).offset().top; 
 
         $('html, body').animate({
-          scrollTop: sectionDistanceFromTop - that.navHeight * 2
+          scrollTop: sectionDistanceFromTop - 120
         }, 1000)
       }
     },
