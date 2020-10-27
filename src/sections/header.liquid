@@ -36,11 +36,11 @@
     <nav class="main-nav  main-nav--small  row  middle-sm  between-sm"
          data-ui-component="main-navigation">
             
-        <a data-action="off-canvas-toggle" class="main-nav-menuToggle">
+        <button aria-label="Open off canvas navigation" data-menu-toggle class="main-nav-menuToggle">
           <div class="menuToggle-icon">
              
           </div>
-        </a>
+        </button >
   
         <div class="main-nav-title">
           <a class="main-nav-title" href="<?php echo $path; ?>"
@@ -84,15 +84,15 @@
 
 
   <!-- Off canvas navigation for small devices--> 
-  <nav class="main-nav--offCanvas"  data-ui-component="off-canvas-navigation">
+  <nav class="main-nav--offCanvas"  data-off-canvas-menu>
 
-      <a 
+      <button
          class="main-nav-navToggle"
-         data-action="off-canvas-toggle">
+         data-close-off-canvas-cart>
         <div class="navToggle-icon" >
            
         </div>
-      </a>
+      </button>
 
       <div class="container-fluid">
         <div class="row  center-sm">
@@ -239,17 +239,15 @@
               {% endfor %}
 
                 <li>
-                  <a href="/cart" class="main-nav-menu-cart"> 
-                     <div class="header-cart" data-ui-component="cart-icon">
-                        {%if cart.item_count > 0 %}
-                          <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon">
-                          <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon">
-                        {%else%}
-                          <img src="{{ 'cart.svg' | asset_url}}" alt="Cart Icon"  class="icon">
-                          <img src="{{ 'cart--alt.svg' | asset_url}}" alt="Cart Icon" class="alt-icon">
-                        {%endif%}
-                    </div>
-                  </a>
+                <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="header-cart" data-ui-component="cart-icon">  
+                      {%if cart.item_count > 0 %}
+                        <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon">
+                        <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon">
+                      {%else%}
+                        <img src="{{ 'cart.svg' | asset_url}}" alt="Cart icon that is empty"  class="icon">
+                        <img src="{{ 'cart--alt.svg' | asset_url}}" alt="Cart icon that is empty" class="alt-icon">
+                      {%endif%}
+                  </button>
                 </li>
     
                 <li>
@@ -275,10 +273,23 @@
     <span class="off-canvas-cart__loader__text">Updating cart...</span>
   </div>
 
-  <button class="off-canvas-cart__close" title="Close off canvas cart" data-close-off-canvas-cart>
+  <button hidden  class="off-canvas-cart__close" title="Close off canvas cart" data-close-off-canvas-cart>
     <span class="off-canvas-cart__close__icon">
 
     </span>
+  </button>
+
+  <button class="off-canvas-cart__continue-shopping" aria-label="Close cart and continue shopping" data-close-off-canvas-cart>
+    <span>
+        <span class="off-canvas-cart__continue-shopping__arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 29.8 27" xml:space="preserve" aria-hidden="true" ><title>Arrow pointing left</title><path d="M2.9 7l25.9.1M1 7l8.3 6.1M1 7l8.3-6"  style="fill:none;stroke:#7a7a7a;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;"/></svg>
+      </span>
+
+      <span class="off-canvas-cart__continue-shopping__text">
+        Continue Shopping
+      </span>
+    </span>
+    
   </button>
 
   <div  id="CartContainer"  class="off-canvas-cart__inner">
@@ -286,6 +297,10 @@
   </div>
 </aside>
 <!-- END Cart Container--> 
+
+<div class="off-canvas-cart-overlay"  data-off-canvas-cart-overlay>
+  
+</div>
 
 
 

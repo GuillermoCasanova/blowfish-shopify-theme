@@ -177,63 +177,6 @@ theme.Header = (function() {
         that.closeCart(); 
       }); 
 
-
-      $('.navigation-menu__drop-down').each(function(index, element) {
-
-          var timer; 
-          var dropDownHovered = false; 
-          var $dropDownParent = $(element); 
-
-          $dropDownParent.hover(function() {
-            dropDownHovered = true; 
-             clearTimeout(timer); 
-          }, function(event) {
-             dropDownHovered = false; 
-             timer = setTimeout(function() {
-               $dropDownParent.removeClass('is-open');
-             }, 100); 
-          }); 
-
-          $(element).find(selectors.dropDownToggle).hover(function(event) {
-             $dropDownParent.addClass('is-open');
-             clearTimeout(timer); 
-          }, function(event) {
-             timer = setTimeout(function() {
-              if(dropDownHovered) {
-                $(event.target).parent('[data-dropdown-id]').addClass('is-open');
-              } else {
-                $(event.target).parent('[data-dropdown-id]').removeClass('is-open');
-              }
-             }, 100); 
-          }); 
-
-
-          $(element).find('.navigation-menu__drop-down__links').mouseout(function(event) {
-              if(dropDownHovered) {
-                $(event.target).parent('[data-dropdown-id]').addClass('is-open');
-              } else {
-                $(event.target).parent('[data-dropdown-id]').removeClass('is-open');
-              }
-          });
-
-      });
-
-
-
-      $(selectors.dropDownToggle).focus(function(event) {
-
-        var id = $(event.target).data('toggle-id');
-
-        $(this).parent('[data-dropdown-id]').addClass('is-open');
-
-        $('[data-dropdown-id]').each(function() {
-          if($(this).hasClass('is-open') && $(this).data('dropdown-id') !== id) {
-            $(this).removeClass('is-open');
-            $(this).addClass('is-closed');
-          }
-        });
-      }); 
-
     }
 
 
@@ -262,7 +205,7 @@ theme.Header = (function() {
       ).getPropertyValue('content').replace(/"/g, "");
 
       if(currentBreakpoint == 'medium-up' || currentBreakpoint == 'large-up') {
-        
+        that.desktopNavInit(); 
       } else {
         console.log('mobile nav init'); 
         that.mobileNavInit(); 

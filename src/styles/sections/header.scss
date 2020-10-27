@@ -667,15 +667,22 @@
 
 
 .header-cart {
-  height: 2.375rem;
-  width: 2.375rem;
+  height: 2.4rem;
+  width: 2.4rem;
   background-size: contain;
   bottom: 4px;
   display: block; 
+  background-color:transparent; 
+  margin-bottom: 0; 
 
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @include media-query($large-up) {
+    height: 3rem; 
+    width: 3rem; 
   }
 }
 
@@ -698,6 +705,11 @@
       }
     }
   }
+}
+
+.main-nav-menu-cart {
+  background-color: transparent; 
+  margin-bottom: 0; 
 }
 
 // .main-nav--minimal {

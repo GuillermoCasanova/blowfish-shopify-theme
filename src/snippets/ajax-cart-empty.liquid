@@ -4,12 +4,26 @@
 {% endcomment %}
 
 <script id="EmptyCartTemplate" type="text/template">
-  <div class="off-canvas-cart__empty-state">
-    {% raw %}
-      <p> 
-         {{emptyState}}
-      </p>
-    {% endraw %}
-  </div>
+	<div class="off-canvas-cart__inner">
+
+  	<div class="off-canvas-cart__header">
+     
+    </div>
+
+
+	  <div class="off-canvas-cart__empty-state ">
+	    {% raw %}
+		    <div>
+		      <p> 
+		      	Your cart is currently empty.
+		         {{emptyState}}
+		      </p>
+		      <a class="button  button--secondary  button--micro  button--expanded" href="/products/starter-pack-20-tablets" rel="internal">
+		      	let's change that
+		    	</a>
+		    </div>
+	    {% endraw %}
+	  </div>
+	</div>
 </script>
       
