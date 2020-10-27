@@ -44,6 +44,9 @@
 
 .main-nav--small {
 
+  .main-nav-title {
+    margin-bottom: 0; 
+  }
 
   .menuToggle-icon {
     border-bottom: 4px solid $tertiary-color; 
@@ -84,6 +87,7 @@
     position: relative;
     cursor: pointer; 
     border-radius: 0; 
+    margin-bottom: 0; 
     background-color: transparent; 
   }
 
@@ -305,7 +309,7 @@
 }
 
 .main-nav--small .main-nav-title {
-  width: 7.5rem;
+  width: 7rem;
   height: 100%
 }
 

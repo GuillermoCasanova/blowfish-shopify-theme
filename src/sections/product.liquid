@@ -1,55 +1,56 @@
 
 
 
-<div class="section--main">
-  <div class="section" data-section-id="{{ section.id }}" data-section-type="product">
-  
-    {%- assign current_variant = product.selected_or_first_available_variant -%}
-    {%- assign current_product = product -%}
-  
-    <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
-    <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
-    <meta itemprop="brand" content="{{ product.vendor }}">
-    <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
-    <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+<div data-section-id="{{ section.id }}" data-section-type="product">
 
-    <section>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-12">
-              <span class="product-page-headline">
-                How Much Blowfish Today?
-              </span>
-            </div>
-          </div>
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign current_product = product -%}
 
-    <!-- <nav class="product-page-nav" data-product-page-nav>
- 
-      <div class="product-page-nav__inner ">
-        <ul class="product-page-nav__links  ">
+  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
+  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
 
-          {%for collection in collections %}
-            {%if collection.id == 372739913 %} 
-              {%for product in collection.products%}
-              <li class="product-page-nav__links__item " data-product-page-nav-item>
-                <a href="#{{product.handle}}"  class="product-page-nav__links__link"  data-product-page-nav-link>
-                {{product.title}}
-                </a>
-              </li>
-              {%endfor%}
-            {%endif%}
-          {%endfor%}
-        </ul>
-     
+  <section class="section  section--main">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <span class="product-page-headline">
+            How Much Blowfish Today?
+          </span>
+        </div>
       </div>
-    </nav>
- -->
- <!--   <div class="product-page-nav__track">
+
+     <nav class="product-page-nav" data-product-page-nav>
+        <div class="product-page-nav__inner"  data-product-page-nav-scroll>
+          <ul class="product-page-nav__links">
+            {%for collection in collections %}
+              {%if collection.id == 372739913 %} 
+                {%for product in collection.products%}
+                <li class="product-page-nav__links__item" data-product-page-nav-item>
+                  <a href="#{{product.handle}}"  class="product-page-nav__links__link"  data-product-page-nav-link>
+                    <span class="product-page-nav__links__link__title">
+                    {{product.title}}
+                    </span>
+                    <span class="product-page-nav__links__link__tablet-count">
+                      {{product.metafields.product['tablet_count']}}
+                    </span>
+                  </a>
+                </li>
+                {%endfor%}
+              {%endif%}
+            {%endfor%}
+          </ul>
+        </div>
+       <div class="product-page-nav__track">
           <div class="product-page-nav__track__active-marker">
             
           </div>
         </div>
- -->
+    </nav>
+
+    <div class="container-fluid">
       <div data-products>
         {%for collection in collections %}
           {%if collection.id == 372739913 %} 
@@ -85,8 +86,7 @@
                                       </h1>
                                   
                                       <span class="product__price">
-                                        <span  class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.price  | money}}
-                                         </span>
+                                         {{product.price  | money}}
                                        </span>
 
                                         <div class="product__rating  yotpo bottomLine">
@@ -179,11 +179,10 @@
           {%endif%}
         {%endfor%}
       </div>
-    </section>
-
-  </div>
+  </section>
 
 </div>
+
 
 
 

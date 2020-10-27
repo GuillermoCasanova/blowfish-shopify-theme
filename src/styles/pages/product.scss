@@ -9,6 +9,37 @@
 
 
 
+/*------------------------------------*\
+    #Product Page Headline
+\*------------------------------------*/
+
+
+.product-page-headline {
+	color: $primary-color; 
+	font-weight: bold; 
+	font-family: $secondary-font-family;
+	text-align: center; 
+	display: block;
+	margin-top: rem-calc($level4); 
+	margin-bottom: rem-calc($level3);
+	@include h3();  
+
+	@include media-query($medium-up) {
+		margin-top: rem-calc($level7); 
+		margin-bottom: rem-calc($level5); 
+		@include h2();  
+	}
+
+	@include media-query($large-up) {
+		margin-top: rem-calc($level7 + $level2); 
+		@include h1();
+	}
+}
+
+
+
+
+
 
 /*------------------------------------*\
     #Product Page Nav
@@ -17,33 +48,60 @@
 
 .product-page-nav {
 	width: 100vw; 
-	margin-top: rem-calc($level3);  
 	margin-bottom: rem-calc($level5);  
+	overflow: hidden; 
+	position: relative;
+
+	@include media-query($medium-up) {
+		width: 94vw; 
+		margin-right: auto; 
+		margin-left: auto; 
+	}
+
+	@include media-query($large-up) {
+		max-width: 57rem; 
+		margin-bottom: 0;  
+	}
 
 	.product-page-nav__inner {
     overflow-x: scroll;
-    font-size: 0px;
-    margin: 0px -1000px;
+    margin: 0 -1000px;
     scroll-padding: 0px 1000px;
     scroll-snap-type: x mandatory;
+    position: relative;
+	  //scrollbar-width: 0;
+	  scrollbar-color: transparent; 
 
+		/* Works on Chrome/Edge/Safari */
+		&::-webkit-scrollbar {
+		  //width: 0;
+		}
+		&::-webkit-scrollbar-track {
+		  background: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+		  background-color: transparent;
+		  border-radius: 0;
+		  //border: 0;
+		}
 
 		.product-page-nav__links {
-			width: 100%; 
-			// display: flex; 
-			// flex-direction: row;  
-			// margin-left: rem-calc($level2); 
-			// margin-right: rem-calc($level2); 
-	    display: inline-flex;
+			display: inline-flex; 
+			margin-left: rem-calc($level2); 
+			margin-right: rem-calc($level2); 
 	    white-space: nowrap;
+	    padding: 0px 1000px;
+	    width: 100%; 
 
+	    @include media-query($medium-up) {
+	 	    justify-content: space-around;
+	    }
 
 			.product-page-nav__links__item {
-				margin-right: rem-calc($level2); 
-				margin-left: rem-calc($level2); 
-				background-color: red; 
-				min-width: 7rem;  
-				max-width: 8rem; 
+				min-width: 8rem;  
+				position: relative; 
+				margin-right: rem-calc($level1); 
+				margin-left: rem-calc($level1); 
 
 				&.is-active,
 				&.swiper-slide-active {
@@ -67,61 +125,53 @@
 
 			.product-page-nav__links__link {
 				text-align: center; 
-				padding-left: rem-calc($level2); 
 				color: $quaternary-color;
 				font-family: $tertiary-font-family; 
-				padding-right: rem-calc($level2); 
 				text-align: center;
-				max-width: 7rem;
+				texst-align: center;
 				display: block;
 				@include text-mini(); 
+
+				.product-page-nav__links__link__title {
+					display: block; 
+					margin-bottom: 0; 
+					text-align: center; 
+					@include text-micro(); 
+				}
+
+				.product-page-nav__links__link__tablet-count {
+					display: block; 
+					text-align: center; 
+					width: 100%; 
+					padding-bottom: rem-calc($level1); 
+					@include text-mini(); 
+				}
 			}
 		}
 
-		.product-page-nav__track {
-			width: 100%; 
-			height: 2px; 
-			background-color: #EBEBEB;
-			display: block;
-			margin-left: rem-calc($level2); 
-			margin-right: rem-calc($level2); 
-			z-index: 0;
-    	position: absolute;
-    	left: 0; 
-    	right: 0; 
-		}
+	}
+
+	.product-page-nav__track {
+    width: 100%;
+    height: 3px;
+    background-color: #EBEBEB;
+    display: block;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    bottom: -.5px;
+    right: 0;
 	}
 }
+
 
 
 
 
 
 /*------------------------------------*\
-    #Product Page Headline
+    #Product
 \*------------------------------------*/
-
-
-.product-page-headline {
-		color: $primary-color; 
-		font-weight: bold; 
-		font-family: $secondary-font-family;
-		text-align: center; 
-		display: block;
-		margin-top: rem-calc($level2); 
-		margin-bottom: rem-calc($level5);
-		@include h2();  
-
-	@include media-query($medium-up) {
-		margin-top: rem-calc($level5); 
-		@include h1();  
-	}
-
-	@include media-query($large-up) {
-		margin-top: 0;
-		margin-bottom: 0; 
-	}
-}
 
 
 .product {
@@ -133,7 +183,7 @@
 	}
 
 	@include media-query($large-up) {
-		margin-top: rem-calc($level5); 
+		margin-top: rem-calc($level3); 
 		margin-bottom: rem-calc($level7 + $level3); 
 	}
 
@@ -145,7 +195,7 @@
 			.product__images {
 
 				@include media-query($medium-up) {
-					right: -10%; 
+					right: -5%; 
 					left: auto; 
 				}
 			}
@@ -225,9 +275,9 @@
     z-index: 0; 
 
     @include media-query($medium-up) {
-			max-width: 110%;
-			width: 110%;
-			left: -10%;
+			max-width: 105%;
+			width: 105%;
+			left: -5%;
 			right: auto;   
     }
 

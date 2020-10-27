@@ -34,7 +34,7 @@
   <div class="hide-for-medium-up" role="navigation" data-mobile-header>
 
     <nav class="main-nav  main-nav--small  row  middle-sm  between-sm"
-         data-ui-component="main-navigation">
+         data-main-navigation>
             
         <button aria-label="Open off canvas navigation" data-menu-toggle class="main-nav-menuToggle">
           <div class="menuToggle-icon">
@@ -42,28 +42,21 @@
           </div>
         </button >
   
+        {% if template.name == 'index' %}
+        <h1 class="main-nav-title">
+        {% else %}
         <div class="main-nav-title">
-          <a class="main-nav-title" href="<?php echo $path; ?>"
-             data-action="off-canvas-toggle">
-              {% if template.name == 'index' %}
-                <h1 class="row middle-sm">
-              {% else %}
-              <div>
-              {%endif%}
-               <a href="/" class="logo-image" rel="internal" title="{{ shop.name }}">
-                <span class="visually-hidden">Blowfish For Hangovers</span>
-                
-                <img src="{{'logo--blowfish.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo">
-
-                <img src="{{'logo--blowfish--white.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo  main-nav-title-logo--alt">
-               </a>
-              {% if template.name == 'index' %}
-                </h1>
-              {% else %}
-              </div>
-              {%endif%}
-            </a>
+        {%endif%}
+         <a href="/" class="logo-image" rel="internal" title="{{ shop.name }}">
+          <span class="visually-hidden">Blowfish For Hangovers</span>
+          <img src="{{'logo--blowfish.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo">
+          <img src="{{'logo--blowfish--white.svg' | asset_url}}" alt="Blowfish Logo" width="260" class="main-nav-title-logo  main-nav-title-logo--alt">
+         </a>
+        {% if template.name == 'index' %}
+          </h1>
+        {% else %}
         </div>
+        {%endif%}
 
         <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="main-nav-menu-cart"> 
          <div class="header-cart" data-ui-component="cart-icon">
@@ -187,7 +180,8 @@
   <div class="show-for-medium-up">
 
     <nav class="main-nav  main-nav--large"
-         data-ui-component="main-navigation">
+         data-desktop-header
+         data-main-navigation>
         
         <div class="main-nav-inner  row  center-md  middle-md between-md">
             

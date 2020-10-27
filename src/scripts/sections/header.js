@@ -38,6 +38,96 @@ theme.Header = (function() {
   var openSection = false; 
   
 
+
+
+      /*------------------------------------*\
+          #Sticky Main Nav Styles Toggle
+      \*------------------------------------*/
+
+      // Variable to detect if user is smooth scrolling to a section
+      var smoothScrolling = false; 
+
+      // Checks to see if there is a '[data-action="toggle-top-bar"]' to hide/show
+      // This prevents it from activating on small devices. 
+      if($('[sticky-nav]').length > 0) {
+
+          //
+          // Function checks to see if the user is scrolling, 
+          // if they are, 
+
+          (function($){
+
+              var prevScroll = 0;
+              var currentScroll; 
+              var stickyNavContainer = $('[sticky-nav]');
+              var navBar = $('[data-main-navigation]');
+              var cart = $('[data-ui-component="cart-icon"]'); 
+              var navBarHeight = navBar.height(); 
+              var didScroll = false; 
+              var theWindow = $(window);
+
+
+              $(window).scroll(function() {
+                  didScroll = true;
+              });
+               
+              setInterval(function() {
+
+                if (didScroll) {
+
+                  didScroll = false; 
+
+                  currentScroll = theWindow.scrollTop();
+                  
+                  if(100 < currentScroll) {
+
+                    navBar.addClass('main-nav--fixed');  
+                    navBar.removeClass('main-nav--alt');
+                    cart.removeClass('cart--alt'); 
+
+                  } else {
+                    
+                    navBar.removeClass('main-nav--fixed');
+
+                  }
+
+                   prevScroll = currentScroll; 
+
+                } 
+
+              }, 300);
+
+          })(jQuery);
+      }
+
+      /*------------------------------------*\
+          #Nav Styles Toggle Based on page 
+      \*------------------------------------*/
+
+      //If the user is on the hangover-science.html page, show the alt styling for the nav and cart
+      //  
+
+      var altNavPage = 'hangover-science'; 
+
+      var hideLogoPage = '/'; 
+
+      (function($) {
+
+        // if(BF_current_page == altNavPage) {
+
+        //   $('[data-ui-component="main-navigation"]').addClass('mainNav--alt');
+        //   $('[data-ui-component="cart-icon"]').addClass('cart--alt'); 
+
+        // }
+
+        if(window.location.pathname === hideLogoPage || window.location.pathname === '/' ) {
+          $('[data-main-navigation]').addClass('is-logo-hidden');
+        }
+
+      })(jQuery);
+
+
+
   var Header = function(container) {
 
     var that = this; 
@@ -211,167 +301,6 @@ theme.Header = (function() {
 
 })();
 
-
-
-
-//<script>
-
-
-// $(document).ready(function() {
-
-
-// /*------------------------------------*\
-//           #Sticky Main Nav Styles Toggle
-//       \*------------------------------------*/
-
-//       // Variable to detect if user is smooth scrolling to a section
-//       var smoothScrolling = false; 
-
-//       // Checks to see if there is a '[data-action="toggle-top-bar"]' to hide/show
-//       // This prevents it from activating on small devices. 
-//       if($('[sticky-nav]').length > 0) {
-
-//           //
-//           // Function checks to see if the user is scrolling, 
-//           // if they are, 
-
-//           (function($){
-
-//               var prevScroll = 0;
-//               var currentScroll; 
-//               var stickyNavContainer = $('[sticky-nav]');
-//               var navBar = $('[data-ui-component="main-navigation"]');
-//               var cart = $('[data-ui-component="cart-icon"]'); 
-//               var navBarHeight = navBar.height(); 
-//               var didScroll = false; 
-//               var theWindow = $(window);
-
-
-//               $(window).scroll(function() {
-//                   didScroll = true;
-//               });
-               
-//               setInterval(function() {
-
-//                 if (didScroll) {
-
-//                   didScroll = false; 
-
-//                   currentScroll = theWindow.scrollTop();
-                  
-//                   if(100 < currentScroll) {
-
-//                     navBar.addClass('main-nav--fixed');  
-//                     navBar.removeClass('main-nav--alt');
-//                     cart.removeClass('cart--alt'); 
-
-//                   } else {
-                    
-//                     navBar.removeClass('main-nav--fixed');
-
-//                   }
-
-//                    prevScroll = currentScroll; 
-
-//                 } 
-
-//               }, 300);
-
-//           })(jQuery);
-//       }
-
-//       /*------------------------------------*\
-//           #Nav Styles Toggle Based on page 
-//       \*------------------------------------*/
-
-//       //If the user is on the hangover-science.html page, show the alt styling for the nav and cart
-//       //  
-
-//       var altNavPage = 'hangover-science'; 
-
-//       var hideLogoPage = '/'; 
-
-//       (function($) {
-
-//         // if(BF_current_page == altNavPage) {
-
-//         //   $('[data-ui-component="main-navigation"]').addClass('mainNav--alt');
-//         //   $('[data-ui-component="cart-icon"]').addClass('cart--alt'); 
-
-//         // }
-
-//         if(window.location.pathname === hideLogoPage || window.location.pathname === '/' ) {
-//           $('[data-ui-component="main-navigation"]').addClass('is-logo-hidden');
-//         }
-
-//       })(jQuery);
-
-
-
-
-
-//      /*------------------------------------*\
-//           #Off Canvas 
-//       \*------------------------------------*/
-
-//       var offCanvasNav = $('[data-ui-component="off-canvas-navigation"]'); 
-
-//       //
-//       //Enable off  Canvas functionality by adding and removing the 'is-open class'
-//       //
-//       function togglemainNavSmall() {
-
-//           if(offCanvasNav.hasClass('is-open')) {
-
-//             offCanvasNav.removeClass('is-open'); 
-//             offCanvasNav.addClass('is-closed'); 
-
-//           } else {
-            
-//             offCanvasNav.removeClass('is-closed'); 
-//              offCanvasNav.addClass('is-open'); 
-             
-//           }
-
-//       }
-
-
-//       $('[data-action="off-canvas-toggle"]').on('click', function() {
-//         togglemainNavSmall();
-//       });
-
-
-//         //
-//         //Function that can be used and inserted to check if we are on a mobile device
-//         //
-//         var checkIfMobile = function() {
-
-//           var mediumUpDeviceBreakpoint  = 700; 
-
-//           var windowWidth = $(window).width(); 
-
-//           if(windowWidth > mediumUpDeviceBreakpoint) {
-
-//               return false;
-
-//           } else {
-
-//               return true; 
-//           }
-
-//         };
-
-
-//       $('.main-nav-menu-link').on('click', function() {
-
-//         if(checkIfMobile()) {
-//           offCanvasNav.removeClass('is-open'); 
-//           offCanvasNav.addClass('is-closed');        
-//         }
-//       }); 
-
-
-// }, 200); 
 
 
 

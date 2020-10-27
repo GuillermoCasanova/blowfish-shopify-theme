@@ -21,10 +21,11 @@ theme.Product = (function() {
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
     singleOptionSelector: '[data-single-option-selector]',
-    mobileHeader: '[data-mobile-header]',
+    header: '[data-header]',
     product: '[data-product]',
     products: '[data-products]',
     productPageNav: '[data-product-page-nav]',
+    productPageNavScroll: '[data-product-page-nav-scroll]',
     productPageNavLinks: '[data-product-page-nav-link]',
     productPageNavItems: '[data-product-page-nav-item]'
   };
@@ -87,59 +88,58 @@ theme.Product = (function() {
 
         let that = this; 
 
-        this.navHeight = $(selectors.mobileHeader).height(); 
+        this.navHeight = $(selectors.header).height(); 
         this.$productPageNavLinks = $(selectors.productPageNavLinks); 
         this.currentProductHandle = (window.location.pathname).replace('/products/', ''); 
         this.$productPageNavItems = $(selectors.productPageNavItems);
+        this.$productPageNavScroll = $(selectors.productPageNavScroll); 
         this.$products = $(selectors.products);  
         var $productPageNavScroll = $('[data-product-page-nav-scroll]'); 
 
-
-        // var mySwiper = new Swiper('.swiper-container', {
-        // })
-
+        this.setActiveProduct(this.currentProductHandle); 
 
         this.$productPageNavLinks.on('click', function(e) {
          e.preventDefault(); 
-
-          // let productId = $(this).attr("href"); 
-
-          // that.setActiveProduct(this); 
-
-          // var target = this; 
-          // var targetIndex = that.$productPageNavLinks.index(this) + 1;
-
-          // console.log($(this).parent().offset().left);
-          // console.log($('.product-page-nav__links').outerWidth(true));
-          // console.log($productPageNavScroll.outerWidth(true));
-
-          // // console.log($productPageNavScroll.scrollLeft()); 
-          // // console.log($productPageNavScroll.outerWidth(true) / 2);
-          // // console.log(($(target).parent().outerWidth(true) / 2) - $productPageNavScroll.scrollLeft()); 
-
-          // // $productPageNavScroll.animate({
-          // //   scrollLeft: ( / 2) - $(this).scrollLeft
-          // // }, 600);
-
-          //that.goToProduct(productId); 
+         let productId = $(this).attr("href").replace('#', ''); 
+         that.setActiveProduct(productId); 
+         that.goToProduct($(this).attr("href")); 
         });
       },
-      setActiveProduct: function(pLinkClicked) {
+      setActiveProduct: function(pProductHandle, pSpeed) {
+        console.log(pProductHandle); 
+        let id = pProductHandle;
+
         this.$productPageNavItems.removeClass('is-active'); 
-        $(pLinkClicked).parent().addClass('is-active');
+
+        this.$productPageNavItems.each(function() {
+
+         var linkHandle = $(this).find('a').attr("href").replace('#', '');
+
+         if(linkHandle == pProductHandle) {
+            $(this).addClass('is-active');
+         }
+        }); 
+
+        var active = this.$productPageNavScroll.find('.is-active'); // find the active element
+        var activeWidth = active.width() / 2; // get active width center
+
+        var pos = active.position().left + activeWidth; //get left position of active li + center position
+        var elpos = this.$productPageNavScroll.scrollLeft(); // get current scroll position
+        var elW = this.$productPageNavScroll.width(); //get div width
+        //var divwidth = $(elem).width(); //get div width
+        pos = pos + elpos - elW / 2; // for center position if you want adjust then change this
+
+        this.$productPageNavScroll.animate({
+          scrollLeft: pos
+        }, pSpeed == undefined ? 600 : pSpeed);
+        return this;
+
       }, 
       goToProduct: function(pProductId) {
 
         let that = this; 
         let sectionDistanceFromTop = this.$products.find(pProductId).offset().top; 
 
-      // var activeCategory = this.getSetActiveCategory()
-
-      //   if(activeCategory) {
-      //     var $activeSlide = $(activeCategory);
-      //   } else {
-      //     return false; 
-      //   }
         $('html, body').animate({
           scrollTop: sectionDistanceFromTop - that.navHeight * 2
         }, 1000)
