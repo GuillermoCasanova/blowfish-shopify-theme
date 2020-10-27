@@ -130,10 +130,12 @@ ShopifyAPI.addItemFromForm = function(form, callback, errorCallback) {
 
 // Get from cart.js returns the cart in JSON
 ShopifyAPI.getCart = function(callback) {
+
   jQuery.getJSON('/cart.js', function(cart) {
     if (typeof callback === 'function') {
       callback(cart);
     } else {
+    	console.log('cart is different');
       ShopifyAPI.onCartUpdate(cart);
     }
   });
@@ -210,7 +212,8 @@ var ajaxCart = (function(module, $) {
       disableAjaxCart: false,
       enableQtySelectors: true,
       closeOffCanvasCart: '[data-close-off-canvas-cart]',
-      offCanvasCart: '[data-off-canvas-cart]'
+      offCanvasCart: '[data-off-canvas-cart]',
+    	addToCartButtonText: '[data-button-text]'
     };
 
 
@@ -248,7 +251,6 @@ var ajaxCart = (function(module, $) {
   };
 
   loadCart = function() {
-    //$body.addClass('drawer--is-loading');
     ShopifyAPI.getCart(cartUpdateCallback);
   };
 
@@ -272,13 +274,11 @@ var ajaxCart = (function(module, $) {
   formOverride = function() {
     $formContainer.on('submit', function(evt) {
     		
-    		console.log(evt); 
-
-    		
         evt.preventDefault();
 
         // Add class to be styled if desired
-        $addToCart.removeClass('is-added').addClass('is-adding');
+        //$addToCart.removeClass('is-added').addClass('is-adding');
+        $(this).find(settings.addToCartButtonText).text('Adding to Cart...')
 
         // Remove any previous quantity errors
         $('.qty-error').remove();
@@ -292,8 +292,15 @@ var ajaxCart = (function(module, $) {
     });
   };
 
-  itemAddedCallback = function() {
-  	$addToCart.removeClass('is-adding').addClass('is-added');
+  itemAddedCallback = function(pForm) {
+
+  	//$addToCart.removeClass('is-adding').addClass('is-added');
+    $(pForm).find(settings.addToCartButtonText).text('Item Added!');
+
+    setTimeout(function() {
+    	$addToCart.find(settings.addToCartButtonText).text('Add to Cart');
+    }, 600);
+
     ShopifyAPI.getCart(cartUpdateCallback);
   };
 

@@ -89,8 +89,7 @@ $(document).ready(function() {
 
      ajaxCart.init({
         cartContainer: '#CartContainer',
-        addToCartSelector: '[data-thumb-add-to-cart-btn]',
-        enableQtySelectors: true,
+        addToCartSelector: '[data-add-to-cart]',
         moneyFormat: theme.strings.moneyFormat
     });
      

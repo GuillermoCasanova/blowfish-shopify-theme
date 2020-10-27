@@ -103,8 +103,6 @@ ShopifyAPI.onError = function(XMLHttpRequest) {
 ==============================================================================*/
 ShopifyAPI.addItemFromForm = function(form, callback, errorCallback) {
 
-	console.log(form); 
-
   var params = {
     type: 'POST',
     url: '/cart/add.js',
@@ -248,8 +246,9 @@ var ajaxCart = (function(module, $) {
   };
 
   loadCart = function() {
-    //$body.addClass('drawer--is-loading');
-    ShopifyAPI.getCart(cartUpdateCallback);
+  	// console.log('load up cart'); 
+  	// $offCanvasCart.addClass('is-loading'); 
+   //  ShopifyAPI.getCart(cartUpdateCallback);
   };
 
   updateCountPrice = function(cart) {

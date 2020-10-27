@@ -55,6 +55,7 @@
     margin: auto;
     border-radius: 12px;
     transition: all .2s cubic-bezier(.86,0,.070,1);
+    width: 100%; 
 
     &:before,
     &:after {
@@ -65,6 +66,7 @@
       content: " ";
       position: absolute;
       top: 10px;
+      left: 0; 
       background-color: $tertiary-color; 
       transition: all .2s cubic-bezier(.86,0,.070,1);
     }
@@ -77,9 +79,12 @@
   .main-nav-menuToggle {
     display: block; 
     width: 36px;
+    height: 36px;
     height: 100%;
     position: relative;
     cursor: pointer; 
+    border-radius: 0; 
+    background-color: transparent; 
   }
 
   .main-nav-menuToggle:hover, 
@@ -164,11 +169,11 @@
 
 
 .main-nav--offCanvas .main-nav-navToggle {
-  width: 100%;
   height: rem-calc(60px);
   width: rem-calc(60px);
   position: relative;
   display: block;
+  background-color: transparent; 
 }
 
 .main-nav--offCanvas .main-nav-navToggle .navToggle-icon {
@@ -359,7 +364,6 @@
 }
 
 .main-nav--offCanvas .main-nav-navToggle {
-  width: 100%;
   padding-left: .1875rem
 }
 

@@ -75,6 +75,8 @@ theme.Product = (function() {
     }
 
     this.productPageNav.init(); 
+    this.initAjaxCart(); 
+    
 
   }
 
@@ -205,7 +207,18 @@ theme.Product = (function() {
 
       this.$featuredImage.attr('src', sizedImgUrl);
     },
-
+    
+    /**
+     * Initializes the AJAX cart with product template properties  
+     */
+    initAjaxCart: function() {
+      //  ajaxCart.init({
+      //     formSelector: '#AddToCartForm--' + this.$container.attr('data-section-id'),
+      //     cartContainer: '#CartContainer',
+      //     addToCartSelector: '#AddToCart--' + this.$container.attr('data-section-id'),
+      //     moneyFormat: theme.strings.moneyFormat
+      // });
+    },
     /**
      * Event callback for Theme Editor `section:unload` event
      */

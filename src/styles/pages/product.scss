@@ -5,6 +5,16 @@
 \*------------------------------------*/
 
 
+
+
+
+
+
+/*------------------------------------*\
+    #Product Page Nav
+\*------------------------------------*/
+
+
 .product-page-nav {
 	width: 100vw; 
 	margin-top: rem-calc($level3);  
@@ -83,6 +93,15 @@
 	}
 }
 
+
+
+
+
+/*------------------------------------*\
+    #Product Page Headline
+\*------------------------------------*/
+
+
 .product-page-headline {
 		color: $primary-color; 
 		font-weight: bold; 
@@ -95,37 +114,40 @@
 
 	@include media-query($medium-up) {
 		margin-top: rem-calc($level5); 
-		margin-bottom: rem-calc($level3); 
 		@include h1();  
 	}
 
 	@include media-query($large-up) {
-		margin-top: rem-calc($level3); 
+		margin-top: 0;
+		margin-bottom: 0; 
 	}
 }
 
 
 .product {
-	margin-bottom: rem-calc($level7 + $level3); 
-	
+	margin-bottom: rem-calc($level7); 
 
 	@include media-query($medium-up) {
 		margin-top: rem-calc($level7); 
-		margin-bottom: rem-calc($level7 + $level5); 
+		margin-bottom: rem-calc($level7 + $level3); 
 	}
 
 	@include media-query($large-up) {
-		margin-bottom: rem-calc($level7 + $level7); 
+		margin-top: rem-calc($level5); 
+		margin-bottom: rem-calc($level7 + $level3); 
 	}
 
 	@include media-query($widescreen) {
-		margin-bottom: rem-calc($level7 + $level7 + $level2);
+		margin-bottom: rem-calc($level7 + $level7);
 	}
 		
 	&.product--reverse {
 			.product__images {
-				right: -10%; 
-				left: auto; 
+
+				@include media-query($medium-up) {
+					right: -10%; 
+					left: auto; 
+				}
 			}
 	}
 

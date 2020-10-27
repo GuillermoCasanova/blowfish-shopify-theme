@@ -12,6 +12,7 @@ theme.Header = (function() {
   var selectors = {
     offCanvasMenu: '[data-off-canvas-menu]',
     offCanvasCart: '[data-off-canvas-cart]',
+    offCanvasCartOverlay: '[data-off-canvas-cart-overlay]',
     closeOffCanvasCart: '[data-close-off-canvas-cart]',
     menuToggle: '[data-menu-toggle]',
     dropDownToggle: '[data-drop-down-toggle]',
@@ -23,13 +24,14 @@ theme.Header = (function() {
     navigationLink: '[data-navigation-link]'
   };
 
-   var offCanvasMenu = $(selectors.offCanvasMenu);
+   var $offCanvasMenu = $(selectors.offCanvasMenu);
    var $offCanvasCart = $(selectors.offCanvasCart); 
    var $dropdownOverlay = $(selectors.dropdownOverlay); 
    var $navigation = $(selectors.navigation); 
    var $navigationLinks =  $(selectors.navigationLink); 
+   var $offCanvasCartOverlay = $(selectors.offCanvasCartOverlay); 
 
-  var menuToggle = $(selectors.menuToggle); 
+  var $menuToggle = $(selectors.menuToggle); 
   var menuContainer = $(selectors.menuContainer);
   var menuIsOpen = false; 
   var offCanvasCartOpen = false; 
@@ -39,34 +41,33 @@ theme.Header = (function() {
   var Header = function(container) {
 
     var that = this; 
-    this.$container = $(container); 
-
-    //this.template = $container.attr('data-template');
     var loadingSection = false; 
 
+    this.$container = $(container); 
+
     var toggleMenuIcon = function() {
-      if(menuToggle.hasClass('is-menu-open')) {
-        menuToggle.removeClass('is-menu-open');
-        menuToggle.addClass('is-menu-closed');
+      if($menuToggle.hasClass('is-menu-open')) {
+        $menuToggle.removeClass('is-menu-open');
+        $menuToggle.addClass('is-menu-closed');
       } else {
-        menuToggle.removeClass('is-menu-closed');
-        menuToggle.addClass('is-menu-open');
+        $menuToggle.removeClass('is-menu-closed');
+        $menuToggle.addClass('is-menu-open');
       }
     }
 
     this.toggleNavigation = function()   {
 
-      if(offCanvasMenu.hasClass('is-open')) {
-        offCanvasMenu.removeClass('is-open');
-        offCanvasMenu.addClass('is-closed');
-        menuToggle.removeClass('is-open');
-        menuToggle.addClass('is-closed');
+      if($offCanvasMenu.hasClass('is-open')) {
+        $offCanvasMenu.removeClass('is-open');
+        $offCanvasMenu.addClass('is-closed');
+        $menuToggle.removeClass('is-open');
+        $menuToggle.addClass('is-closed');
         menuIsOpen = false;    
       } else{
-        offCanvasMenu.addClass('is-open');
-        offCanvasMenu.removeClass('is-closed');
-        menuToggle.addClass('is-open');
-        menuToggle.removeClass('is-closed');
+        $offCanvasMenu.addClass('is-open');
+        $offCanvasMenu.removeClass('is-closed');
+        $menuToggle.addClass('is-open');
+        $menuToggle.removeClass('is-closed');
         menuIsOpen = true;    
       }
     }
@@ -76,11 +77,15 @@ theme.Header = (function() {
       if($offCanvasCart.hasClass('is-open')) {
         $offCanvasCart.removeClass('is-open');
         $offCanvasCart.addClass('is-closed');
+        $offCanvasCartOverlay.removeClass('is-showing');
+        $offCanvasCartOverlay.addClass('is-hidden');
         offCanvasCartOpen = false;    
       } else{
+        ajaxCart.load(); 
         $offCanvasCart.addClass('is-open');
         $offCanvasCart.removeClass('is-closed');
-        ajaxCart.load(); 
+        $offCanvasCartOverlay.addClass('is-showing');
+        $offCanvasCartOverlay.removeClass('is-hidden');
         offCanvasCartOpen = true;    
       }
     }
@@ -88,6 +93,8 @@ theme.Header = (function() {
     this.closeCart = function() {
       $offCanvasCart.removeClass('is-open');
       $offCanvasCart.addClass('is-closed');
+      $offCanvasCartOverlay.removeClass('is-showing');
+      $offCanvasCartOverlay.addClass('is-hidden')
       offCanvasCartOpen = false;    
     }
 
@@ -101,37 +108,6 @@ theme.Header = (function() {
       $dropdownOverlay.addClass('is-hidden');
     }
 
-
-    //
-    // Setup jquery that applies to all devices
-    //
-    // this.globalNavPropInit = function() {
-
-    //   $navigationLinks.mouseover(function() {
-    //     var handle = $(event.target).data('navigation-handle');
-    //     console.log(handle); 
-    //     event.preventDefault(); 
-
-
-    //     $('[data-navigation-link]').each(function() {
-    //       if(!$(this).hasClass('is-opaqued') && $(this).data('navigation-handle') !== handle) {
-    //         $(this).addClass('is-opaqued');
-    //       }
-    //     });
-
-    //     // if($('[data-navigation-handle=' + handle + ']').hasClass('is-opaqued')) {
-    //     //   $('[data-navigation-handle=' + handle + ']').removeClass('is-opaqued');
-    //     // } else {
-    //     //   $('[data-navigation-handle=' + handle + ']').addClass('is-opaqued');
-    //     // }
-    //   });
-
-    //   $navigationLinks.mouseout(function() {
-    //     event.preventDefault(); 
-    //     $('[data-navigation-link]').removeClass('is-opaqued');
-    //   });
-
-    // }
 
     //
     // Sets up transtion-delay on all links for stagger animation effect
@@ -148,7 +124,6 @@ theme.Header = (function() {
     // Setup mobile-specific jquery 
     //
     this.mobileNavInit = function() {
-
       $(selectors.menuToggle).on('click', function(event) {
         that.toggleNavigation(); 
       }); 
@@ -160,7 +135,6 @@ theme.Header = (function() {
       $(selectors.closeOffCanvasCart).on('click', function(event) {
         that.closeCart(); 
       }); 
-
     }
 
 
@@ -207,7 +181,6 @@ theme.Header = (function() {
       if(currentBreakpoint == 'medium-up' || currentBreakpoint == 'large-up') {
         that.desktopNavInit(); 
       } else {
-        console.log('mobile nav init'); 
         that.mobileNavInit(); 
       } 
     }
@@ -229,6 +202,8 @@ theme.Header = (function() {
   Header.openCart = function() {
     $offCanvasCart.removeClass('is-closed');
     $offCanvasCart.addClass('is-open');
+    $offCanvasCartOverlay.addClass('is-showing');
+    $offCanvasCartOverlay.removeClass('is-hidden');
     offCanvasCartOpen = true; 
   }; 
 

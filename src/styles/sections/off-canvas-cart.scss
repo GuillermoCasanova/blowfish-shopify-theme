@@ -40,37 +40,87 @@
 }
 
 
+@keyframes enter-overlay {
+  0% {
+    transform: translateX(120%);
+    opacity: 0; 
+  }
+
+  1% {
+    transform: translateX(0);
+    opacity: 0; 
+  }
+  
+  100% {
+    transform: translateX(0);
+    opacity: .8; 
+  }
+}
+
+
+@keyframes exit-overlay {
+  0% {
+    transform: translateX(0);
+    opacity: .8; 
+  }
+
+  99% {
+    transform: translateX(0);
+    opacity: 0; 
+  }
+  
+  100% {
+    transform: translateX(120%);
+    opacity: 0; 
+  }
+}
+
+
+
 .off-canvas-cart-overlay {
   background-color: #fff;
-  opacity: .2; 
   position: fixed;
   top: 0; 
   bottom: 0; 
   left: 0;
   right: 0; 
+  z-index: 100; 
+  width: 100vw; 
+  height: 100vh; 
+  transform: translateX(120%);
+  opacity: 0;  
+
+  &.is-hidden {
+    animation: exit-overlay .5s $primary-easing forwards;
+  }
+
+  &.is-showing {
+    animation: enter-overlay .8s $primary-easing forwards;
+  }
 }
 
 
 .off-canvas-cart {
-  z-index: 100;
+  z-index: 101;
   position: fixed;
-  top: rem-calc(23px);
+  top: 0;
   box-shadow: 0 0 28px -10px rgba(0,0,0,0.3);
   background-color: #fff;
   transition: all .2s ease-in-out;
-  transform: translateY(-140%);
   width: 96%;
-  height: calc(100vh - 4.4375rem);
+  height: 100vh; 
   max-width: 25rem; 
   margin-left: auto;
   right: 0;
   margin-right: auto;
+  transform: translateX(120%);
 
   @include media-query($medium-up) {
     max-width: rem-calc(400px);
     margin-left: auto; 
     top: 0; 
-    height: calc(100vh - 3rem);
+    height: 100vh;
+    bottom: 0; 
   }
 
 	&.is-closed {
@@ -128,7 +178,7 @@
 
   .off-canvas-cart__inner {
     width: 100%; 
-    height: 100%; 
+    height: 96%; 
     transition: all .2s cubic-bezier(0.23, 1, 0.32, 1); 
     background-color: #fff; 
     position: relative; 
@@ -160,12 +210,27 @@
 
   .off-canvas-cart__continue-shopping {
     position: absolute; 
-    top: 1rem; 
+    top: .5rem; 
     left: rem-calc($level2); 
     z-index: 1; 
-    color: $tertiary-color; 
+    color: $quaternary-color; 
+    transition: all .4s $primary-easing;
     background-color: transparent; 
     @include text-micro(); 
+
+    &:hover,
+    &:focus {
+      color: $tertiary-color;
+
+      .off-canvas-cart__continue-shopping__arrow {
+        transform: translateX(-2px);
+        svg {
+          stroke: $tertiary-color;
+        }
+      }
+    }
+
+
 
     @include media-query($medium-up) {
       top: .5rem; 
@@ -180,14 +245,20 @@
     }
 
     .off-canvas-cart__continue-shopping__arrow {
-      width: 2rem;
-      height: 1rem;
+      width: 1.5rem;
+      height: .75rem;
       display: block;
       margin-right: .25rem;
+      transition: all .4s $primary-easing;
+
+      svg {
+        stroke: $quaternary-color;
+      }
     }
 
     .off-canvas-cart__continue-shopping__text {
       display: block; 
+      @include text-mini(); 
     }
   }
 	
@@ -250,8 +321,8 @@
     width: 100%; 
     margin-bottom: rem-calc($level2); 
     position: relative;
-    max-height: 60%; 
-    height: 100vh;
+    max-height: 66%; 
+    height: auto;
     background-color: #fff; 
     
     &::-webkit-scrollbar {
@@ -275,7 +346,6 @@
     transition: all .2s cubic-bezier(0.23, 1, 0.32, 1); 
     display: flex;
     align-items: top; 
-    border-bottom: 1px solid $quintenary-color; 
     width: 92%; 
     margin-right: auto; 
     margin-left: auto; 
@@ -425,7 +495,6 @@
   .off-canvas-cart__footer {
     background-color: #fff;
     position: relative;
-    position: absolute;
     width: 100%; 
     padding-top: rem-calc($level2); 
     padding-right: rem-calc($level2);
@@ -436,7 +505,7 @@
   }
 
   .off-canvas-cart__total {
-    border-top: 2px solid $quintenary-color; 
+    border-top: 1px solid $quintenary-color; 
     width: 100%; 
     padding-top: rem-calc($level2);
     padding-bottom: rem-calc($level1);
@@ -447,10 +516,10 @@
 		flex-direction: row; 
 		justify-content: space-between; 
     font-weight: bold; 
-    @include h6();
+    @include text-micro();
 
     .off-canvas-cart__total__amount {
-       @include h5();
+       @include h6();
     }
 
     p {
@@ -473,10 +542,6 @@
 
     p:nth-child(2) {
       @include text-mini(); 
-      
-      @include media-query($medium-up) {
-        @include text-micro(); 
-      }
     }
   }
 
