@@ -2,7 +2,7 @@
 
 
 <div class="section--main">
-  <section class="section  row  middle-sm center-sm" data-section-id="{{ section.id }}" data-section-type="product">
+  <div class="section" data-section-id="{{ section.id }}" data-section-type="product">
   
     {%- assign current_variant = product.selected_or_first_available_variant -%}
     {%- assign current_product = product -%}
@@ -12,252 +12,186 @@
     <meta itemprop="brand" content="{{ product.vendor }}">
     <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
     <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
-  
-  
-    <div class="product">
-      <div class="container-fluid">
-        <div class="row center-md">
-            <div class="col-sm-12  col-md-10  col-lg-12">
-              <div class="product__inner">
-                <div class="row  center-lg middle-lg">
-                      
-                  <div class="col-sm-12  col-md-12 col-lg-6">
-                     <div class="row  center-md">
-                        <div class="col-sm-12 col-md-11 col-lg-12" id="scroll-to-product">  
-                          <div class="product__images" data-product-images>
-                            {%for collection in collections %}
-                              {%if collection.id == 372739913 %} 
-                                {%for product in collection.products%}
-                                  <picture>
-                                    <source srcset="{{ product.images[0].src | img_url: '900x' }}" media="(min-width: 64.0625em)">
-                                    <source srcset="{{ product.images[0].src | img_url: '700x' }}" media="(min-width: 43.8125em)">
-                                    <img src="{{ product.images[0].src | img_url: '450x' }}" alt="{{ product.images[0].alt | escape }}"  class="{%if product.id != current_product.id %}is-hidden{%endif%}"  data-product-id="{{product.id}}">
-                                  </picture>
-                                {%endfor%}
-                              {%endif%}
-                             {%endfor%}
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                        
-                  <div class="col-sm-12  col-lg-5">
-                      <div class="row">
-                        <div class="col-sm-12  columns">
-                          <h1 class="product__title" data-product-titles>
-                          {%for collection in collections %}
-                            {%if collection.id == 372739913 %} 
-                              {%for product in collection.products%}
-                                <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.title}}
-                                 </span>
-                              {%endfor%}
-                            {%endif%}
-                           {%endfor%}
-                          </h1>
-                      
-                          <span class="product__price" data-product-prices>
-                            {%for collection in collections %}
-                              {%if collection.id == 372739913 %} 
-                                {%for product in collection.products%}
-                                  <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.price  | money}}
-                                   </span>
-                                {%endfor%}
-                              {%endif%}
-                             {%endfor%}
-                           </span>
 
-                            <div class="product__rating  yotpo bottomLine"
-                              data-product-id="{{ product.id }}">
-                              {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
-                            {%- assign time_now = 'now' | date: '%s' %}
-                            {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
-                            {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
-                            {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
-                            {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
-                            {%- if yotpo_live_time and diff_seconds_from_live < 86400 and yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
-                             {%- assign yotpo_bottomline_obsolete = false %}
-                            {%- else %}
-                             {%- assign yotpo_bottomline_obsolete = true %}
-                            {%- endif %}
-                            {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
-                             {{ product.metafields.yotpo.bottomline }}
-                            {%- endif %}
-                            </div>
+    <section>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <span class="product-page-headline">
+                How Much Blowfish Today?
+              </span>
+            </div>
+          </div>
+
+    <!-- <nav class="product-page-nav" data-product-page-nav>
+ 
+      <div class="product-page-nav__inner ">
+        <ul class="product-page-nav__links  ">
+
+          {%for collection in collections %}
+            {%if collection.id == 372739913 %} 
+              {%for product in collection.products%}
+              <li class="product-page-nav__links__item " data-product-page-nav-item>
+                <a href="#{{product.handle}}"  class="product-page-nav__links__link"  data-product-page-nav-link>
+                {{product.title}}
+                </a>
+              </li>
+              {%endfor%}
+            {%endif%}
+          {%endfor%}
+        </ul>
+     
+      </div>
+    </nav>
+ -->
+ <!--   <div class="product-page-nav__track">
+          <div class="product-page-nav__track__active-marker">
+            
+          </div>
+        </div>
+ -->
+      <div data-products>
+        {%for collection in collections %}
+          {%if collection.id == 372739913 %} 
+            {%for product in collection.products%}
+            {%assign mod = forloop.index | modulo: 2%}
+            <div class="product {%if mod == 0%}product--reverse{%endif%}" id="{{product.handle}}" data-product>
+              <div class="container-fluid">
+
+                <div class="row center-md">
+                    <div class="col-sm-12 ">
+                      <div class="product__inner">
                             
-                          <div class="product__description  mb3 text-micro" data-product-descriptions>
-                          {%for collection in collections %}
-                            {%if collection.id == 372739913 %} 
-                              {%for product in collection.products%}
-                                 <span data-product-id="{{product.id}}" class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.description}}
-                                 </span>
-                              {%endfor%}
-                            {%endif%}
-                           {%endfor%}
-                          </div>
-                        </div>
-                      </div>
-                    
-                      <div class="row  center-sm">
-                        <div class="col-sm-12">
-                          <!---Product Actions--> 
-                          <div class="product__actions">                        
-                          
-                            <label class="product__actions__label " for="productType">
-                              HOW MUCH BLOWFISH TODAY?
-                            </label>
-                        
-                            <div class="product__actions__select select-wrapper select-wrapper--primary  select-wrapper--medium">
-                            {%for collection in collections %}
-                              {%if collection.id == 372739913 %} 
-                                <select name="product-options" id="product-option" data-product-options>
-                                  {%for product in collection.products%}
-                                    <option value="{{product.id}}"   {% if product.id == current_product.id %}selected="selected"{% endif %}>
-                                      {{product.title}} {%if settings.priceInDropdown == 'show'%} {{product.price | money}} {%endif%}
-                                    </option>
-                                  {%endfor%}
-                                </select>
-                              {%endif%}
-                             {%endfor%}
-                            </div>
-                            {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
-                              {%for collection in collections %}
-                                {%if collection.id == 372739913 %} 
-                                <select name="id"  data-product-variants class="visually-hidden">
-                                  {%for product in collection.products%}
-                                    {%for variant in product.variants%}
-                                      <option  value="{{variant.id}}" {% if variant.id == current_variant.id %}selected="selected"{% endif %} >{{variant.id}}</option>
-                                    {%endfor%}
-                                  {%endfor%}
-                                </select>
-                                {%endif%}
-                               {%endfor%}
-                        
-                              <button class="button  button--medium  button--primary  button--expanded" type="submit"
-                                      name="add"
-                                      data-add-to-cart
-                                      data-text="Add to Cart">
-                                  <span class="button-textState1">
-                                    Add to Cart 
-                                  </span>
-                                  <span class="button-textState2">
-                                    Add to Cart 
-                                  </span>
-                              </button>
-                           {%endform%}
+                            <div class="row  center-md middle-md    {%if mod == 0%}reverse-md{%endif%}">
+                                  
+                              <div class="col-sm-12  col-md-6 col-lg-6">
+                                 <div class="row  center-md">
+                                    <div class="col-sm-12">  
+                                      <div class="product__images" data-product-images>
+                                          <picture>
+                                            <source srcset="{{ product.images[0].src | img_url: '900x' }}" media="(min-width: 64.0625em)">
+                                            <source srcset="{{ product.images[0].src | img_url: '700x' }}" media="(min-width: 43.8125em)">
+                                            <img src="{{ product.images[0].src | img_url: '450x' }}" alt="{{ product.images[0].alt | escape }}">
+                                          </picture>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                                    
+                              <div class="col-sm-12  col-md-6 col-lg-5">
+                                  <div class="row">
+                                    <div class="col-sm-12  columns">
+                                      <h1 class="product__title">
+                                        {{product.title}}
+                                      </h1>
+                                  
+                                      <span class="product__price">
+                                        <span  class="{%if product.id != current_product.id %}is-hidden{%endif%}"> {{product.price  | money}}
+                                         </span>
+                                       </span>
 
-                              <!--Payment Options--> 
-                                <ul class="product__payment-options row middle-sm between-sm center-md contained-sm">
+                                        <div class="product__rating  yotpo bottomLine">
+                                          {%- assign yotpo_offload_content = shop.metafields.yotpo.yotpo_offload_content %}
+                                        {%- assign time_now = 'now' | date: '%s' %}
+                                        {%- assign yotpo_live_time = shop.metafields.yotpo.yotpo_live | date: '%s' %}
+                                        {%- assign diff_seconds_from_live = time_now | minus: yotpo_live_time %}
+                                        {%- assign yotpo_bottomline_last_updated = product.metafields.yotpo.bottomline_update_time | date: '%s' %}
+                                        {%- assign diff_seconds_from_last_bottomline_update = time_now | minus: yotpo_bottomline_last_updated %}
+                                        {%- if yotpo_live_time and diff_seconds_from_live < 86400 and yotpo_bottomline_last_updated and diff_seconds_from_last_bottomline_update < 86400 -%}
+                                         {%- assign yotpo_bottomline_obsolete = false %}
+                                        {%- else %}
+                                         {%- assign yotpo_bottomline_obsolete = true %}
+                                        {%- endif %}
+                                        {%- if yotpo_offload_content == 'yes' and yotpo_bottomline_obsolete != true -%}
+                                         {{ product.metafields.yotpo.bottomline }}
+                                        {%- endif %}
+                                        </div>
+                                        
+                                      <div class="product__description  mb3 text-micro">
+                                         {{product.description}}
+                                      </div>
+                                    </div>
+
+                                    {% unless product == empty %}
+                                    <script type="application/json" data-product-json>
+                                    {{ product | json }}
+                                    </script>
+                                    {% endunless %}
+
+                                  </div>
                                 
+                                  <div class="row  center-sm">
+                                    <div class="col-sm-12">
+                                      <!---Product Actions--> 
+                                      <div class="product__actions">                        
 
-                                  <li class="text-center">
-                                     <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="product__payment-options__option" >
-                                  </li>         
-                                  <li class=" text-center">
-                                    <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="product__payment-options__option" >
-                                  </li>      
-                                  <li class=" text-center">
-                                    <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="product__payment-options__option" >
-                                  </li>
-                                </ul>
-                            <!--Payment Options--> 
-                          </div>
-                          <!---End Product Actions--> 
-                        </div>
+                                        {% form 'product', product, data-product-form: '', data-product-handle: product.handle, data-enable-history-state: 'true' %}
+
+                                          <select name="id"  data-product-variants hidden>
+                                          {%for product in collection.products%}
+                                            {%for variant in product.variants%}
+                                              <option  value="{{variant.id}}" {% if variant.id == current_variant.id %}selected="selected"{% endif %} >{{variant.id}}</option>
+                                            {%endfor%}
+                                          {%endfor%}
+                                        </select>
+
+
+                                          <button class="button  button--medium  button--primary  button--expanded  product__actions__button" type="submit"
+                                                  name="add"
+                                                  data-add-to-cart
+                                                  type="submit"
+                                                  aria-label="Add selected product to cart"
+                                                  data-text="Add to Cart"
+                                                  data-add-to-cart
+                                                  id="AddToCart--{{section.id}}">
+                                              <span class="button-textState1">
+                                                Add to Cart 
+                                              </span>
+                                              <span class="button-textState2">
+                                                Add to Cart 
+                                              </span>
+                                          </button>
+                                       {%endform%}
+
+                                          <!--Payment Options--> 
+                                          {%if forloop.index == 1%}
+                                         <!--  <ul class="product__payment-options row middle-sm between-sm center-md contained-sm"  hidden>
+                                          
+                                            <li class="text-center">
+                                               <img src="{{'payment--paypal.gif' | asset_url}}" alt="Paypal" width="130" class="product__payment-options__option" >
+                                            </li>         
+                                            <li class=" text-center">
+                                              <img src="{{'payment--apple.gif' | asset_url}}" alt="Apple Pay" width="130" class="product__payment-options__option" >
+                                            </li>      
+                                            <li class=" text-center">
+                                              <img src="{{'payment--amazonPay.gif' | asset_url}}" alt="Amazon Pay" width="130" class="product__payment-options__option" >
+                                            </li>
+                                          </ul> -->
+                                          {%endif%}
+                                          <!--Payment Options--> 
+                                      </div>
+                                      <!---End Product Actions--> 
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+
                       </div>
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
-        </div>
+             {%endfor%}
+          {%endif%}
+        {%endfor%}
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
+
 </div>
 
 
-{%javascript%}
-//<script>
-$(document).ready(function() {
-  if($('[data-section-type="product"]').length > 0) {
-
-    var selectors = {
-      images: "[data-product-images]", 
-      titles: "[data-product-titles]",
-      prices: "[data-product-prices]",
-      descriptions: "[data-product-descriptions]",
-      productOptions: '[data-product-options]',
-      variants: "[data-product-variants]"
-    };
-
-    var $variants = $(selectors.variants);
-    var $productOptions = $(selectors.productOptions); 
-    var $images = $(selectors.images); 
-    var $descriptions = $(selectors.descriptions); 
-    var $titles = $(selectors.titles); 
-    var $prices = $(selectors.prices); 
-
-
-    
-    $(selectors.productOptions).on('change', function() {
-        $('html, body').animate({
-          scrollTop: 0
-        }, 600);
-    })
-
-
-    function changeActiveProduct(pProductId, pCollectionProducts) {
-
-      var id = '[data-product-id=' + "\"" + pProductId + "\"]"
-
-      $images.find('img').addClass('is-hidden');
-      $images.find(id).removeClass('is-hidden');
-
-      $descriptions.find('span').addClass('is-hidden');
-      $descriptions.find(id).removeClass('is-hidden');
-
-      $titles.find('span').addClass('is-hidden');
-      $titles.find(id).removeClass('is-hidden');
-
-      $prices.find('span').addClass('is-hidden');
-      $prices.find(id).removeClass('is-hidden');
-
-
-      for(var i = 0; i < pCollectionProducts.length; i++) {
-        if(pProductId == pCollectionProducts[i].id) {
-          $variants.val(pCollectionProducts[i].variants[0].id);
-        }
-      }
-    }
-
-    function getCollectionProducts(pCollectionHandle) {
-
-      return $.ajax({
-        type: "GET",
-        url: '/collections/' + pCollectionHandle + '?view=json', 
-        success: function(res) {
-          return res;
-        },
-        error: function(res) {
-          return res;
-        }
-
-      })
-    }
-
-    getCollectionProducts('collection-for-website').then(function(res) {
-      var collectionProducts = JSON.parse(res);
-
-      $productOptions.on('change', function() {
-        var product = this.value;
-        changeActiveProduct(product, collectionProducts.products); 
-      }); 
-
-    }); 
-
-  }
-});
-//</script>
-{%endjavascript%}
 
 
 {% schema %}

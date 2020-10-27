@@ -28,9 +28,9 @@
 
 
 /*!
- * slick.min.js
+ * swiper.js
  */
-// =require vendor/slick.js
+// =require vendor/swiper.js
 
 
 

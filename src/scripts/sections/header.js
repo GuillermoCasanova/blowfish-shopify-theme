@@ -38,9 +38,6 @@ theme.Header = (function() {
 
   var Header = function(container) {
 
-    console.log(container); 
-    console.log('header is running'); 
-
     var that = this; 
     this.$container = $(container); 
 

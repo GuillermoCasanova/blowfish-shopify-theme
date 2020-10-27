@@ -20,8 +20,16 @@ theme.Product = (function() {
     productJson: '[data-product-json]',
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
-    singleOptionSelector: '[data-single-option-selector]'
+    singleOptionSelector: '[data-single-option-selector]',
+    mobileHeader: '[data-mobile-header]',
+    product: '[data-product]',
+    products: '[data-products]',
+    productPageNav: '[data-product-page-nav]',
+    productPageNavLinks: '[data-product-page-nav-link]',
+    productPageNavItems: '[data-product-page-nav-item]'
   };
+
+  console.log(selectors); 
 
   /**
    * Product section constructor. Runs on page load as well as Theme Editor
@@ -30,6 +38,9 @@ theme.Product = (function() {
    */
   function Product(container) {
     this.$container = $(container);
+
+
+    console.log($(selectors.productJson).html());
 
     // Stop parsing if we don't have the product json script tag when loading
     // section in the Theme Editor
@@ -63,22 +74,75 @@ theme.Product = (function() {
       this.$container.on('variantImageChange' + this.namespace, this.updateProductImage.bind(this));
     }
 
-
-    this.$optionSelector = $(selectors.optionSelector);
-
-
-    this.$optionSelector.change(function() {
-      var optionValue = $(this).val();
-      $(this)
-        .closest('form')
-        .find('[data-single-option-selector]')
-        .val(optionValue)
-        .trigger('change');
-    });
+    this.productPageNav.init(); 
 
   }
 
   Product.prototype = $.extend({}, Product.prototype, {
+
+    productPageNav:  {
+      init: function() {
+
+        let that = this; 
+
+        this.navHeight = $(selectors.mobileHeader).height(); 
+        this.$productPageNavLinks = $(selectors.productPageNavLinks); 
+        this.currentProductHandle = (window.location.pathname).replace('/products/', ''); 
+        this.$productPageNavItems = $(selectors.productPageNavItems);
+        this.$products = $(selectors.products);  
+        var $productPageNavScroll = $('[data-product-page-nav-scroll]'); 
+
+
+        // var mySwiper = new Swiper('.swiper-container', {
+        // })
+
+
+        this.$productPageNavLinks.on('click', function(e) {
+         e.preventDefault(); 
+
+          // let productId = $(this).attr("href"); 
+
+          // that.setActiveProduct(this); 
+
+          // var target = this; 
+          // var targetIndex = that.$productPageNavLinks.index(this) + 1;
+
+          // console.log($(this).parent().offset().left);
+          // console.log($('.product-page-nav__links').outerWidth(true));
+          // console.log($productPageNavScroll.outerWidth(true));
+
+          // // console.log($productPageNavScroll.scrollLeft()); 
+          // // console.log($productPageNavScroll.outerWidth(true) / 2);
+          // // console.log(($(target).parent().outerWidth(true) / 2) - $productPageNavScroll.scrollLeft()); 
+
+          // // $productPageNavScroll.animate({
+          // //   scrollLeft: ( / 2) - $(this).scrollLeft
+          // // }, 600);
+
+          //that.goToProduct(productId); 
+        });
+      },
+      setActiveProduct: function(pLinkClicked) {
+        this.$productPageNavItems.removeClass('is-active'); 
+        $(pLinkClicked).parent().addClass('is-active');
+      }, 
+      goToProduct: function(pProductId) {
+
+        let that = this; 
+        let sectionDistanceFromTop = this.$products.find(pProductId).offset().top; 
+
+      // var activeCategory = this.getSetActiveCategory()
+
+      //   if(activeCategory) {
+      //     var $activeSlide = $(activeCategory);
+      //   } else {
+      //     return false; 
+      //   }
+        $('html, body').animate({
+          scrollTop: sectionDistanceFromTop - that.navHeight * 2
+        }, 1000)
+      }
+    },
 
     /**
      * Updates the DOM state of the add to cart button
