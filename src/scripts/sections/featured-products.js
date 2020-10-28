@@ -33,13 +33,6 @@ theme.FeaturedProducts = (function() {
     init: function() {
 
       let that  = this; 
-      let getCurrentBreakPoint = function() {
-        let currentBreakpoint = window.getComputedStyle(
-            document.querySelector('body'), ':before'
-        ).getPropertyValue('content').replace(/"/g, "");
-
-        return currentBreakpoint; 
-      }
 
       let initFunctionality = function(pCurrentBreakpoint) {
         setTimeout(function() {
@@ -72,19 +65,31 @@ theme.FeaturedProducts = (function() {
 
      $(window).on('resize', function() {
        throttle(function() {
-        initFunctionality(getCurrentBreakPoint()); 
+        initFunctionality(that.getCurrentBreakPoint()); 
       }, 600); 
      }); 
 
-      initFunctionality(getCurrentBreakPoint()); 
+      initFunctionality(that.getCurrentBreakPoint()); 
 
     },
+    getCurrentBreakPoint: function() {
+      let currentBreakpoint = window.getComputedStyle(
+          document.querySelector('body'), ':before'
+      ).getPropertyValue('content').replace(/"/g, "");
+
+      return currentBreakpoint; 
+    }, 
     initMobile: function() {
 
       if(this.$slideshow) {
         this.featuredProductsSlidehow.destroy(true, true);
+        this.$slideshow.removeClass('swiper-container');
+        this.$slides.unwrap(".swiper-wrapper");
+        this.$slides.removeClass('swiper-slide');
+        $('.swiper-pagination').remove();  
       }
-      let swiperComponents = '<div class="swiper-pagination"></div> <div class="swiper-button-prev"></div> <div class="swiper-button-next"></div>'
+
+      let swiperComponents = '<div class="swiper-pagination"></div>'
 
       this.$slideshow = $(selectors.productsContainer); 
       this.$slides = $(selectors.products);
@@ -94,28 +99,46 @@ theme.FeaturedProducts = (function() {
       this.$slides.addClass('swiper-slide'); 
       this.$slideshow.append(swiperComponents);
 
-      this.featuredProductsSlidehow = new Swiper(selectors.productsContainer, {
-        direction: 'horizontal',
-        slidesPerView: 1,
-        autoHeight: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true
+
+      var slideshowOptions = {}; 
+
+      if(this.getCurrentBreakPoint() == 'medium-up') {
+        slideshowOptions = {
+          direction: 'horizontal',
+          slidesPerView: 1,
+          autoHeight: true,
+          spaceBetween: 0, 
+          slidesPerView: 2, 
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          }
         }
-      });
+      } 
+
+      if(this.getCurrentBreakPoint() == 'small-up') {
+        slideshowOptions = {
+          direction: 'horizontal',
+          slidesPerView: 1,
+          autoHeight: true,
+          spaceBetween: 30, 
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          }
+        }
+      } 
+
+      this.featuredProductsSlidehow = new Swiper(selectors.productsContainer, slideshowOptions);
 
 
     },
     initDesktop: function() {
-      console.log('init desktop');
 
       if(this.$slideshow) {
-        this.featuredProductsSlidehow.destroy(true, false);
+        this.featuredProductsSlidehow.destroy(true, true);
         this.$slideshow.removeClass('swiper-container');
         this.$slides.unwrap(".swiper-wrapper");
         this.$slides.removeClass('swiper-slide');

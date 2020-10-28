@@ -74,9 +74,27 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
   padding-left: 1.5rem;
   height: auto; 
 
+  .row {
+    margin-right: $gutter-compensation;
+    margin-left: $gutter-compensation;
+  }
+
   @include media-query($medium-up) {
-  padding-right: $flexboxgrid-outer-margin;
-  padding-left: $flexboxgrid-outer-margin;
+    padding-right: $flexboxgrid-outer-margin;
+    padding-left: $flexboxgrid-outer-margin;
+  }
+}
+
+.container-fluid--flushed {
+  padding-right: 0;
+  padding-left: 0;
+
+  & > .row {
+    margin: 0 0; 
+  }
+
+  @include media-query($large-up) {
+    width: 100%; 
   }
 }
 
@@ -88,12 +106,7 @@ $half-gutter-width: $flexboxgrid-gutter-width * .5;
   flex-wrap: wrap;
 }
 
-.container-fluid {
-   .row {
-    margin-right: $gutter-compensation;
-    margin-left: $gutter-compensation;
-  }
-}
+
 
 .row--no-wrap {
   flex-wrap: nowrap;
