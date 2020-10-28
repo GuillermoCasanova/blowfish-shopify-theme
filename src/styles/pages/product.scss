@@ -59,7 +59,8 @@
 	}
 
 	@include media-query($large-up) {
-		max-width: 57rem; 
+		min-width: 57rem; 
+		max-width: 58rem; 
 		margin-bottom: 0;  
 	}
 
@@ -69,12 +70,13 @@
     scroll-padding: 0px 1000px;
     scroll-snap-type: x mandatory;
     position: relative;
-	  //scrollbar-width: 0;
 	  scrollbar-color: transparent; 
+  	-ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
 
 		/* Works on Chrome/Edge/Safari */
 		&::-webkit-scrollbar {
-		  //width: 0;
+			display: none; 
 		}
 		&::-webkit-scrollbar-track {
 		  background: transparent;
@@ -82,7 +84,6 @@
 		&::-webkit-scrollbar-thumb {
 		  background-color: transparent;
 		  border-radius: 0;
-		  //border: 0;
 		}
 
 		.product-page-nav__links {
@@ -91,9 +92,9 @@
 			margin-right: rem-calc($level2); 
 	    white-space: nowrap;
 	    padding: 0px 1000px;
-	    width: 100%; 
 
 	    @include media-query($medium-up) {
+	    	min-width: 100%;
 	 	    justify-content: space-around;
 	    }
 

@@ -18,6 +18,7 @@
 /*================ GLOBAL ================*/
 @import url('global/normalize.scss');
 @import url('global/animations.scss');
+@import url('global/breakpoints.scss');
 @import url('global/buttons.scss');
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
@@ -31,12 +32,14 @@
 
 
 /*================ SECTIONS ================*/
+@import url('sections/featured-products-section.scss');
 @import url('sections/footer.scss');
 @import url('sections/guarantee-section.scss');
 @import url('sections/header.scss');
 @import url('sections/hero-header.scss');
 @import url('sections/how-it-works.scss');
 @import url('sections/intro-section.scss');
+@import url('sections/off-canvas-cart.scss');
 @import url('sections/press-gallery.scss');
 @import url('sections/ready.scss');
 @import url('sections/reviews-capture-section.scss');
@@ -44,7 +47,6 @@
 @import url('sections/shoutout.scss');
 @import url('sections/store-locator.scss');
 @import url('sections/the-science-section.scss');
-@import url('sections/off-canvas-cart.scss');
 
 
 

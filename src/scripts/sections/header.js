@@ -38,98 +38,96 @@ theme.Header = (function() {
   var openSection = false; 
   
 
+  /*------------------------------------*\
+      #Sticky Main Nav Styles Toggle
+  \*------------------------------------*/
+
+  // Variable to detect if user is smooth scrolling to a section
+  var smoothScrolling = false; 
+
+  // Checks to see if there is a '[data-action="toggle-top-bar"]' to hide/show
+  // This prevents it from activating on small devices. 
+  if($('[sticky-nav]').length > 0) {
+
+      //
+      // Function checks to see if the user is scrolling, 
+      // if they are, 
+
+      (function($){
+
+          var prevScroll = 0;
+          var currentScroll; 
+          var stickyNavContainer = $('[sticky-nav]');
+          var navBar = $('[data-main-navigation]');
+          var cart = $('[data-ui-component="cart-icon"]'); 
+          var navBarHeight = navBar.height(); 
+          var didScroll = false; 
+          var theWindow = $(window);
 
 
-      /*------------------------------------*\
-          #Sticky Main Nav Styles Toggle
-      \*------------------------------------*/
+          $(window).scroll(function() {
+              didScroll = true;
+          });
+           
+          setInterval(function() {
 
-      // Variable to detect if user is smooth scrolling to a section
-      var smoothScrolling = false; 
+            if (didScroll) {
 
-      // Checks to see if there is a '[data-action="toggle-top-bar"]' to hide/show
-      // This prevents it from activating on small devices. 
-      if($('[sticky-nav]').length > 0) {
+              didScroll = false; 
 
-          //
-          // Function checks to see if the user is scrolling, 
-          // if they are, 
+              currentScroll = theWindow.scrollTop();
+              
+              if(100 < currentScroll) {
 
-          (function($){
+                navBar.addClass('main-nav--fixed');  
+                navBar.removeClass('main-nav--alt');
+                cart.removeClass('cart--alt'); 
 
-              var prevScroll = 0;
-              var currentScroll; 
-              var stickyNavContainer = $('[sticky-nav]');
-              var navBar = $('[data-main-navigation]');
-              var cart = $('[data-ui-component="cart-icon"]'); 
-              var navBarHeight = navBar.height(); 
-              var didScroll = false; 
-              var theWindow = $(window);
+              } else {
+                
+                navBar.removeClass('main-nav--fixed');
 
+              }
 
-              $(window).scroll(function() {
-                  didScroll = true;
-              });
-               
-              setInterval(function() {
+               prevScroll = currentScroll; 
 
-                if (didScroll) {
+            } 
 
-                  didScroll = false; 
-
-                  currentScroll = theWindow.scrollTop();
-                  
-                  if(100 < currentScroll) {
-
-                    navBar.addClass('main-nav--fixed');  
-                    navBar.removeClass('main-nav--alt');
-                    cart.removeClass('cart--alt'); 
-
-                  } else {
-                    
-                    navBar.removeClass('main-nav--fixed');
-
-                  }
-
-                   prevScroll = currentScroll; 
-
-                } 
-
-              }, 300);
-
-          })(jQuery);
-      }
-
-      /*------------------------------------*\
-          #Nav Styles Toggle Based on page 
-      \*------------------------------------*/
-
-      //If the user is on the hangover-science.html page, show the alt styling for the nav and cart
-      //  
-
-      var altNavPage = 'hangover-science'; 
-
-      var hideLogoPage = '/'; 
-
-      (function($) {
-
-        // if(BF_current_page == altNavPage) {
-
-        //   $('[data-ui-component="main-navigation"]').addClass('mainNav--alt');
-        //   $('[data-ui-component="cart-icon"]').addClass('cart--alt'); 
-
-        // }
-
-        if(window.location.pathname === hideLogoPage || window.location.pathname === '/' ) {
-          $('[data-main-navigation]').addClass('is-logo-hidden');
-        }
+          }, 300);
 
       })(jQuery);
+  }
+
+  /*------------------------------------*\
+      #Nav Styles Toggle Based on page 
+  \*------------------------------------*/
+
+  //If the user is on the hangover-science.html page, show the alt styling for the nav and cart
+  //  
+
+  var altNavPage = 'hangover-science'; 
+
+  var hideLogoPage = '/'; 
+
+  (function($) {
+
+    // if(BF_current_page == altNavPage) {
+
+    //   $('[data-ui-component="main-navigation"]').addClass('mainNav--alt');
+    //   $('[data-ui-component="cart-icon"]').addClass('cart--alt'); 
+
+    // }
+
+    if(window.location.pathname === hideLogoPage || window.location.pathname === '/' ) {
+      $('[data-main-navigation]').addClass('is-logo-hidden');
+    }
+
+  })(jQuery);
 
 
 
   var Header = function(container) {
-
+    
     var that = this; 
     var loadingSection = false; 
 

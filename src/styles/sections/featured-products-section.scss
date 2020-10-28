@@ -1,0 +1,22 @@
+
+
+/*------------------------------------*\
+    #Featured Products Section
+\*------------------------------------*/
+
+
+.featured-products-section {
+
+	.featured-products-section__header {
+		text-align: center; 
+	}
+
+	.featured-products-section__products {
+		@include media-query($large-up) {
+			display: flex; 
+			flex-direction: row; 
+			justify-content: space-between; 
+		}
+	}
+
+}

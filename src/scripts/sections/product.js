@@ -30,7 +30,6 @@ theme.Product = (function() {
     productPageNavItems: '[data-product-page-nav-item]'
   };
 
-  console.log(selectors); 
 
   /**
    * Product section constructor. Runs on page load as well as Theme Editor
@@ -39,9 +38,6 @@ theme.Product = (function() {
    */
   function Product(container) {
     this.$container = $(container);
-
-
-    console.log($(selectors.productJson).html());
 
     // Stop parsing if we don't have the product json script tag when loading
     // section in the Theme Editor
@@ -228,4 +224,5 @@ theme.Product = (function() {
   });
 
   return Product;
+  
 })();
