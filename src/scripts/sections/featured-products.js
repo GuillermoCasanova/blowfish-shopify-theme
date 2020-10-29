@@ -13,6 +13,7 @@ theme.FeaturedProducts = (function() {
 
   var selectors = {
      products: '[data-featured-product]',
+     productLinks: '[data-product-link]',
      productsContainer: '[data-featured-products-container]'
   };
 
@@ -33,6 +34,7 @@ theme.FeaturedProducts = (function() {
     init: function() {
 
       let that  = this; 
+      let $products = $(selectors.products); 
 
       let initFunctionality = function(pCurrentBreakpoint) {
         setTimeout(function() {
@@ -63,13 +65,35 @@ theme.FeaturedProducts = (function() {
         }, delay)
       }
 
+
      $(window).on('resize', function() {
        throttle(function() {
         initFunctionality(that.getCurrentBreakPoint()); 
       }, 600); 
      }); 
 
-      initFunctionality(that.getCurrentBreakPoint()); 
+     initFunctionality(that.getCurrentBreakPoint()); 
+
+     $products.each(function(index) {
+       let $productContainer = $(this); 
+
+       $productContainer.find(selectors.productLinks).hover(function() {
+         console.log('this is hovered'); 
+         $(this).parent().addClass('is-hovered');
+       }, function() {
+         console.log('this is hovered'); 
+         $(this).parent().removeClass('is-hovered');
+       });
+
+       $productContainer.find(selectors.productLinks).focus(function() {
+         console.log('this is hovered'); 
+         $(this).parent().addClass('is-hovered');
+       }, function() {
+         console.log('this is hovered'); 
+         $(this).parent().removeClass('is-hovered');
+       });
+
+     });
 
     },
     getCurrentBreakPoint: function() {
@@ -117,7 +141,7 @@ theme.FeaturedProducts = (function() {
         }
       } 
 
-      if(this.getCurrentBreakPoint() == 'small-up') {
+      if(this.getCurrentBreakPoint() == 'small') {
         slideshowOptions = {
           direction: 'horizontal',
           slidesPerView: 1,

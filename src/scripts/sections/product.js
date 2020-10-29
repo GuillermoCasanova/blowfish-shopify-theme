@@ -92,12 +92,13 @@ theme.Product = (function() {
         var $productPageNavScroll = $('[data-product-page-nav-scroll]'); 
 
         this.setActiveProduct(this.currentProductHandle); 
+         that.goToProduct("#" + this.currentProductHandle, false); 
 
         this.$productPageNavLinks.on('click', function(e) {
          e.preventDefault(); 
          let productId = $(this).attr("href").replace('#', ''); 
          that.setActiveProduct(productId); 
-         that.goToProduct($(this).attr("href")); 
+         that.goToProduct($(this).attr("href"), true); 
         });
       },
       setActiveProduct: function(pProductHandle, pSpeed) {
@@ -130,14 +131,15 @@ theme.Product = (function() {
         return this;
 
       }, 
-      goToProduct: function(pProductId) {
+      goToProduct: function(pProductId, pAnimateToSection) {
 
         let that = this; 
         let sectionDistanceFromTop = this.$products.find(pProductId).offset().top; 
+        let speed = pAnimateToSection ? 1000 : 0; 
 
         $('html, body').animate({
           scrollTop: sectionDistanceFromTop - 120
-        }, 1000)
+        }, speed)
       }
     },
 

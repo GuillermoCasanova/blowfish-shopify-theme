@@ -110,8 +110,8 @@ $base-font-line-height: $base-magic-number / $base-font-size; //24px
 
 
 @mixin text-mini() {
-  font-size: 0.7rem;
-  line-height: 2;
+  font-size: 0.75rem;
+  line-height: 1;
 };
 
 @mixin text-micro() {
