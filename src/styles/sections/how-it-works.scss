@@ -10,6 +10,9 @@
   .how-it-works__header {
     margin-bottom: rem-calc($level7);
     text-align: center; 
+    max-width: 43rem;
+    margin-right: auto; 
+    margin-left: auto; 
   }
 
   .how-it-works__cta {

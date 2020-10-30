@@ -78,18 +78,14 @@ theme.FeaturedProducts = (function() {
        let $productContainer = $(this); 
 
        $productContainer.find(selectors.productLinks).hover(function() {
-         console.log('this is hovered'); 
          $(this).parent().addClass('is-hovered');
        }, function() {
-         console.log('this is hovered'); 
          $(this).parent().removeClass('is-hovered');
        });
 
        $productContainer.find(selectors.productLinks).focus(function() {
-         console.log('this is hovered'); 
          $(this).parent().addClass('is-hovered');
        }, function() {
-         console.log('this is hovered'); 
          $(this).parent().removeClass('is-hovered');
        });
 

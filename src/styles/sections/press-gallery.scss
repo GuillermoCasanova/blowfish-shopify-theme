@@ -10,8 +10,36 @@
 	padding-top: 0;
 	padding-bottom: 0; 
 
+	.pressGallery-quote {
+	  margin-bottom: .75rem;
+	  font-size: 1.125rem;
+	  line-height: 1.33333;
+
+	 @media only screen and (min-width:43.8125em) {
+	    margin-top: .75rem;
+	    margin-bottom: 1.875rem;
+	    font-size: 1.25rem;
+	    line-height: 1.2;
+	}
+
+	@media only screen and (min-width:64.0625em) {
+	    margin-top: 1.5rem;
+	    margin-bottom: 3rem;
+	    font-size: 1.5rem;
+	    line-height: 1;
+	}
+
+
+	}
 	.pressGallery-press {
 		margin-bottom: 0; 
+
+		@include media-query($large-up) {
+			justify-content: space-between;
+	    max-width: 60rem;
+	    margin-right: auto;
+	    margin-left: auto;
+		}
 
 		.pressGallery-press-logo {
 		  border-right: 1px solid #fff;
@@ -19,6 +47,7 @@
 		  padding-bottom: 1.125rem;
 		  padding-left: 1rem;
 		  padding-right: 1rem;
+		  max-width: 9rem; 
 		}
 
 		.pressGallery-press-logo:first-child {

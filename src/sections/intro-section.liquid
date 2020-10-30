@@ -1,6 +1,7 @@
 
 <!--Introduction section-->
- <section class="section  intro-section">
+ <section class="intro-section">
+  <div class="intro-section__inner">
     <div class="container-fluid">
      <div class="row  middle-md">
 
@@ -21,12 +22,23 @@
                         media="(min-width: 64.0625em)">
                 <source srcset="{{'introPhoto--medium2.gif' | asset_url }}" 
                         media="(min-width: 43.8125em)">
-                <img src="{{'introPhoto--small2.jpg' | asset_url }}" alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish" data-sizes="auto" class="intro-section__img ">
+                <img src="{{'introPhoto--small2.jpg' | asset_url }}" alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish" data-sizes="auto" class="intro-section__img hide-for-large-up">
         </picture>
         
       </div>
 
     </div>
+  </div>
+
+    <picture>
+      <source srcset="{{'introPhoto--large2.gif' | asset_url }}" 
+                    media="(min-width: 64.0625em)">
+            <source srcset="{{'introPhoto--medium2.gif' | asset_url }}" 
+                    media="(min-width: 43.8125em)">
+            <img src="{{'introPhoto--small2.jpg' | asset_url }}" alt="Man laying down on floor with hangover next to cup of coffee needing Blowfish" data-sizes="auto" class="intro-section__img show-for-large-up">
+    </picture>
+
+  </div>
 </section>
 
 

@@ -137,7 +137,13 @@
 					display: block; 
 					margin-bottom: 0; 
 					text-align: center; 
+					margin-bottom: rem-calc(3px); 
 					@include text-micro(); 
+
+					@include media-query($widescreen) {
+						margin-bottom: 0; 
+						@include h6(); 
+					}
 				}
 
 				.product-page-nav__links__link__tablet-count {
@@ -145,7 +151,13 @@
 					text-align: center; 
 					width: 100%; 
 					padding-bottom: rem-calc($level1); 
+					font-family: $primary-font-family; 
 					@include text-mini(); 
+
+					@include media-query($widescreen) {
+						padding-bottom: rem-calc($level2); 
+						@include text-micro(); 
+					}
 				}
 			}
 		}
@@ -180,7 +192,7 @@
 
 	@include media-query($medium-up) {
 		margin-top: rem-calc($level7); 
-		margin-bottom: rem-calc($level7 + $level3); 
+		margin-bottom: rem-calc($level7 + $level7); 
 	}
 
 	@include media-query($large-up) {

@@ -10,7 +10,10 @@
 
 .reviews-capture__header {
 	margin-bottom: rem-calc($level1);
-
+    max-width: 43rem;
+  margin-right: auto;
+  margin-left: auto;
+    
 	@include media-query($medium-up) {
 		margin-bottom: rem-calc($level1);
 	}

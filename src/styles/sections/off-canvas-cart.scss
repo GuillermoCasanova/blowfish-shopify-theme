@@ -210,13 +210,17 @@
 
   .off-canvas-cart__continue-shopping {
     position: absolute; 
-    top: .8rem; 
-    left: rem-calc($level2); 
+    top: .9rem; 
+    left: rem-calc($level1); 
     z-index: 1; 
     color: $quaternary-color; 
     transition: all .4s $primary-easing;
     background-color: transparent; 
     @include text-micro(); 
+
+    @include media-query($medium-up) {
+      left: rem-calc($level2); 
+    }
 
     &:hover,
     &:focus {
@@ -230,12 +234,6 @@
       }
     }
 
-
-
-    @include media-query($medium-up) {
-      top: .5rem; 
-      @include text-mini(); 
-    }
 
     span {
       width: 100%; 
@@ -366,11 +364,8 @@
       text-decoration: none; 
       font-family: $tertiary-color; 
       font-weight: bold;
+      margin-bottom: rem-calc($level1); 
       @include text-micro();
-
-      @include media-query($medium-up) {
-        margin-bottom: rem-calc($level1); 
-      }
 
       &:hover, 
       &:focus {

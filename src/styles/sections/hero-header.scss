@@ -4,6 +4,7 @@
     #Hero Header
 \*------------------------------------*/
 
+
 .heroHeader{
    height: 80vh;
    min-height: 37.5rem;
@@ -12,11 +13,31 @@
    overflow: hidden; 
    max-height: rem-calc(680px);
 
+        
+    @media only screen and (orientation:landscape) and (max-width:43.812em){
+        overflow:hidden;
+        max-height:420px;
+        min-height:380px
+    }
+
+   @include media-query($medium-up) {
+        max-height: rem-calc(620px);
+        height:94vh;
+    }
+
+
    @include media-query($large-up) {
-    max-height: 740px;
-    min-height: 740px;
-    height: 92vh; 
+        max-height: rem-calc(640px);
+        min-height: rem-calc(620px);
+        height: 92vh; 
    }
+
+   @include media-query($widescreen) {
+        max-height: 49rem; 
+        min-height: 47rem; 
+        height: 100vh; 
+   }
+
 
 	p {
 		text-align: center; 
@@ -29,23 +50,131 @@
 		}
 	}
 
-	.heroHeader-content {
-		z-index: 1; 
-		position: relative; 
-    margin-bottom: 50%;
-    width:100%
-	}
-
   .heroHeader-logo {
     max-width: rem-calc(260px);
     margin-right: auto; 
     margin-left: auto; 
     width: 100%;
 
+    @media only screen and (orientation:landscape){
+        width:14.375rem;
+    }
+
+    @media only screen and (orientation:landscape) and (max-width:43.812em){
+         max-width: 12.375rem;
+         margin-left: 0; 
+    }
+
     @include media-query($medium-up) {
       max-width: 100%; 
     }
+
+    @media only screen and (orientation:landscape) and (min-width:43.8125em){
+        width:auto;
+    }
   }
+
+
+  .heroHeader-background {
+    object-fit:contain;
+    width:100%;
+    height:89%;
+    object-position:right bottom;
+    position:absolute;
+    bottom: -13%; 
+
+
+    @media only screen and (orientation:landscape) and (max-width:43.812em){
+        width:100%;
+        height:100%;
+    }
+    @media only screen and (orientation:landscape) and (min-width:43.8125em){
+        background-position:center center;
+        width:100%;
+        height:100%;
+    }
+
+
+    @include media-query($medium-up){
+        width: 100;
+        height: 102%;
+        object-position: right bottom;
+        position: absolute;
+        bottom: -62px;
+        max-width: rem-calc(800px);
+        right: -7vw;
+    }
+
+    @media only screen and (max-width:64.0625em) and (orientation:landscape){
+        background-position: left;
+        bottom:  -13vh;
+        object-fit:cover;
+        width: 94%;
+    }
+
+    @include media-query($large-up){
+        bottom: 0;
+        max-height: auto;
+        bottom: -3vh;
+        width:  100%;
+        height: 103%;
+        right:  -2vw;
+        object-fit: contain;
+        max-width:  80%;
+        min-width: 50rem; 
+    }
+
+  }
+
+    .heroHeader-content {
+        z-index: 1; 
+        position: relative; 
+        margin-bottom: 50%;
+        width:100%;
+           
+        @media only screen and (orientation:landscape) and (min-width:43.8125em){
+            margin-bottom:3rem;
+            width:100%
+        }
+
+        @media only screen and (orientation:landscape) and (max-width:43.812em){
+            margin-bottom:0;
+
+            svg{
+                text-align:left;
+                max-width:280px;
+            }
+
+            p {
+                text-align:left;
+                max-width:240px;
+            }
+            
+            .button{
+                max-width:210px;
+                margin-bottom: 1rem;
+            }
+        }
+
+
+        @include media-query($medium-up) {
+            width: 98%;
+            margin-bottom:4.875rem;
+        }
+
+        @include media-query($large-up) {
+            margin-bottom:1.5rem;
+            width: 100%; 
+            max-width: 70rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @include media-query($widescreen) {
+            max-width: 78rem; 
+        }
+    }
+
 
   .hero-header-button {
     max-width: rem-calc(300px);
@@ -58,355 +187,37 @@
   	right:0;
   	top:0; 
   	z-index: 0; 
-  }
-}
-
-
-
-
-
-@media only screen and (orientation:landscape){
-    .heroHeader{
-        height:144vh
-    }
-}
-@media only screen and (min-width:43.8125em){
-    .heroHeader{
-        height:94vh
-    }
-}
-
-
-.heroHeader .section-bg{
     max-width:460px;
     background-position:center;
     margin-right:auto;
     margin-left:auto;
-    bottom:8vh
-}
-@media only screen and (min-width:64.0625em) and (orientation:landscape){
-    .heroHeader .section-bg{
-        right:-25vw;
-        margin-right:0
-    }
-    .heroHeader .heroHeader-content{
-        width:78%;
-        margin-bottom:4.875rem
-    }
-}
-.show-for-landscape-only{
-    display:none
-}
-.heroHeader .heroHeader-logo{
-    width:auto
-}
-.heroHeader .heroHeader-background{
-    object-fit:contain;
-    width:100%;
-    height:89%;
-    object-position:right bottom;
-    position:absolute;
-    bottom: -13%; 
-}
+    bottom:8vh;
 
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-    .hide-for-landscape-only{
-        display:none
-    }
-}
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-    .show-for-landscape-only{
-        display:block
-    }
-}
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-    .heroHeader{
-        overflow:hidden;
-        max-height:420px;
-        min-height:380px
-    }
-    .heroHeader .section-bg{
+    @media only screen and (orientation:landscape) and (max-width:43.812em){
         margin-right:0;
         bottom:-6vw;
-        right:-6vw;
-        max-width:600px
+        right:-3vw;
+        max-width:600px;
     }
-    .heroHeader .heroHeader-background{
-        width:100%;
-        height:100%
-    }
-    .heroHeader .heroHeader-content{
-        margin-bottom:0;
-        
-    }
-    .heroHeader .heroHeader-content svg{
-        text-align:left;
-        max-width:280px
-    }
-    .heroHeader .heroHeader-content p{
-        text-align:left;
-        max-width:240px
-    }
-    .heroHeader .heroHeader-content .button{
-        max-width:210px
-    }
-}
-@media only screen and (orientation:landscape) and (min-width:43.8125em){
-    .heroHeader .heroHeader-content{
-        margin-bottom:3rem;
-        width:100%
-    }
-}
-@media only screen and (min-width:43.8125em){
 
-    .heroHeader .section-bg{
+    @include media-query($medium-up) {
         max-width:100%;
         background-position:center;
         margin-right:auto;
         margin-left:auto;
         bottom:0
     }
-    .heroHeader .heroHeader-content{
-        margin-bottom:3rem;
-        width:100%
-    }
 
-}
-
-
-@media only screen and (min-width:64.0625em){
-    .heroHeader .heroHeader-background{
-        object-fit:contain
-    }
-    .heroHeader .section-bg{
-        right:0;
-        bottom:2vh
-    }
-
-}
-@media only screen and (min-width:43.8125em){
-    
-    .heroHeader .heroHeader-background{
-        object-fit:cover;
-        width:100;
-        height:102%;
-        object-position:right bottom;
-        position:absolute;
-        bottom:-62px;
-        max-width:800px;
-        right:-11vw
-    }
-}
-@media only screen and (min-width:64.0625em){
-
-    .heroHeader .heroHeader-background{
-        bottom:0;
-        max-height:auto;
-        bottom:-3vh;
-        width:100%;
-        height:103%;
-        right:-4vw;
-        object-fit:contain;
-        max-width:80%
-    }
-}
-@media only screen and (orientation:landscape){
-    .heroHeader .heroHeader-logo{
-        width:14.375rem
-    }
-}
-@media only screen and (max-width:64.0625em) and (orientation:landscape){
-    .heroHeader .heroHeader-background{
-        background-position:left;
-        bottom:-13vh;
-        object-fit:cover;
-        width:94%
-    }
-}
-@media only screen and (orientation:landscape) and (min-width:43.8125em){
-    .heroHeader .heroHeader-logo{
-        width:auto
-    }
-    .heroHeader .heroHeader-background{
-        background-position:center center
-    }
-}
-
-@media only screen and (min-width:64.0625em){
-    .heroHeader .heroHeader-content{
-        margin-bottom:1.5rem
-    }
-}
-
-
-
-@media only screen and (orientation:landscape){
-    .heroHeader{
-        height:144vh
-    }
-}
-@media only screen and (min-width:43.8125em){
-    .heroHeader{
-        height:94vh
-    }
-}
-
-
-.heroHeader .section-bg{
-    max-width:460px;
-    background-position:center;
-    margin-right:auto;
-    margin-left:auto;
-    bottom:8vh
-}
-@media only screen and (min-width:64.0625em) and (orientation:landscape){
-    .heroHeader .section-bg{
-        right:-25vw;
-        margin-right:0
-    }
-    .heroHeader .heroHeader-content{
-        width:78%;
-        margin-bottom:4.875rem
-    }
-}
-.show-for-landscape-only{
-    display:none
-}
-.heroHeader .heroHeader-logo{
-    width:auto
-}
-
-
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-    .hide-for-landscape-only{
-        display:none
-    }
-}
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-    .show-for-landscape-only{
-        display:block
-    }
-}
-
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-   .heroHeader-logo {
-     max-width: 15.375rem;
-     margin-left: 0; 
-   }
-}
-
-
-@media only screen and (orientation:landscape) and (max-width:43.812em){
-    .heroHeader .section-bg{
-        margin-right:0;
-        bottom:-6vw;
-        right:-6vw;
-        max-width:600px
-    }
-    .heroHeader .heroHeader-background{
-        width:100%;
-        height:100%
-    }
-    .heroHeader .heroHeader-content{
-        margin-bottom:0;
-        
-    }
-    .heroHeader .heroHeader-content svg{
-        text-align:left;
-        max-width:280px
-    }
-    .heroHeader .heroHeader-content p{
-        text-align:left;
-        max-width:240px
-    }
-    .heroHeader .heroHeader-content .button{
-        max-width:210px
-    }
-}
-@media only screen and (orientation:landscape) and (min-width:43.8125em){
-    .heroHeader .heroHeader-content{
-        margin-bottom:3rem;
-        width:100%
-    }
-}
-@media only screen and (min-width:43.8125em){
-    .heroHeader{
-        max-height:620px
-    }
-    .heroHeader .section-bg{
-        max-width:100%;
-        background-position:center;
-        margin-right:auto;
-        margin-left:auto;
-        bottom:0
-    }
-    .heroHeader .heroHeader-content{
-        margin-bottom:3rem;
-        width:100%;
-    }
-
-}
-
-@media only screen and (min-width:64.0625em){
-    .heroHeader .heroHeader-background{
-        object-fit:contain
-    }
-    .heroHeader .section-bg{
+    @include media-query($large-up) {
         right:0;
         bottom:2vh;
+        margin-right:0;
+        margin-right: auto;
+        margin-left: auto;
     }
 
-}
-@media only screen and (min-width:43.8125em){
-  
-    .heroHeader .heroHeader-background{
-        object-fit:cover;
-        width:100;
-        height:102%;
-        object-position:right bottom;
-        position:absolute;
-        bottom:-62px;
-        max-width:800px;
-        right:-11vw;
+    @include media-query($widescreen) {
+        max-width: 91rem;
     }
-}
-@media only screen and (min-width:64.0625em){
-
-    .heroHeader .heroHeader-background{
-        bottom:0;
-        max-height:auto;
-        bottom:-3vh;
-        width:100%;
-        height:103%;
-        right:-4vw;
-        object-fit:contain;
-        max-width:80%;
-    }
-}
-@media only screen and (orientation:landscape){
-    .heroHeader .heroHeader-logo{
-        width:14.375rem;
-    }
-}
-@media only screen and (max-width:64.0625em) and (orientation:landscape){
-    .heroHeader .heroHeader-background{
-        background-position:left;
-        bottom:-13vh;
-        object-fit:cover;
-        width:94%;
-    }
-}
-@media only screen and (orientation:landscape) and (min-width:43.8125em){
-    .heroHeader .heroHeader-logo{
-        width:auto
-    }
-    .heroHeader .heroHeader-background{
-        background-position:center center;
-    }
-}
-
-@media only screen and (min-width:64.0625em){
-    .heroHeader .heroHeader-content{
-        margin-bottom:1.5rem;
-    }
+  }
 }

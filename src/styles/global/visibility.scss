@@ -5,6 +5,30 @@
 \*------------------------------------*/
 
 
+
+
+.show-for-landscape-only{
+    display:none
+}
+.heroHeader .heroHeader-logo{
+    width:auto
+}
+
+
+
+@media only screen and (orientation:landscape) and (max-width:43.812em){
+    .hide-for-landscape-only{
+        display:none
+    }
+}
+
+@media only screen and (orientation:landscape) and (max-width:43.812em){
+    .show-for-landscape-only{
+        display:block
+    }
+}
+
+
 @media only screen {
   .hide-for-large,
   .hide-for-large-only,

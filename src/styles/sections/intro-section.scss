@@ -9,9 +9,10 @@
 	position: relative; 
 	overflow: hidden;
 
-	.intro-section__img {
-		position: relative;
-		transform: scale(1.1) translateX(4vw);
+	.intro-section__inner  {
+		max-width: 76rem; 
+		margin-right: auto; 
+		margin-left: auto; 
 	}
 
 	.intro-section__content {
@@ -30,14 +31,29 @@
 	}
 	
 	.intro-section__img {
+		position: relative;
+		transform: scale(1.1) translateX(4vw);
+
 		@include media-query($medium-up) {
 			position: relative;
     	transform: scale(2) translateX(1vw) translateY(36px);	
 		}
 
 		@include media-query($large-up) {
-			position: relative;
     	transform: scale(1.5) translateX(3.1vw) translateY(87px);	
+   			position: absolute; 
+				bottom: 0; 
+				width: 100%; 
+				bottom: rem-calc(160px);
+				right: 8vw;
+				width: 35%;
+				max-width: 28rem;
+		}
+
+		@include media-query($widescreen) {
+    	width: 30%;
+  		right: 9vw;
+			max-width: 34rem;
 		}
 	}
 }

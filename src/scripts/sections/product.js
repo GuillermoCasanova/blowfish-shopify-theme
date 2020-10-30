@@ -91,8 +91,11 @@ theme.Product = (function() {
         this.$products = $(selectors.products);  
         var $productPageNavScroll = $('[data-product-page-nav-scroll]'); 
 
-        this.setActiveProduct(this.currentProductHandle); 
+        this.setActiveProduct(this.currentProductHandle);
+
+        if(!window.location.hash) {
          that.goToProduct("#" + this.currentProductHandle, false); 
+        }
 
         this.$productPageNavLinks.on('click', function(e) {
          e.preventDefault(); 
@@ -102,7 +105,7 @@ theme.Product = (function() {
         });
       },
       setActiveProduct: function(pProductHandle, pSpeed) {
-        console.log(pProductHandle); 
+
         let id = pProductHandle;
 
         this.$productPageNavItems.removeClass('is-active'); 
@@ -132,6 +135,10 @@ theme.Product = (function() {
 
       }, 
       goToProduct: function(pProductId, pAnimateToSection) {
+
+        if(pProductId === $(this.$productPageNavLinks[0]).attr("href")) {
+          return false 
+        }
 
         let that = this; 
         let sectionDistanceFromTop = this.$products.find(pProductId).offset().top; 

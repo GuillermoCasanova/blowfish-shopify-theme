@@ -523,6 +523,11 @@
   margin-bottom: 0; 
 }
 
+.main-nav--large .main-nav-inner .main-nav-buyNow {
+  padding-left: rem-calc($level3); 
+  padding-right: rem-calc($level3); 
+}
+
 .main-nav--alt .main-nav-inner .main-nav-buyNow--alt,
 .main-nav--large .main-nav-inner .main-nav-buyNow--alt {
   display: none
