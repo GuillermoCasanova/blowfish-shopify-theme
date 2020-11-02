@@ -338,6 +338,7 @@ var ajaxCart = (function(module, $) {
 		      };
 		      $cartContainer.append(template(data));
 	      cartCallback(cart);
+	      $body.trigger('ajaxCart.cart-is-empty'); 
 	      return;
 	    }
 
@@ -422,6 +423,10 @@ var ajaxCart = (function(module, $) {
 	              )
 	            )
 	    };
+
+	    if(items.length > 0 ) {
+	      $body.trigger('ajaxCart.cart-is-filled'); 
+	   	}
 
 	    $cartContainer.append(template(data));
 	    cartCallback(cart);

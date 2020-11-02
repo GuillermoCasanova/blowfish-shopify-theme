@@ -59,14 +59,13 @@
         {%endif%}
 
         <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="main-nav-menu-cart"> 
-         <div class="header-cart" data-ui-component="cart-icon">
-            {%if cart.item_count > 0 %}
-              <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon">
-              <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon">
-            {%else%}
-              <img src="{{ 'cart.svg' | asset_url}}" alt="Cart icon that is empty"  class="icon">
-              <img src="{{ 'cart--alt.svg' | asset_url}}" alt="Cart icon that is empty" class="alt-icon">
-            {%endif%}
+         <div class="header-cart {%if cart.item_count > 0 %} is-filled {%endif%}" data-cart-icon>
+              <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon icon--cart-filled">
+
+              <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon icon--cart-filled">
+
+              <img src="{{ 'cart.svg' | asset_url}}" alt="Cart icon that is empty"  class="icon icon--cart-empty">
+              <img src="{{ 'cart--alt.svg' | asset_url}}" alt="Cart icon that is empty" class="alt-icon icon--cart-empty">
           </div>
         </button>
 
@@ -234,15 +233,16 @@
               {% endfor %}
 
                 <li>
-                <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="header-cart" data-ui-component="cart-icon">  
-                      {%if cart.item_count > 0 %}
-                        <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon">
-                        <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon">
-                      {%else%}
-                        <img src="{{ 'cart.svg' | asset_url}}" alt="Cart icon that is empty"  class="icon">
-                        <img src="{{ 'cart--alt.svg' | asset_url}}" alt="Cart icon that is empty" class="alt-icon">
-                      {%endif%}
-                  </button>
+                    <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="main-nav-menu-cart"> 
+                     <div class="header-cart {%if cart.item_count > 0 %} is-filled {%endif%}" data-cart-icon>
+                          <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon icon--cart-filled">
+
+                          <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon icon--cart-filled">
+
+                          <img src="{{ 'cart.svg' | asset_url}}" alt="Cart icon that is empty"  class="icon icon--cart-empty">
+                          <img src="{{ 'cart--alt.svg' | asset_url}}" alt="Cart icon that is empty" class="alt-icon icon--cart-empty">
+                      </div>
+                    </button>
                 </li>
     
                 <li>

@@ -19,7 +19,7 @@ theme.Header = (function() {
     menuContainer: '[data-menu]',
     navigation: '[data-navigation]',
     cartToggle: '[data-cart-toggle]',
-    cartItemAddedSuccessModal: '[data-cart-item-added-success-modal]',
+    cartIcon: '[data-cart-icon]',
     dropdownOverlay: '[data-dropdown-overlay]',
     navigationLink: '[data-navigation-link]'
   };
@@ -30,6 +30,8 @@ theme.Header = (function() {
    var $navigation = $(selectors.navigation); 
    var $navigationLinks =  $(selectors.navigationLink); 
    var $offCanvasCartOverlay = $(selectors.offCanvasCartOverlay); 
+   var $cartIcon = $(selectors.cartIcon); 
+   var $body = $('body');
 
   var $menuToggle = $(selectors.menuToggle); 
   var menuContainer = $(selectors.menuContainer);
@@ -59,7 +61,7 @@ theme.Header = (function() {
           var currentScroll; 
           var stickyNavContainer = $('[sticky-nav]');
           var navBar = $('[data-main-navigation]');
-          var cart = $('[data-ui-component="cart-icon"]'); 
+          var cart = $('[data-cart-icon]'); 
           var navBarHeight = navBar.height(); 
           var didScroll = false; 
           var theWindow = $(window);
@@ -114,7 +116,7 @@ theme.Header = (function() {
     // if(BF_current_page == altNavPage) {
 
     //   $('[data-ui-component="main-navigation"]').addClass('mainNav--alt');
-    //   $('[data-ui-component="cart-icon"]').addClass('cart--alt'); 
+    //   $('[data-cart-icon]').addClass('cart--alt'); 
 
     // }
 
@@ -242,6 +244,23 @@ theme.Header = (function() {
     }
 
 
+    //
+    // Sets up cart events
+    //
+    this.cartEventsInit = function() {
+      $body.on('ajaxCart.cart-is-empty', function() {
+        $cartIcon.removeClass('is-filled'); 
+        $cartIcon.addClass('is-empty'); 
+      });
+
+       $body.on('ajaxCart.cart-is-filled', function() {
+        $cartIcon.removeClass('is-empty'); 
+        $cartIcon.addClass('is-filled'); 
+      })
+    }
+
+
+
     var timerId = null;
 
     var  throttle  =  function (func, delay) {
@@ -260,7 +279,12 @@ theme.Header = (function() {
       }, delay)
     }
 
+    //
+    // Inits the nav 
+    //
     this.initNav = function() {
+
+      this.cartEventsInit(); 
 
       var currentBreakpoint = window.getComputedStyle(
           document.querySelector('body'), ':before'

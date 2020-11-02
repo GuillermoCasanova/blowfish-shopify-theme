@@ -697,10 +697,27 @@
     height: 3rem; 
     width: 3rem; 
   }
-}
 
 
-.header-cart {
+  &.is-filled {
+    .icon--cart-filled {
+      display: block; 
+    }
+
+    .icon--cart-empty {
+      display: none; 
+    }
+  }
+
+  &.is-empty {
+    .icon--cart-filled {
+      display: none; 
+    }
+
+    .icon--cart-empty {
+      display: block; 
+    }
+  }
 
    .icon {
       display: block; 
@@ -708,8 +725,9 @@
     .alt-icon {
       display: none; 
     }
+
     &.is-alt {
-       @include media-query($medium-up) {
+      @include media-query($medium-up) {
       .icon {
         display: none; 
       }
@@ -717,6 +735,9 @@
         display: block; 
       }
     }
+
+
+
   }
 }
 
