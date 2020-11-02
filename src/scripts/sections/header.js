@@ -15,9 +15,8 @@ theme.Header = (function() {
     offCanvasCartOverlay: '[data-off-canvas-cart-overlay]',
     closeOffCanvasCart: '[data-close-off-canvas-cart]',
     menuToggle: '[data-menu-toggle]',
-    dropDownToggle: '[data-drop-down-toggle]',
     menuContainer: '[data-menu]',
-    navigation: '[data-navigation]',
+    navigation: '[data-main-navigation]',
     cartToggle: '[data-cart-toggle]',
     cartIcon: '[data-cart-icon]',
     dropdownOverlay: '[data-dropdown-overlay]',
@@ -107,21 +106,20 @@ theme.Header = (function() {
   //If the user is on the hangover-science.html page, show the alt styling for the nav and cart
   //  
 
-  var altNavPage = 'hangover-science'; 
+  var altNavPage = '/pages/hangover-science'; 
 
   var hideLogoPage = '/'; 
 
   (function($) {
+    console.log(window.location.pathname); 
 
-    // if(BF_current_page == altNavPage) {
+    if(window.location.pathname === altNavPage) {
+     $navigation.addClass('mainNav--alt');
+     $cartIcon.addClass('cart--alt'); 
+    }
 
-    //   $('[data-ui-component="main-navigation"]').addClass('mainNav--alt');
-    //   $('[data-cart-icon]').addClass('cart--alt'); 
-
-    // }
-
-    if(window.location.pathname === hideLogoPage || window.location.pathname === '/' ) {
-      $('[data-main-navigation]').addClass('is-logo-hidden');
+    if(window.location.pathname === hideLogoPage) {
+      $navigation.addClass('is-logo-hidden');
     }
 
   })(jQuery);

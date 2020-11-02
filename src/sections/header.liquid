@@ -59,7 +59,7 @@
         {%endif%}
 
         <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="main-nav-menu-cart"> 
-         <div class="header-cart {%if cart.item_count > 0 %} is-filled {%endif%}" data-cart-icon>
+         <div class="header-cart {%if cart.item_count > 0 %} is-filled {%else%} is-empty{%endif%}" data-cart-icon>
               <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon icon--cart-filled">
 
               <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon icon--cart-filled">
@@ -234,7 +234,7 @@
 
                 <li>
                     <button data-cart-toggle aria-label="Toggle Off Canvas Cart" class="main-nav-menu-cart"> 
-                     <div class="header-cart {%if cart.item_count > 0 %} is-filled {%endif%}" data-cart-icon>
+                     <div class="header-cart {%if cart.item_count > 0 %} is-filled {%else%} is-empty{%endif%}" data-cart-icon>
                           <img src="{{ 'cart--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="icon icon--cart-filled">
 
                           <img src="{{ 'cart--alt--isFilled.svg' | asset_url}}" alt="Cart Icon Filled with Blowfish Character"  class="alt-icon icon--cart-filled">

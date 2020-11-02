@@ -130,7 +130,9 @@
             Shipping
           </p>
           <p>
-          Calculated at checkout</p>
+            {% endraw %}
+          {{ 'cart.general.shipping_at_checkout' | t }}</p> 
+          {% raw %}
         </div>
      
         <div class="off-canvas-cart-actions">
