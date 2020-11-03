@@ -1,6 +1,6 @@
 {
   "name": "blowfish-theme",
-  "version": "0.0.1",
+  "version": "1.2",
   "devDependencies": {
     "@shopify/slate-tools": "0.14.0"
   }

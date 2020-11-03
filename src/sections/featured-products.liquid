@@ -31,9 +31,9 @@
 
                       <div class="featured-products-section__products__product__image">
                         <picture>
-                          <source srcset="{{ product_information.images[0].src | img_url: '700x' }}" media="(min-width: 64.0625em)">
-                          <source srcset="{{ product_information.images[0].src | img_url: '500x' }}" media="(min-width: 43.8125em)">
-                          <img src="{{ product_information.images[0].src | img_url: '450x' }}" alt="{{ product.images[0].alt | escape }}">
+                          <source data-srcset="{{ product_information.images[0].src | img_url: '700x' }}" media="(min-width: 64.0625em)">
+                          <source data-srcset="{{ product_information.images[0].src | img_url: '500x' }}" media="(min-width: 43.8125em)">
+                          <img data-src="{{ product_information.images[0].src | img_url: '450x' }}" alt="{{ product.images[0].alt | escape }}" class="lazyload">
                         </picture>  
                       </div>
 
