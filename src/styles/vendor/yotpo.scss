@@ -7,3 +7,12 @@
 span.yotpo-icon.yotpo-icon-share { display: none; }
 
 .yotpo-action span.y-label { display: none;}
+
+
+.yotpo-action span.y-label {
+  display: none !important;
+}
+.yotpo .yotpo-review .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-review .yotpo-footer .yotpo-icon-seperator, .yotpo .yotpo-comment .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-comment .yotpo-footer .yotpo-icon-seperator, .yotpo .yotpo-question .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-question .yotpo-footer .yotpo-icon-seperator, .yotpo .yotpo-onsite-upload .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-onsite-upload .yotpo-footer .yotpo-icon-seperator {
+  font-size: 12px;
+  display: none !important;
+}

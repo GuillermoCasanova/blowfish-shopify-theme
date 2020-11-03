@@ -60,17 +60,11 @@
   {{ content_for_header }}
 
   <meta name="google-site-verification" content="LS4KaBf47s8mkTfkR3fZNZGdK8tXSvNX7hzh_L1-XqY" />
-
-
-  <!-- Yotpo JavaScript -->
-    <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/VI7R7FuUbFmSWvoxyU8QAN4wXMTXxLFtMIqppl59/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
-<!-- End of Yotpo JavaScript -->   
+ 
 
 </head>
 
 <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
-
-
 
 
   {% section 'header' %}
@@ -81,20 +75,13 @@
 
   {% section 'footer' %}
 
-    <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
-
-<style>
-  .yotpo-action span.y-label {
-    display: none !important;
-  }
-  .yotpo .yotpo-review .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-review .yotpo-footer .yotpo-icon-seperator, .yotpo .yotpo-comment .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-comment .yotpo-footer .yotpo-icon-seperator, .yotpo .yotpo-question .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-question .yotpo-footer .yotpo-icon-seperator, .yotpo .yotpo-onsite-upload .yotpo-footer .yotpo-icon-dot, .yotpo .yotpo-onsite-upload .yotpo-footer .yotpo-icon-seperator {
-    font-size: 12px;
-    display: none !important;
-}
-  </style>
-
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
 
 </body> 
+
+<!-- Yotpo JavaScript -->
+  <script prefetch type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/VI7R7FuUbFmSWvoxyU8QAN4wXMTXxLFtMIqppl59/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+<!-- End of Yotpo JavaScript -->  
+
 </html>

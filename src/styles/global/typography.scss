@@ -91,11 +91,11 @@ p {
 
 //Set your font size min/max (px)
 $max-font-size : 21;
-$min-font-size : 16.5;
+$min-font-size : 16.15;
  
 //Set your viewport size min/max (px)
-$max-media : 2800;
-$min-media : 320;
+$max-media : 2400;
+$min-media : 200;
  
 // Internal variables for the font/viewport ranges
 $viewport-range : $max-media - $min-media;

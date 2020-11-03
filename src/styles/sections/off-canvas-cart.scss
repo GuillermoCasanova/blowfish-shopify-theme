@@ -167,7 +167,7 @@
   right: 0;
   margin-right: auto;
   transform: translateX(120%);
-
+  
   @include media-query($medium-up) {
     max-width: rem-calc(400px);
     margin-left: auto; 

@@ -6,7 +6,6 @@
  * @namespace hangover science
  */
 
-
 theme.hangoverScience = (function() {
 
 	$(document).ready(function() {

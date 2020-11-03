@@ -23,14 +23,14 @@ theme.Header = (function() {
     navigationLink: '[data-navigation-link]'
   };
 
-   var $offCanvasMenu = $(selectors.offCanvasMenu);
-   var $offCanvasCart = $(selectors.offCanvasCart); 
-   var $dropdownOverlay = $(selectors.dropdownOverlay); 
-   var $navigation = $(selectors.navigation); 
-   var $navigationLinks =  $(selectors.navigationLink); 
-   var $offCanvasCartOverlay = $(selectors.offCanvasCartOverlay); 
-   var $cartIcon = $(selectors.cartIcon); 
-   var $body = $('body');
+  var $offCanvasMenu = $(selectors.offCanvasMenu);
+  var $offCanvasCart = $(selectors.offCanvasCart); 
+  var $dropdownOverlay = $(selectors.dropdownOverlay); 
+  var $navigation = $(selectors.navigation); 
+  var $navigationLinks =  $(selectors.navigationLink); 
+  var $offCanvasCartOverlay = $(selectors.offCanvasCartOverlay); 
+  var $cartIcon = $(selectors.cartIcon); 
+  var $body = $('body');
 
   var $menuToggle = $(selectors.menuToggle); 
   var menuContainer = $(selectors.menuContainer);
@@ -59,8 +59,8 @@ theme.Header = (function() {
           var prevScroll = 0;
           var currentScroll; 
           var stickyNavContainer = $('[sticky-nav]');
-          var navBar = $('[data-main-navigation]');
-          var cart = $('[data-cart-icon]'); 
+          var navBar = $(selectors.navigation);
+          var cart = $(selectors.cartIcon); 
           var navBarHeight = navBar.height(); 
           var didScroll = false; 
           var theWindow = $(window);
@@ -79,15 +79,10 @@ theme.Header = (function() {
               currentScroll = theWindow.scrollTop();
               
               if(100 < currentScroll) {
-
                 navBar.addClass('main-nav--fixed');  
                 navBar.removeClass('main-nav--alt');
-                cart.removeClass('cart--alt'); 
-
               } else {
-                
                 navBar.removeClass('main-nav--fixed');
-
               }
 
                prevScroll = currentScroll; 
