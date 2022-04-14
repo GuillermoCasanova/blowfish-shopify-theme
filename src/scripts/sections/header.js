@@ -207,17 +207,15 @@ theme.Header = (function() {
     // Setup mobile-specific jquery 
     //
     this.mobileNavInit = function() {
+
+      $(selectors.menuToggle).off('click'); 
+      
       $(selectors.menuToggle).on('click', function(event) {
         that.toggleNavigation(); 
       }); 
 
-      $(selectors.cartToggle).on('click', function(event) {
-        that.toggleCart(); 
-      }); 
+      this.initCart(); 
 
-      $(selectors.closeOffCanvasCart).on('click', function(event) {
-        that.closeCart(); 
-      }); 
     }
 
 
@@ -225,6 +223,11 @@ theme.Header = (function() {
     // Setup desktop-specific jquery 
     //
     this.desktopNavInit = function() {
+      this.initCart(); 
+    }
+
+    this.initCart = function() {
+      $(selectors.cartToggle).off('click'); 
 
       $(selectors.cartToggle).on('click', function(event) {
         that.toggleCart(); 
@@ -233,7 +236,6 @@ theme.Header = (function() {
       $(selectors.closeOffCanvasCart).on('click', function(event) {
         that.closeCart(); 
       }); 
-
     }
 
 
@@ -284,8 +286,10 @@ theme.Header = (function() {
       ).getPropertyValue('content').replace(/"/g, "");
 
       if(currentBreakpoint == 'medium-up' || currentBreakpoint == 'large-up') {
+        console.log('desktop nav init!');
         that.desktopNavInit(); 
       } else {
+        console.log('mobile nav init!');
         that.mobileNavInit(); 
       } 
     }

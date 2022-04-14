@@ -103,8 +103,8 @@ ShopifyAPI.onError = function(XMLHttpRequest) {
 ==============================================================================*/
 ShopifyAPI.addItemFromForm = function(form, callback, errorCallback) {
 
-	console.log(form); 
-
+	console.log(jQuery(form).serialize()); 
+	
   var params = {
     type: 'POST',
     url: '/cart/add.js',
@@ -451,10 +451,7 @@ var ajaxCart = (function(module, $) {
   	//
     //Calls the event to open the offCanvasCart in the Header component via theme.js
     $body.trigger('ajaxCart.afterCartLoad', cart);
-  
-    if (window.Shopify && Shopify.StorefrontExpressButtons) {
-      Shopify.StorefrontExpressButtons.initialize();
-    }
+
   };
 
   adjustCart = function() {

@@ -1,4 +1,3 @@
-
 /*------------------------------------*\
     #Header
 \*------------------------------------*/
@@ -11,14 +10,14 @@
 
 
 .header-alert {
-  background-color: $secondary-color; 
-  position: relative; 
+  background-color: $secondary-color;
+  position: relative;
   z-index: 102;
   width: 100%;
-  top:0; 
-  left: 0; 
-  rigth: 0; 
-  display: block; 
+  top: 0;
+  left: 0;
+  rigth: 0;
+  display: block;
   padding-top: rem-calc(1px);
   padding-bottom: rem-calc(1px);
 
@@ -28,9 +27,9 @@
 
   .header-alert__inner {
     width: 100%;
-    text-align: center; 
+    text-align: center;
     @include text-micro();
-    line-height: 1.5; 
+    line-height: 1.5;
   }
 }
 
@@ -42,8 +41,8 @@
 \*------------------------------------*/
 
 .fixed-nav {
-  position: fixed; 
-  top: 0; 
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 100;
 }
@@ -63,7 +62,7 @@
   transition: all .2s $primary-easing;
 
   @include media-query($medium-up) {
-    height: 4.0625rem; 
+    height: 4.0625rem;
     padding-left: rem-calc($level3);
     padding-right: rem-calc($level3);
   }
@@ -71,7 +70,7 @@
   @include media-query($large-up) {
     padding-left: rem-calc($level7);
     padding-right: rem-calc($level7);
-    height: 4.15rem; 
+    height: 4.15rem;
   }
 
   &.is-logo-hidden {
@@ -83,24 +82,27 @@
   &.main-nav--minimal {
     .header-cart {
       .alt-icon {
-        display: none; 
+        display: none;
       }
     }
 
     .header-cart {
       @include media-query($medium-up) {
-       .icon {
-          display: block; 
+        .icon {
+          display: block;
         }
+
         .alt-icon {
-          display: none; 
+          display: none;
         }
+
         &.is-alt {
           .icon {
-            display: none; 
+            display: none;
           }
+
           .alt-icon {
-            display: block; 
+            display: block;
           }
         }
       }
@@ -115,7 +117,8 @@
       .main-nav__title__logo {
         opacity: 0;
       }
-        .main-nav__title__logo--alt {
+
+      .main-nav__title__logo--alt {
         opacity: 1;
       }
     }
@@ -123,7 +126,7 @@
     .main-nav__menu-container {
       .main-nav__menu {
         .main-nav__menu__link {
-          color: #fff; 
+          color: #fff;
         }
       }
     }
@@ -132,7 +135,7 @@
   &.main-nav--fixed {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, .3);
     position: fixed;
-     background-color: #fff;
+    background-color: #fff;
 
     .main-nav__title {
       opacity: 1
@@ -146,13 +149,13 @@
     max-width: 74rem;
     margin-right: auto;
     margin-left: auto;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .main-nav__title {
-    margin-bottom: 0; 
+    margin-bottom: 0;
     width: 7rem;
     height: 100%;
     transition: all .4s $primary-easing;
@@ -166,7 +169,7 @@
 
 
     h1 {
-      margin-bottom: 0; 
+      margin-bottom: 0;
     }
 
     a {
@@ -182,31 +185,31 @@
       left: 0;
       opacity: 1;
       position: absolute;
-      width: 100%; 
+      width: 100%;
     }
 
     .main-nav__title__logo--alt {
-      opacity: 0; 
+      opacity: 0;
     }
   }
 
 
   .main-nav__menu-toggle {
-    display: block; 
+    display: block;
     width: 36px;
     height: 36px;
     height: 100%;
     position: relative;
-    cursor: pointer; 
-    border-radius: 0; 
-    margin-bottom: 0; 
-    background-color: transparent; 
+    cursor: pointer;
+    border-radius: 0;
+    margin-bottom: 0;
+    background-color: transparent;
 
     @include media-query($medium-up) {
-      display: none; 
+      display: none;
     }
 
-    &:hover, 
+    &:hover,
     &:focus {
 
       .main-nav__menu-toggle__icon {
@@ -215,7 +218,7 @@
 
         &:before,
         &:after {
-          background-color: $accent-color; 
+          background-color: $accent-color;
         }
       }
     }
@@ -223,7 +226,7 @@
     .main-nav__menu-toggle__icon {
       transition: all .4s $primary-easing;
       color: $tertiary-color;
-      border-bottom: 4px solid $tertiary-color; 
+      border-bottom: 4px solid $tertiary-color;
       width: 35px;
       position: absolute;
       top: 18px;
@@ -231,8 +234,8 @@
       left: 0;
       margin: auto;
       border-radius: 12px;
-      transition: all .2s cubic-bezier(.86,0,.070,1);
-      width: 100%; 
+      transition: all .2s cubic-bezier(.86, 0, .070, 1);
+      width: 100%;
 
       &:before,
       &:after {
@@ -243,13 +246,13 @@
         content: " ";
         position: absolute;
         top: 10px;
-        left: 0; 
-        background-color: $tertiary-color; 
-        transition: all .2s cubic-bezier(.86,0,.070,1);
+        left: 0;
+        background-color: $tertiary-color;
+        transition: all .2s cubic-bezier(.86, 0, .070, 1);
       }
 
       &:after {
-        top: 20px; 
+        top: 20px;
       }
 
       &:active,
@@ -262,11 +265,11 @@
 
   .main-nav__cart-toggle {
     padding-right: .75rem;
-    background-color: transparent; 
-    margin-bottom: 0; 
+    background-color: transparent;
+    margin-bottom: 0;
 
     @include media-query($medium-up) {
-      padding-right: 0; 
+      padding-right: 0;
     }
 
     .main-nav__cart-toggle__icon,
@@ -275,20 +278,20 @@
       width: 2.5rem;
       background-size: contain;
       bottom: 4px;
-      display: block; 
-      background-color:transparent; 
-      margin-bottom: 0; 
-      position: relative; 
+      display: block;
+      background-color: transparent;
+      margin-bottom: 0;
+      position: relative;
 
       @include media-query($medium-up) {
-        height: 2.25rem; 
-        width: 2.25rem; 
+        height: 2.25rem;
+        width: 2.25rem;
       }
 
       @include media-query($large-up) {
-        height: 2.5rem; 
-        width: 2.5rem; 
-        bottom: 4px; 
+        height: 2.5rem;
+        width: 2.5rem;
+        bottom: 4px;
       }
 
       img {
@@ -298,64 +301,67 @@
 
 
       .icon {
-        display: block; 
+        display: block;
       }
 
       .alt-icon {
-        display: none; 
+        display: none;
       }
 
       &.is-filled {
         .icon--cart-filled {
-          display: block; 
+          display: block;
         }
 
         .icon--cart-empty,
         .alt-icon.icon--cart-filled {
-          display: none; 
+          display: none;
         }
       }
 
       &.is-empty {
+
         .icon--cart-filled,
         .alt-icon.icon--cart-empty {
-          display: none; 
+          display: none;
         }
 
         .icon--cart-empty {
-          display: block; 
+          display: block;
         }
       }
 
       &.is-alt {
 
         .icon {
-          display: none; 
+          display: none;
         }
+
         .alt-icon {
-          display: block; 
+          display: block;
         }
 
         &.is-filled {
           .alt-icon.icon--cart-filled {
-            display: block; 
+            display: block;
           }
 
           .alt-icon.icon--cart-empty,
           .icon.icon--cart-filled {
-            display: none; 
+            display: none;
 
           }
         }
 
         &.is-empty {
+
           .alt-icon.icon--cart-filled,
           .icon.icon--cart-empty {
-            display: none; 
+            display: none;
           }
 
           .alt-icon.icon--cart-empty {
-            display: block; 
+            display: block;
           }
         }
       }
@@ -363,43 +369,44 @@
   }
 
   .main-nav__menu-container {
-    position: fixed; 
+    position: fixed;
     background-color: $primary-color;
     height: 100%;
     width: 100%;
     opacity: 0;
     z-index: 200;
     top: 0;
-    opacity: 0; 
+    left: 0;
+    opacity: 0;
     transform: translateX(200%);
 
     @include media-query($medium-up) {
       transform: none;
-      opacity: 1;  
+      opacity: 1;
       background-color: transparent;
       position: relative;
       display: flex;
-      flex-direction: row; 
+      flex-direction: row;
       width: 75%;
       justify-content: flex-end;
       align-items: flex-end;
-      max-width: 37rem; 
+      max-width: 37rem;
     }
 
     @include media-query($large-up) {
-      max-width: 59%; 
-      width: 100%; 
+      max-width: 59%;
+      width: 100%;
     }
 
     @include media-query($widescreen) {
-      max-width: 58%; 
+      max-width: 58%;
     }
 
     &.is-closed {
       animation: main-nav-disappear .4s ease-out forwards;
 
       @include media-query($medium-up) {
-        animation: none; 
+        animation: none;
       }
     }
 
@@ -407,7 +414,7 @@
       animation: main-nav-appear .4s $primary-easing forwards;
 
       @include media-query($medium-up) {
-        animation: none; 
+        animation: none;
       }
 
       .main-nav-menu .main-nav-menu-animElem {
@@ -424,17 +431,17 @@
       margin-left: auto;
       left: 0;
       right: 0;
-      display: block; 
+      display: block;
     }
 
     .main-nav__menu {
       padding-top: .75rem;
 
       @include media-query($medium-up) {
-        display: flex; 
-        flex-direction: row; 
-        align-items: center; 
-        width: 100%; 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
         justify-content: space-between;
       }
 
@@ -448,21 +455,21 @@
       .main-nav__menu__link {
         color: #fff;
         width: 100%;
-        text-align: center; 
+        text-align: center;
         position: relative;
-        display: block; 
+        display: block;
 
         @include media-query($medium-up) {
-          @include h6(); 
+          @include h6();
           color: #8A8A8A;
           white-space: nowrap;
           border-bottom: 0;
           transition: all .4s cubic-bezier(.86, 0, .070, 1);
 
-          &:hover, 
+          &:hover,
           &:focus {
             &:after {
-              width: 100%; 
+              width: 100%;
             }
           }
         }
@@ -479,9 +486,9 @@
         }
       }
 
-     .main-nav__menu__item {
+      .main-nav__menu__item {
         margin-bottom: rem-calc($level2);
-        text-align: center; 
+        text-align: center;
       }
 
 
@@ -490,23 +497,23 @@
           transition-delay: #{$i * 0.06}s;
 
           @include media-query($medium-up) {
-            transition-delay: unset; 
+            transition-delay: unset;
           }
         }
       }
     }
 
     .main-nav__menu__buy-now {
-      padding-left: rem-calc($level3); 
-      padding-right: rem-calc($level3); 
+      padding-left: rem-calc($level3);
+      padding-right: rem-calc($level3);
       max-width: 203px;
-      margin-right: auto; 
-      margin-left: auto; 
-      left: 0; 
-      right: 0; 
+      margin-right: auto;
+      margin-left: auto;
+      left: 0;
+      right: 0;
 
       @include media-query($medium-up) {
-        margin-bottom: 0; 
+        margin-bottom: 0;
       }
     }
 
@@ -515,17 +522,17 @@
       width: rem-calc(60px);
       position: relative;
       display: block;
-      background-color: transparent; 
+      background-color: transparent;
       text-align: left;
       left: rem-calc($level1);
-      top: rem-calc($level1); 
+      top: rem-calc($level1);
 
       @include media-query($medium-up) {
-        display: none; 
+        display: none;
       }
 
       .main-nav__menu-close__icon {
-        transition: all .4s cubic-bezier(.86,0,.070,1);
+        transition: all .4s cubic-bezier(.86, 0, .070, 1);
         width: rem-calc(36px);
         position: relative;
         height: 100%;
@@ -565,20 +572,20 @@
       margin-top: rem-calc($level4);
       margin-bottom: rem-calc($level4);
       max-width: rem-calc(160px);
-      margin-left: auto; 
+      margin-left: auto;
       margin-right: auto;
-      display: flex; 
-      flex-direction: row; 
-      align-items: center; 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       justify-content: center;
 
       @include media-query($medium-up) {
-        display: none; 
+        display: none;
       }
 
       .main-nav__menu__social__link {
         border-bottom: 0;
-        margin-right: rem-calc($level2); 
+        margin-right: rem-calc($level2);
 
         @include media-query($medium-up) {
           margin-right: rem-calc($level1);
@@ -618,6 +625,7 @@
     opacity: 0;
     transform: translateY(200%)
   }
+
   100% {
     opacity: 1;
     transform: translateY(0)
@@ -630,12 +638,9 @@
     opacity: 1;
     transform: translateY(0)
   }
+
   100% {
     opacity: 0;
     transform: translateY(200%)
   }
 }
-
-
-
-

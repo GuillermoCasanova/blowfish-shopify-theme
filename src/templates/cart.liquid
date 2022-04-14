@@ -45,7 +45,7 @@
                           <td class="show-for-medium-up text-center">
                             {% if item.image != blank %}
                               <a href="{{ item.url | within: collections.all }}" class="cart__line-item__image">
-                                <img src=" {{ item | img_url: '240x240'}} " alt="{{img_tag: item.title}}">
+                                <img src=" {{ item | img_url: '240x240'}} " alt="{{item.title}}">
                               </a>
                             {% endif %}
                           </td>
