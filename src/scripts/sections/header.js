@@ -286,10 +286,8 @@ theme.Header = (function() {
       ).getPropertyValue('content').replace(/"/g, "");
 
       if(currentBreakpoint == 'medium-up' || currentBreakpoint == 'large-up') {
-        console.log('desktop nav init!');
         that.desktopNavInit(); 
       } else {
-        console.log('mobile nav init!');
         that.mobileNavInit(); 
       } 
     }
